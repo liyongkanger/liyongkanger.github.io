@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>picture | 康康的博客</title>
+  <title>mysql基础操作 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: ‘’’picture’’’date: 2019-10-31 20:22:16tags:—###引入一下图片">
+  <meta name="description" content="MYSQL操作DDL:操作数据库,表  1.C(create) 创建  创建数据库： create database if not exists; 数据可m名称 创建数据库并指定字符集 create database 数据库名称 character set 字符集utf8;  2.R(Retrieve)查询  查询数据库的名称： show databases;  3.U(Updata)修改  修改">
 <meta property="og:type" content="article">
-<meta property="og:title" content="picture">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;picture&#x2F;index.html">
+<meta property="og:title" content="mysql基础操作">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
-<meta property="og:description" content="title: ‘’’picture’’’date: 2019-10-31 20:22:16tags:—###引入一下图片">
+<meta property="og:description" content="MYSQL操作DDL:操作数据库,表  1.C(create) 创建  创建数据库： create database if not exists; 数据可m名称 创建数据库并指定字符集 create database 数据库名称 character set 字符集utf8;  2.R(Retrieve)查询  查询数据库的名称： show databases;  3.U(Updata)修改  修改">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;1.jpg">
-<meta property="og:updated_time" content="2019-10-31T12:26:10.755Z">
+<meta property="og:updated_time" content="2019-11-03T12:49:08.985Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
   
@@ -158,28 +156,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-picture" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-mysql基础操作" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      picture
+      mysql基础操作
     </h1>
   
 
         
-        <a href="/2019/10/31/picture/" class="archive-article-date">
-  	<time datetime="2019-10-31T12:22:16.908Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
+        <a href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2019-11-03T12:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: ‘’’picture’’’<br>date: 2019-10-31 20:22:16<br>tags:<br>—###引入一下图片<br><img src="/.com//1.jpg" alt="加油啊"></p>
+        <h3 id="MYSQL操作"><a href="#MYSQL操作" class="headerlink" title="MYSQL操作"></a>MYSQL操作</h3><h6 id="DDL-操作数据库-表"><a href="#DDL-操作数据库-表" class="headerlink" title="DDL:操作数据库,表"></a>DDL:操作数据库,表</h6><p>  1.C(create) 创建</p>
+<ul>
+<li>创建数据库： create database if not exists; 数据可m名称</li>
+<li>创建数据库并指定字符集 create database 数据库名称 character set 字符集utf8;</li>
+</ul>
+<p>2.R(Retrieve)查询</p>
+<ul>
+<li>查询数据库的名称： show databases;</li>
+</ul>
+<p>3.U(Updata)修改</p>
+<ul>
+<li>修改数据库的字符集： alter database 数据库名称; character set 字符集名称;</li>
+</ul>
+<p>4.D(Delete)删除</p>
+<ul>
+<li>删除数据库：drop database if exists 数据库名称;</li>
+</ul>
+<p>5.使用数据库</p>
+<ul>
+<li>查询数据库名称select database();</li>
+<li>使用数据库 ：use 数据库名称;<h6 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h6></li>
+</ul>
+<p>1.创建  create table 表名（<br>                           第一个列名 数据类型，<br>                           第二个列名 数据类型)；注意最后一个不加逗号<br>2.数据库类型  int,double,date,datetime,varchar<br>  创建表 :create table student(<br>                    id int,<br>                    name varchar(32),<br>                    age int ,<br>                    score double(4,1),<br>                    birthday date,<br>                    insert_time timestamp<br>                );<br>  复制表  create table 表名 like 被复制的表名</p>
+<p>3.查询某个数据库中所有的表名称 show tables<br>  查询某个表结构 desc 表名</p>
+<p>4.修改<br>   修改表名： alter table 表名rename to 新表名<br>   修改表的字符集： alter table 表名 character set 字符集<br>   添加一列： alter table 表名 add 列名 数据类型<br>   修改列名称 类型 alter table 表名 change 列名 新类别 新数据类型/ alter table 表名 modify 列名 新数据类型<br>   删除列 alter table 表名 drop 列名</p>
+<ol start="5">
+<li>删除  drop table if exists 表名</li>
+</ol>
+<p>6.添加数据  insert into 表名(列名1，列名2，列名3)value(值1，值2，值3)<br>  删除数据  delete from 表名 where + 条件</p>
+<ol start="7">
+<li>修改数据 update 表名 set 列名1 = 值1， 列名2 = 值2 where + 条件</li>
+</ol>
+<p>8.select * from 表名    select 字段 from 表名  where 条件 group by 分组字段 having 分组之后的条件  order by 排序(默认升序) limit分页限定 </p>
 
       
 
@@ -259,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/31/picture/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +302,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/03/spring-day01-ioc/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          spring_day01_ioc
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">my基本操作</div>
+    <a href="/2019/11/03/spring-day01-ioc/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">spring_day01_ioc</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -311,7 +331,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MYSQL操作"><span class="toc-number">1.</span> <span class="toc-text">MYSQL操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#DDL-操作数据库-表"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">DDL:操作数据库,表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#操作表"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">操作表</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -328,8 +348,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/10/31/picture/", 
-    sourceId: "picture",
+    url: "http://yoursite.com/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/", 
+    sourceId: "mysql基础操作",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
