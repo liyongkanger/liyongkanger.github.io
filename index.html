@@ -78,7 +78,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 6
+                                           总文章数 8
                                  </nav>
 
 		<nav class="header-nav">
@@ -664,6 +664,198 @@ private static void main(String[] args) throw IOExeception{
 
 
   
+    <article id="post-mysql基础操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">mysql基础操作</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2019-11-03T12:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="MYSQL操作"><a href="#MYSQL操作" class="headerlink" title="MYSQL操作"></a>MYSQL操作</h3><h6 id="DDL-操作数据库-表"><a href="#DDL-操作数据库-表" class="headerlink" title="DDL:操作数据库,表"></a>DDL:操作数据库,表</h6><p>  1.C(create) 创建</p>
+<ul>
+<li>创建数据库： create database if not exists; 数据可m名称</li>
+<li>创建数据库并指定字符集 create database 数据库名称 character set 字符集utf8;</li>
+</ul>
+<p>2.R(Retrieve)查询</p>
+<ul>
+<li>查询数据库的名称： show databases;</li>
+</ul>
+<p>3.U(Updata)修改</p>
+<ul>
+<li>修改数据库的字符集： alter database 数据库名称; character set 字符集名称;</li>
+</ul>
+<p>4.D(Delete)删除</p>
+<ul>
+<li>删除数据库：drop database if exists 数据库名称;</li>
+</ul>
+<p>5.使用数据库</p>
+<ul>
+<li>查询数据库名称select database();</li>
+<li>使用数据库 ：use 数据库名称;<h6 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h6></li>
+</ul>
+<p>1.创建  create table 表名（<br>                           第一个列名 数据类型，<br>                           第二个列名 数据类型)；注意最后一个不加逗号<br>2.数据库类型  int,double,date,datetime,varchar<br>  创建表 :create table student(<br>                    id int,<br>                    name varchar(32),<br>                    age int ,<br>                    score double(4,1),<br>                    birthday date,<br>                    insert_time timestamp<br>                );<br>  复制表  create table 表名 like 被复制的表名</p>
+<p>3.查询某个数据库中所有的表名称 show tables<br>  查询某个表结构 desc 表名</p>
+<p>4.修改<br>   修改表名： alter table 表名rename to 新表名<br>   修改表的字符集： alter table 表名 character set 字符集<br>   添加一列： alter table 表名 add 列名 数据类型<br>   修改列名称 类型 alter table 表名 change 列名 新类别 新数据类型/ alter table 表名 modify 列名 新数据类型<br>   删除列 alter table 表名 drop 列名</p>
+<ol start="5">
+<li>删除  drop table if exists 表名</li>
+</ol>
+<p>6.添加数据  insert into 表名(列名1，列名2，列名3)value(值1，值2，值3)<br>  删除数据  delete from 表名 where + 条件</p>
+<ol start="7">
+<li>修改数据 update 表名 set 列名1 = 值1， 列名2 = 值2 where + 条件</li>
+</ol>
+<p>8.select * from 表名    select 字段 from 表名  where 条件 group by 分组字段 having 分组之后的条件  order by 排序(默认升序) limit分页限定 </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-day01-ioc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/spring-day01-ioc/">spring_day01_ioc</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/spring-day01-ioc/" class="archive-article-date">
+  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##关于jdbc的简单用法<br>  1.注册驱动<br>       DriverManager.registerDriver(new com.mysql.jdbc.Driver());<br>       或者Class.forName(“com.sql.jdbc.Driver”);<br>  2.获取连接<br>       Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/数据库名称，”root”,”admin”);<br>  3.获取操作数据库的预处理对象<br>       PrepareStatement pstm = conn.prepareStatement(“select * from account”);<br>  4.执行sql语句得到结果集<br>       ResultSet rs = pstm.executeQuery();<br>  5.便利结果集<br>      while(rs.next()){System.out.println(rs.getString(“name”);)}<br>  6.释放资源  rs.close()  pstm.close(); conn.close();  规则先打开的最后关闭</p>
+<hr>
+<p>##spring中使用xml进行配置<br> #1.spring中两个核心功能一个是ioc一个是aop,ioc是一个容器，使用ioc容器可以很好的降低程序间的耦合，两个特性，控制反转和依赖注入<br>    将对象的实例化交给spring去创建减少使用new的关键字，通过注入的方式给变量对象赋值<br>    一般进行xml进行配置的时候xml中主要使用<bean>标签，其中含有class属性和id属性，class一般是所创建对象的包名的全部路径，id是实例化对象的名字，通过这<br>    两个属性来确定具体的位置。init-method：指定类中的初始化方法名称。  destroy-method：指定类中销毁方法名称。scope：指定对象的作用范围 </bean></p>
+<p> #2.在主函数中如何使用java bean<br>        1.获取核心容器的对象<br>           ApplicationContext  applicationContext = new ClassPathXmlApplicationContext(“bean.xml”);<br>        2.根据id获取Bean对象<br>            IAccountService   accountService = (IAccountService)accountService.getBean(“配置文件中的id”)；<br>        3.根据创建好的对象调用它的方法<br>              accountService.saveAccount();<br>  #3.在bean.xml中的DI依赖注入<br>        1.复杂类型/集合类型注入的方式：有三种第一种：使用构造函数提供第二种：使用set方法提供第三种：使用注解提供<br>        2.构造函数注入：使用的标签:constructor-arg 标签出现的位置：bean标签的内部标签中的属性 type：用于指定要注入的数据的数据类型，该数据类型也是构造函数中某个或某些参数的类型 index：用于指定要注入的数据给构造函数中指定索引位置的参数赋值。<br>           索引的位置是从0开始 name：用于指定给构造函数中指定名称的参数赋值(使用较少)<br>           <code>&lt;constructor-arg value = &quot;&quot;  name = &quot;&quot;&gt; &lt;constructor-arg name = &quot;复杂属性&quot; ref=&quot;值&quot; &gt;
+        3.配置一个日期对象</code><bean class="java.util.Date" id="now"><br>        4.使用set方法然后通过配置注入, 复杂类型的注入/集合类型的注入用于给List结构集合注入的标签： list array set 用于个Map结构集合注入的标签:map props 结构相同，标签可以互换 –&gt;<br>              <code>&lt;property name = &quot;myStrs&quot;&gt;  &lt;set&gt;&lt;value&gt;AAA&lt;/value&gt;&lt;/set&gt;&lt;/property&gt;</code>&lt;property name = “myList”      <array><value>AAA</value></array><br>              <code>&lt;property name = &quot;myMap&quot;&gt; &lt;props&gt;&lt;prop key = &quot;test&quot;&gt;ccc&lt;/prop&gt;&lt;/props&gt;</code><property name="muProps"><map><entry value="aaa" key="test"></entry></map>  </property></bean></p>
+<hr>
+<pre><code>  简单类型：`&lt;bean id = &quot;&quot; class =&quot;&quot;&gt;  &lt;property name = &quot;name&quot; value =&quot;text&quot;&gt; &lt;/property&gt;              
+5.在使用meavn工程中spring的依赖
+                     `&lt;packaging&gt;jar&lt;/packaging&gt;
+                     `&lt;dependencies&gt; &lt;dependency&gt;
+                     `&lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                     `&lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+                     `&lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
+                     `&lt;/dependency&gt;   &lt;/dependencies&gt;</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/spring-day01-ioc/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-my基本操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1100,6 +1292,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
