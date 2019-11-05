@@ -78,7 +78,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 5
+                                           总文章数 6
                                  </nav>
 
 		<nav class="header-nav">
@@ -483,6 +483,158 @@ IAccountService as = ac.getBean(&quot;accountService&quot;,IAccountSevice.class)
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Socket实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/">Socket实例</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2019-11-03T15:27:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Socket编程实例"><a href="#Socket编程实例" class="headerlink" title="Socket编程实例"></a>Socket编程实例</h2><p> 客户端Echo Client<br> ` 代码如下</p>
+<pre><code>public class EchoClient{
+private Strin host = &quot;localhost&quot;;
+private int port  = 8000;
+Private Socket socket;
+public EchoClient() throw IOException{
+    socket = new Socket(host,port);
+}//利用构造函数进行初始化
+//修饰输入
+private BufferedReader getReader(Socket socket) throws IOException{
+    InputStream socketIn = socket.getInputStream();
+    return  new BufferedReader(new InputStreamReader(socketIn));
+   }
+//修饰输出
+private PrintWriter getWriter(Socket socket) throw IOException{
+    OutputStream socketOut = socket.getOutputStream();
+    return new PrintWriter(socketOUt,true);
+}
+public void talke() throws IOException{
+    BufferedReader br =getReader(socket);//调用上面的方法
+    PrintWriter pw = getWriter(socket);//输出
+    BufferedReader localReader = new BufferedReader(new InputStreamReader(System.in));
+    String msg = null;
+    while((msg =localReader.readLine()) != null){
+        pw.println(msg);
+        System.out.println(br.readLine());
+        if (msg.equals(&quot;bye&quot;)   break;
+    }
+    socket.close();
+}
+
+private static void main(String[] args) throw IOExeception{
+    new EchoClient().talk();
+}</code></pre><p> }</p>
+<p> 服务器端代码<br>  `代码如下</p>
+<pre><code>public class EchoSever{
+ private int port = 8000;
+ private ServerSocket serverSocket;
+ //构造函数
+ public EchoServer() throws IOException{
+     serverSocket = new ServerSocket(port);
+     System.out.println(&quot;服务启动&quot;);
+ }
+ public String echo(String msg){
+     return &quot;echo&quot;+msg;
+ }
+ //装饰输出跟客户端一样
+ private PrintWriter getWriter(Socket socket) throw IOException{
+     OutputStream socketOut = socket.getOutputStream();
+     return new PrintWriter(SocketOut, true);
+ }//输入
+ public BufferedReader getReader(Socket socket) throws IOExcption{
+     InputStream socketIn = sokcet.getInputStream();
+     return new BufferedReader(new InputStreamReader(socketIn));
+ }
+ public void service(){
+     while(true){
+        Socket socket = null;
+        socket = serverSocket.accept();   
+       System.out.println(&quot;New connection accepted&quot;
+        + socket.getIneAddress()+&quot;:&quot;+socket.getPort());
+
+        BufferedReader br = getRead(socket);
+        PrintWriter pw = getWriter(socket);
+        String msg = null;
+        while((msg = br.readLine())!= null){
+            System.out.println(msg);
+            pw.println(echo(msg));
+            if (msg.equals(&quot;bys&quot;)){
+                break;
+            }
+        }
+        if (socket !=null)  socket.close( );
+     }
+     }
+     public static void main(String[] args) throws IOEception{
+         new EchoServer().service();
+
+ }</code></pre><p>  }</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Socket</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/">展开全文 >></a>
         </p>
       
 
@@ -945,6 +1097,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
