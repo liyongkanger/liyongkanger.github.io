@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | 康康的博客</title>
+  <title>spring-day02-annotation | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="spring_day02_ioc1.使用注解来管理spring ioc用于创建对象 1.@Component 作用：把资源让spring管理，相当于在xml中配置了一个bean 属性：指定bean的id，如果不指定value的属性，默认bean的id为当前类名，首字母小写 2.@Controller 一般用于表现层的注解 3.@Service 一般用于业务层的注解 4.@Respository一般">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;29&#x2F;hello-world&#x2F;index.html">
+<meta property="og:title" content="spring-day02-annotation">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;04&#x2F;spring-day02-annotation&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="spring_day02_ioc1.使用注解来管理spring ioc用于创建对象 1.@Component 作用：把资源让spring管理，相当于在xml中配置了一个bean 属性：指定bean的id，如果不指定value的属性，默认bean的id为当前类名，首字母小写 2.@Controller 一般用于表现层的注解 3.@Service 一般用于业务层的注解 4.@Respository一般">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-29T10:50:42.808Z">
+<meta property="og:updated_time" content="2019-11-04T11:28:19.524Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -57,7 +57,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/tags">随笔</a></li>
+	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -77,7 +81,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 7
+                                           总文章数 5
                                  </nav>
 
 		<nav class="header-nav">
@@ -119,6 +123,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -136,12 +144,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags">随笔</a></li>
+		        
+					<li style="width: 25%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 25%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -156,39 +168,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-spring-day02-annotation" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      spring-day02-annotation
     </h1>
   
 
         
-        <a href="/2019/10/29/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-29T10:50:42.808Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+        <a href="/2019/11/04/spring-day02-annotation/" class="archive-article-date">
+  	<time datetime="2019-11-04T08:53:32.459Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="spring-day02-ioc"><a href="#spring-day02-ioc" class="headerlink" title="spring_day02_ioc"></a>spring_day02_ioc</h3><h4 id="1-使用注解来管理spring-ioc"><a href="#1-使用注解来管理spring-ioc" class="headerlink" title="1.使用注解来管理spring ioc"></a>1.使用注解来管理spring ioc</h4><h6 id="用于创建对象"><a href="#用于创建对象" class="headerlink" title="用于创建对象"></a>用于创建对象</h6><p> 1.@Component 作用：把资源让spring管理，相当于在xml中配置了一个bean 属性：指定bean的id，如果不指定value的属性，默认bean的id为当前类名，首字母小写<br> 2.@Controller 一般用于表现层的注解<br> 3.@Service 一般用于业务层的注解<br> 4.@Respository一般用于持久层的注解(如果注解中只有一个属性要赋值时，且名称为value，value在赋值时可以不写)</p>
+<h6 id="用于注入数据"><a href="#用于注入数据" class="headerlink" title="用于注入数据"></a>用于注入数据</h6><p>  1.@Autowired 作用：自动按照类型注入，当使用注解注入属性时，set方法可以省略，他只能注入其他bean类型当多个类型匹配时，要使用对象的变量名称作为bean的id<br>  2.@Qualifier作用自动注入的基础上，在按照Bean的id注入,给字段注入时不能单独使用，必须和@Autowire一起使用。属性：指定bean的id<br>  3.@Resource作用:按照bean的id注入，只能注入其他bean类型。属性:指定bean的id<br>  4.@Value作用：注入基本数据类型和String类型value:指定值</p>
+<h6 id="改变作用范围的"><a href="#改变作用范围的" class="headerlink" title="改变作用范围的"></a>改变作用范围的</h6><p>  1.@Scope 作用：指定bean的作用范围。属性：value:取值singleton prototype request session globalsession<br>  2.@PostConstruct初始化方法<br>  3.@PreDestroy销毁方法</p>
+<h6 id="注解配置类"><a href="#注解配置类" class="headerlink" title="注解配置类"></a>注解配置类</h6><p>  1.@Configuration作用指定当前是一个配置类获取容器时需要使用AnnotationApplicationContext value指定配置类的字节码<br>  2.@ComponentScan用于在spring在初始时要扫描的包<br>  3.@Bean 该注解只能写在方法上，使用这个方法创建一个对象，放入spring容器中 name：指定id<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class JdbcConfig &#123;  @Value(&quot;$&#123;jdbc.driver&#125;&quot;) </span><br><span class="line">private String driver;</span><br><span class="line">@Value(&quot;$&#123;jdbc.url&#125;&quot;) </span><br><span class="line">private String url;</span><br><span class="line">@Value(&quot;$&#123;jdbc.username&#125;&quot;)</span><br><span class="line">private String username; </span><br><span class="line">@Value(&quot;$&#123;jdbc.password&#125;&quot;) </span><br><span class="line">private String password; </span><br><span class="line"></span><br><span class="line">@Bean(name = &quot;dataSource&quot;)</span><br><span class="line">public DataSource createDataSource()&#123;</span><br><span class="line">    ComboPooledDataSource ds = new ComboPooledDataSource();</span><br><span class="line">    ds.setUser(&quot;root&quot;);</span><br><span class="line">    ds.setPassword(&quot;admin&quot;);</span><br><span class="line">    ds.setDriverClass(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    ds.setJdbcUrl(&quot;jdbc:mysql://ee50&quot;)；</span><br><span class="line">    return ds;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>  4.@PropertySource作用：加载。properties 文件中位置,value[]指定文件位置<br>  5.如果有两个配置类但是要建立配置文件与配置文件之间的关系用@Import ,导入其他配置类，在引入其他配置类时可以不用写@Comfiguration<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  示例代码： @Configuration @ComponentScan(basePackages = &quot;com.itheima.spring&quot;) @Import(&#123; JdbcConfig.class&#125;) public class SpringConfiguration &#123; &#125; </span><br><span class="line"> </span><br><span class="line">@Configuration @PropertySource(&quot;classpath:jdbc.properties&quot;) public class JdbcConfig&#123; &#125;</span><br></pre></td></tr></table></figure><br>6.没有配置文件如何获取容器呢，也可以通过注解，ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.calss)</p>
 
       
 
@@ -268,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/29/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/04/spring-day02-annotation/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,15 +285,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/29/%E5%B0%9D%E8%AF%95%E5%9C%A8%E5%86%99%E4%B8%80%E6%AC%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/11/04/spring-%E6%95%B4%E5%90%88junit/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          尝试在写一次
+          spring 整合junit
         
       </div>
     </a>
   
+  
+    <a href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树与二叉树</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -315,7 +323,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#spring-day02-ioc"><span class="toc-number">1.</span> <span class="toc-text">spring_day02_ioc</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-使用注解来管理spring-ioc"><span class="toc-number">1.1.</span> <span class="toc-text">1.使用注解来管理spring ioc</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#用于创建对象"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">用于创建对象</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#用于注入数据"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">用于注入数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#改变作用范围的"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">改变作用范围的</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#注解配置类"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">注解配置类</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -332,8 +340,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/10/29/hello-world/", 
-    sourceId: "hello-world",
+    url: "http://yoursite.com/2019/11/04/spring-day02-annotation/", 
+    sourceId: "spring-day02-annotation",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -437,6 +445,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Spring</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

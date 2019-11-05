@@ -6,16 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | 康康的博客</title>
+  <title>Socket实例 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="Socket编程实例 客户端Echo Client ` 代码如下 public class EchoClient{ private Strin host = &amp;quot;localhost&amp;quot;; private int port  = 8000; Private Socket socket; public EchoClient() throw IOException{     socket">
+<meta name="keywords" content="Socket">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;29&#x2F;hello-world&#x2F;index.html">
+<meta property="og:title" content="Socket实例">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;Socket%E5%AE%9E%E4%BE%8B&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Socket编程实例 客户端Echo Client ` 代码如下 public class EchoClient{ private Strin host = &amp;quot;localhost&amp;quot;; private int port  = 8000; Private Socket socket; public EchoClient() throw IOException{     socket">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-29T10:50:42.808Z">
+<meta property="og:updated_time" content="2019-11-05T11:18:04.003Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -57,7 +58,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/tags">随笔</a></li>
+	        
+				<li><a href="/tags/Socket">tags</a></li>
 	        
 			</ul>
 		</nav>
@@ -77,7 +80,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 7
+                                           总文章数 6
                                  </nav>
 
 		<nav class="header-nav">
@@ -119,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -136,12 +141,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/Socket">tags</a></li>
 		        
 				</ul>
 			</nav>
@@ -156,39 +163,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Socket实例" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Socket实例
     </h1>
   
 
         
-        <a href="/2019/10/29/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-29T10:50:42.808Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+        <a href="/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2019-11-03T15:27:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h2 id="Socket编程实例"><a href="#Socket编程实例" class="headerlink" title="Socket编程实例"></a>Socket编程实例</h2><p> 客户端Echo Client<br> ` 代码如下</p>
+<pre><code>public class EchoClient{
+private Strin host = &quot;localhost&quot;;
+private int port  = 8000;
+Private Socket socket;
+public EchoClient() throw IOException{
+    socket = new Socket(host,port);
+}//利用构造函数进行初始化
+//修饰输入
+private BufferedReader getReader(Socket socket) throws IOException{
+    InputStream socketIn = socket.getInputStream();
+    return  new BufferedReader(new InputStreamReader(socketIn));
+   }
+//修饰输出
+private PrintWriter getWriter(Socket socket) throw IOException{
+    OutputStream socketOut = socket.getOutputStream();
+    return new PrintWriter(socketOUt,true);
+}
+public void talke() throws IOException{
+    BufferedReader br =getReader(socket);//调用上面的方法
+    PrintWriter pw = getWriter(socket);//输出
+    BufferedReader localReader = new BufferedReader(new InputStreamReader(System.in));
+    String msg = null;
+    while((msg =localReader.readLine()) != null){
+        pw.println(msg);
+        System.out.println(br.readLine());
+        if (msg.equals(&quot;bye&quot;)   break;
+    }
+    socket.close();
+}
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+private static void main(String[] args) throw IOExeception{
+    new EchoClient().talk();
+}</code></pre><p> }</p>
+<p> 服务器端代码<br>  `代码如下</p>
+<pre><code>public class EchoSever{
+ private int port = 8000;
+ private ServerSocket serverSocket;
+ //构造函数
+ public EchoServer() throws IOException{
+     serverSocket = new ServerSocket(port);
+     System.out.println(&quot;服务启动&quot;);
+ }
+ public String echo(String msg){
+     return &quot;echo&quot;+msg;
+ }
+ //装饰输出跟客户端一样
+ private PrintWriter getWriter(Socket socket) throw IOException{
+     OutputStream socketOut = socket.getOutputStream();
+     return new PrintWriter(SocketOut, true);
+ }//输入
+ public BufferedReader getReader(Socket socket) throws IOExcption{
+     InputStream socketIn = sokcet.getInputStream();
+     return new BufferedReader(new InputStreamReader(socketIn));
+ }
+ public void service(){
+     while(true){
+        Socket socket = null;
+        socket = serverSocket.accept();   
+       System.out.println(&quot;New connection accepted&quot;
+        + socket.getIneAddress()+&quot;:&quot;+socket.getPort());
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+        BufferedReader br = getRead(socket);
+        PrintWriter pw = getWriter(socket);
+        String msg = null;
+        while((msg = br.readLine())!= null){
+            System.out.println(msg);
+            pw.println(echo(msg));
+            if (msg.equals(&quot;bys&quot;)){
+                break;
+            }
+        }
+        if (socket !=null)  socket.close( );
+     }
+     }
+     public static void main(String[] args) throws IOEception{
+         new EchoServer().service();
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+ }</code></pre><p>  }</p>
 
       
 
@@ -218,7 +291,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Socket</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Socket//" class="article-tag-list-link color2">Socket</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -268,7 +363,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/29/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,15 +377,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/29/%E5%B0%9D%E8%AF%95%E5%9C%A8%E5%86%99%E4%B8%80%E6%AC%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          尝试在写一次
+          树与二叉树
         
       </div>
     </a>
   
+  
+    <a href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">my基本操作</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -315,7 +415,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Socket编程实例"><span class="toc-number">1.</span> <span class="toc-text">Socket编程实例</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -332,8 +432,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/10/29/hello-world/", 
-    sourceId: "hello-world",
+    url: "http://yoursite.com/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/", 
+    sourceId: "Socket实例",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -437,6 +537,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Socket</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

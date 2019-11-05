@@ -54,7 +54,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/tags">随笔</a></li>
+	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -74,7 +78,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 6
+                                           总文章数 5
                                  </nav>
 
 		<nav class="header-nav">
@@ -116,6 +120,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -133,12 +141,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags">随笔</a></li>
+		        
+					<li style="width: 25%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 25%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -155,59 +167,35 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-mysql基础操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-mybatis-day01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">mysql基础操作</a>
+      <a class="article-title" href="/2019/11/04/mybatis-day01/">mybatis_day01</a>
     </h1>
   
 
         
-        <a href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+        <a href="/2019/11/04/mybatis-day01/" class="archive-article-date">
+  	<time datetime="2019-11-04T11:45:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="MYSQL操作"><a href="#MYSQL操作" class="headerlink" title="MYSQL操作"></a>MYSQL操作</h3><h6 id="DDL-操作数据库-表"><a href="#DDL-操作数据库-表" class="headerlink" title="DDL:操作数据库,表"></a>DDL:操作数据库,表</h6><p>  1.C(create) 创建</p>
-<ul>
-<li>创建数据库： create database if not exists; 数据可m名称</li>
-<li>创建数据库并指定字符集 create database 数据库名称 character set 字符集utf8;</li>
-</ul>
-<p>2.R(Retrieve)查询</p>
-<ul>
-<li>查询数据库的名称： show databases;</li>
-</ul>
-<p>3.U(Updata)修改</p>
-<ul>
-<li>修改数据库的字符集： alter database 数据库名称; character set 字符集名称;</li>
-</ul>
-<p>4.D(Delete)删除</p>
-<ul>
-<li>删除数据库：drop database if exists 数据库名称;</li>
-</ul>
-<p>5.使用数据库</p>
-<ul>
-<li>查询数据库名称select database();</li>
-<li>使用数据库 ：use 数据库名称;<h6 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h6></li>
-</ul>
-<p>1.创建  create table 表名（<br>                           第一个列名 数据类型，<br>                           第二个列名 数据类型)；注意最后一个不加逗号<br>2.数据库类型  int,double,date,datetime,varchar<br>  创建表 :create table student(<br>                    id int,<br>                    name varchar(32),<br>                    age int ,<br>                    score double(4,1),<br>                    birthday date,<br>                    insert_time timestamp<br>                );<br>  复制表  create table 表名 like 被复制的表名</p>
-<p>3.查询某个数据库中所有的表名称 show tables<br>  查询某个表结构 desc 表名</p>
-<p>4.修改<br>   修改表名： alter table 表名rename to 新表名<br>   修改表的字符集： alter table 表名 character set 字符集<br>   添加一列： alter table 表名 add 列名 数据类型<br>   修改列名称 类型 alter table 表名 change 列名 新类别 新数据类型/ alter table 表名 modify 列名 新数据类型<br>   删除列 alter table 表名 drop 列名</p>
-<ol start="5">
-<li>删除  drop table if exists 表名</li>
-</ol>
-<p>6.添加数据  insert into 表名(列名1，列名2，列名3)value(值1，值2，值3)<br>  删除数据  delete from 表名 where + 条件</p>
-<ol start="7">
-<li>修改数据 update 表名 set 列名1 = 值1， 列名2 = 值2 where + 条件</li>
-</ol>
-<p>8.select * from 表名    select 字段 from 表名  where 条件 group by 分组字段 having 分组之后的条件  order by 排序(默认升序) limit分页限定 </p>
+        <h3 id="Mybatis的框架概述"><a href="#Mybatis的框架概述" class="headerlink" title="Mybatis的框架概述"></a>Mybatis的框架概述</h3><p>  mybatis是一个优秀的基于java的持久层框架，他内部封装了jdbc,使开发者只需要关注sql语句本身而不用花费精力去处理加载驱动，创建连接，创建statement等繁杂过程<br>  mybatis通过xml过着注解的方式将要执行的statement配置起来，并且通过java对象和statement中的sql的动态参数进行映射成为最终的执行的语句，最后有mybatis框架执行sql并将结果集映射为java对象并且返回。<br>  Jdbc编程回顾<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">    Connection connnection = null;</span><br><span class="line">    PreparedStatement preparedStatement = null</span><br><span class="line">    ResultSet resultset = null</span><br><span class="line">    //加载驱动</span><br><span class="line">    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    //通过驱动来获取管理类数据库的连接</span><br><span class="line">    connection = DriverManager.getConnection(&quot;jdbc:mysql://locatlhost:3306/mybaits?characterEncoding =utf-8&quot;,&quot;root&quot;,&quot;admin&quot;);</span><br><span class="line">    //定义sql语句？表示占位符</span><br><span class="line">    String sql = &quot;select * from user&quot;;</span><br><span class="line">    //预处理对象</span><br><span class="line">    PrepareStatement = connection.prepareStatement(sql);</span><br><span class="line">    //设置参数</span><br><span class="line">    prepareStatement.setString(1,&quot;wangwu&quot;)；</span><br><span class="line">    //向数据库发出sql请求查询，查询出结果集</span><br><span class="line">    resultSet = preparedStatement.executeQery();</span><br><span class="line">    //遍历结果集</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="mybatis创建"><a href="#mybatis创建" class="headerlink" title="mybatis创建"></a>mybatis创建</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">创建一个meavn工程添加依赖</span><br><span class="line"> &lt;dependencies&gt;    &lt;dependency&gt;     &lt;groupId&gt;org.mybatis&lt;/groupId&gt;     &lt;artifactId&gt;mybatis&lt;/artifactId&gt;     &lt;version&gt;3.4.5&lt;/version&gt;    &lt;/dependency&gt;    &lt;dependency&gt;     &lt;groupId&gt;junit&lt;/groupId&gt;     &lt;artifactId&gt;junit&lt;/artifactId&gt;     &lt;version&gt;4.10&lt;/version&gt;     &lt;scope&gt;test&lt;/scope&gt;    &lt;/dependency&gt;    &lt;dependency&gt;     &lt;groupId&gt;mysql&lt;/groupId&gt;     &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;     &lt;version&gt;5.1.6&lt;/version&gt;     &lt;scope&gt;runtime&lt;/scope&gt;    &lt;/dependency&gt;    &lt;dependency&gt;     &lt;groupId&gt;log4j&lt;/groupId&gt;     &lt;artifactId&gt;log4j&lt;/artifactId&gt;     &lt;version&gt;1.2.12&lt;/version&gt;    &lt;/dependency&gt;   &lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="编写持久层接口的映射文件"><a href="#编写持久层接口的映射文件" class="headerlink" title="编写持久层接口的映射文件"></a>编写持久层接口的映射文件</h4>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">要求在resources文件中创建的xml文件必须和持久层接口在相同的包中，必须以持久层接口名称命名文件，扩展名为.xml</span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE mapper     PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;     &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt; </span><br><span class="line"></span><br><span class="line">&lt;mapper namespace = &quot;com.itheima.com.dao.IUserDao&quot;</span><br><span class="line">&lt;selsect id = &quot;findAll&quot; resultType =&quot;com.itheima.domain.User&quot;&gt;</span><br><span class="line">select * from User</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="编写SqlMapConfig-xml"><a href="#编写SqlMapConfig-xml" class="headerlink" title="编写SqlMapConfig.xml"></a>编写SqlMapConfig.xml</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE mapper     PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;     &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt; </span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;！-- 配置mybatis的环境 --&gt;</span><br><span class="line">&lt;environments default = &quot;mysql&quot;&gt;</span><br><span class="line">&lt;!-- 配置mysql环境--&gt;</span><br><span class="line">&lt;environment id = &quot;mysql&quot;&gt;</span><br><span class="line">  &lt;!-- 配置事务类型--&gt;</span><br><span class="line"> &lt;transactionManager type = &quot;JDBC&quot;&gt; &lt;/transactionManager&gt;</span><br><span class="line"> &lt;!--配置连接数据库的信息：用的是数据源连接池--&gt;</span><br><span class="line"> &lt;dataSource type = &quot;POOLED&quot;&gt;</span><br><span class="line"> &lt;property name = &quot;driver&quot; value = &quot;com.mysql.jdbc.Driver&quot;/&gt;</span><br><span class="line"> &lt;property name =&quot;url&quot; value = &quot;jdbc:mysql://localhost:3306/ee50/&quot;/&gt;</span><br><span class="line"> &lt;property name = &quot;username&quot; value = &quot;root&quot;/&gt;</span><br><span class="line"> &lt;property name = &quot;password value = &quot;admin&quot;/&gt;    &lt;/dataSource&gt;</span><br><span class="line">&lt;/environment&gt;</span><br><span class="line">&lt;/environments&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--告知mybatis映射的位置 --&gt;</span><br><span class="line">&lt;mappers&gt; </span><br><span class="line">&lt;mapper resource = &quot;com/itheima/dao/IUserDao.xml&quot;/&gt;&lt;/mappers&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="编写测试类"><a href="#编写测试类" class="headerlink" title="编写测试类"></a>编写测试类</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//1.读取配置文件</span><br><span class="line">InputStream in = Resources.getResourceAsStream(&quot;sqlMapConfig.xml&quot;);</span><br><span class="line">//2,创建sqlSessionFactory的构建者对象</span><br><span class="line">SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();</span><br><span class="line">//3.使用构建者创造工厂对象SqlSessionFactory</span><br><span class="line">SqlSessionFactory factory = builder.build(in);</span><br><span class="line">//4.使用SqlSessionFactory 生产sessionduixiang</span><br><span class="line">SqlSession session  = factory.openSession();</span><br><span class="line">//5.使用Sqlsession对象创建dao接口的代理对象</span><br><span class="line">IUerDao userDao = session.getMapper(IUserDao.class);</span><br><span class="line">//6.使用代理对象执行查询的所有方法</span><br><span class="line">List&lt;User&gt;users = userDao.findAll();</span><br><span class="line">for(User user :users) System.out.println(user);</span><br><span class="line">//7.释放资源</span><br><span class="line">session.close();</span><br><span class="line">in.close();</span><br></pre></td></tr></table></figure>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>  通过实例我们可以得知，使用mybatis只需要编写Dao接口并且按照mybatis编写连个配置文件SqlMapConfig.xml和对应包下面的映射文件就可以实现功能，</p>
+<p>  ####基于注解的mybatis<br>  在持久层中添加注解<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface IUserDao&#123;</span><br><span class="line">    @Select(&quot;select * from user&quot;)</span><br><span class="line">    List&lt;User&gt; findAll();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br> 修改SqlMapConfig.xml<br> <mappers><br> <mapper class="com.itheima.dao,IUserDao"><br> <br> 在基于注解的Mybatis配置时，不要添加xml对应接口的映射文件（IUserDao.xml）</mapper></mappers></p>
+<hr>
+<p> 后来补充自定义mybatis框架了解设计模式</p>
 
       
 
@@ -216,11 +204,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-Mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Mybatis//" class="article-tag-list-link color3">Mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/04/mybatis-day01/">展开全文 >></a>
         </p>
       
 
@@ -250,40 +260,36 @@
 
 
   
-    <article id="post-spring-day01-ioc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-spring-整合junit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/spring-day01-ioc/">spring_day01_ioc</a>
+      <a class="article-title" href="/2019/11/04/spring-%E6%95%B4%E5%90%88junit/">spring 整合junit</a>
     </h1>
   
 
         
-        <a href="/2019/11/03/spring-day01-ioc/" class="archive-article-date">
-  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+        <a href="/2019/11/04/spring-%E6%95%B4%E5%90%88junit/" class="archive-article-date">
+  	<time datetime="2019-11-04T11:28:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##关于jdbc的简单用法<br>  1.注册驱动<br>       DriverManager.registerDriver(new com.mysql.jdbc.Driver());<br>       或者Class.forName(“com.sql.jdbc.Driver”);<br>  2.获取连接<br>       Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/数据库名称，”root”,”admin”);<br>  3.获取操作数据库的预处理对象<br>       PrepareStatement pstm = conn.prepareStatement(“select * from account”);<br>  4.执行sql语句得到结果集<br>       ResultSet rs = pstm.executeQuery();<br>  5.便利结果集<br>      while(rs.next()){System.out.println(rs.getString(“name”);)}<br>  6.释放资源  rs.close()  pstm.close(); conn.close();  规则先打开的最后关闭</p>
-<hr>
-<p>##spring中使用xml进行配置<br> #1.spring中两个核心功能一个是ioc一个是aop,ioc是一个容器，使用ioc容器可以很好的降低程序间的耦合，两个特性，控制反转和依赖注入<br>    将对象的实例化交给spring去创建减少使用new的关键字，通过注入的方式给变量对象赋值<br>    一般进行xml进行配置的时候xml中主要使用<bean>标签，其中含有class属性和id属性，class一般是所创建对象的包名的全部路径，id是实例化对象的名字，通过这<br>    两个属性来确定具体的位置。init-method：指定类中的初始化方法名称。  destroy-method：指定类中销毁方法名称。scope：指定对象的作用范围 </bean></p>
-<p> #2.在主函数中如何使用java bean<br>        1.获取核心容器的对象<br>           ApplicationContext  applicationContext = new ClassPathXmlApplicationContext(“bean.xml”);<br>        2.根据id获取Bean对象<br>            IAccountService   accountService = (IAccountService)accountService.getBean(“配置文件中的id”)；<br>        3.根据创建好的对象调用它的方法<br>              accountService.saveAccount();<br>  #3.在bean.xml中的DI依赖注入<br>        1.复杂类型/集合类型注入的方式：有三种第一种：使用构造函数提供第二种：使用set方法提供第三种：使用注解提供<br>        2.构造函数注入：使用的标签:constructor-arg 标签出现的位置：bean标签的内部标签中的属性 type：用于指定要注入的数据的数据类型，该数据类型也是构造函数中某个或某些参数的类型 index：用于指定要注入的数据给构造函数中指定索引位置的参数赋值。<br>           索引的位置是从0开始 name：用于指定给构造函数中指定名称的参数赋值(使用较少)<br>           <code>&lt;constructor-arg value = &quot;&quot;  name = &quot;&quot;&gt; &lt;constructor-arg name = &quot;复杂属性&quot; ref=&quot;值&quot; &gt;
-        3.配置一个日期对象</code><bean class="java.util.Date" id="now"><br>        4.使用set方法然后通过配置注入, 复杂类型的注入/集合类型的注入用于给List结构集合注入的标签： list array set 用于个Map结构集合注入的标签:map props 结构相同，标签可以互换 –&gt;<br>              <code>&lt;property name = &quot;myStrs&quot;&gt;  &lt;set&gt;&lt;value&gt;AAA&lt;/value&gt;&lt;/set&gt;&lt;/property&gt;</code>&lt;property name = “myList”      <array><value>AAA</value></array><br>              <code>&lt;property name = &quot;myMap&quot;&gt; &lt;props&gt;&lt;prop key = &quot;test&quot;&gt;ccc&lt;/prop&gt;&lt;/props&gt;</code><property name="muProps"><map><entry value="aaa" key="test"></entry></map>  </property></bean></p>
-<hr>
-<pre><code>  简单类型：`&lt;bean id = &quot;&quot; class =&quot;&quot;&gt;  &lt;property name = &quot;name&quot; value =&quot;text&quot;&gt; &lt;/property&gt;              
-5.在使用meavn工程中spring的依赖
-                     `&lt;packaging&gt;jar&lt;/packaging&gt;
-                     `&lt;dependencies&gt; &lt;dependency&gt;
-                     `&lt;groupId&gt;org.springframework&lt;/groupId&gt;
-                     `&lt;artifactId&gt;spring-context&lt;/artifactId&gt;
-                     `&lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-                     `&lt;/dependency&gt;   &lt;/dependencies&gt;</code></pre>
+        <h3 id="spring-整合-junit"><a href="#spring-整合-junit" class="headerlink" title="spring 整合 junit"></a>spring 整合 junit</h3><h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><pre><code>在每个测试类中每个测试方法都去要这个
+ApplicationContext ac = new ClassPathXmlApplcicationContext(&quot;bean.xml&quot;);
+IAccountService as = ac.getBean(&quot;accountService&quot;,IAccountSevice.class);//代码作用获取容器
+如果程序自动创建容器就可以解决这个问题，那么我们通过junit的注解替换掉他的运行器，依靠spring的运行期来读取配置文件啊或者注解就可以创建容器 </code></pre><h4 id="Runwith注解"><a href="#Runwith注解" class="headerlink" title="@Runwith注解"></a>@Runwith注解</h4><pre><code>1. @RunWith(SpringJUnit4ClassRunner.class) 2.@ContextConfiguration(locations= {   &quot;classpath:bean.xml&quot;})
+ public class AccountServiceTest { } 
+
+ @ContextConfiguration 注解：  locations 属性：用于指定配置文件的位置。如果是类路径下，需要用 classpath:表明  classes 属性：用于指定注解的类。当不使用 xml 配置时，需要用此属性指定注解类的位置
+3.@Autowire 
+  public IAccountService ac;</code></pre><h4 id="测试类中的属性为什么不用xml配置"><a href="#测试类中的属性为什么不用xml配置" class="headerlink" title="测试类中的属性为什么不用xml配置"></a>测试类中的属性为什么不用xml配置</h4><p>```<br>   答案是肯定的，没问题，可以使用。 那么为什么不采用配置到 xml 中的方式呢？ 这个原因是这样的：<br>  第一：当我们在 xml 中配置了一个 bean，spring 加载配置文件创建容器时，就会创建对象。<br> 第二：测试类只是我们在测试功能时使用，而在项目中它并不参与程序逻辑，也不会解决需求上的问 题，所以创建完了，并没有使用。<br>那么存在容器中就会造成资源的浪费。  所以，基于以上两点，我们不应该把测试配置到 xml 文件中。 </p>
+
       
 
       
@@ -291,11 +297,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Spring//" class="article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/spring-day01-ioc/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/04/spring-%E6%95%B4%E5%90%88junit/">展开全文 >></a>
         </p>
       
 
@@ -325,28 +353,30 @@
 
 
   
-    <article id="post-picture" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-spring-day02-annotation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/31/picture/">picture</a>
+      <a class="article-title" href="/2019/11/04/spring-day02-annotation/">spring-day02-annotation</a>
     </h1>
   
 
         
-        <a href="/2019/10/31/picture/" class="archive-article-date">
-  	<time datetime="2019-10-31T12:22:16.908Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
+        <a href="/2019/11/04/spring-day02-annotation/" class="archive-article-date">
+  	<time datetime="2019-11-04T08:53:32.459Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: ‘’’picture’’’<br>date: 2019-10-31 20:22:16<br>tags:<br>—###引入一下图片<br><img src="/.com//1.jpg" alt="加油啊"></p>
+        <h3 id="spring-day02-ioc"><a href="#spring-day02-ioc" class="headerlink" title="spring_day02_ioc"></a>spring_day02_ioc</h3><h4 id="1-使用注解来管理spring-ioc"><a href="#1-使用注解来管理spring-ioc" class="headerlink" title="1.使用注解来管理spring ioc"></a>1.使用注解来管理spring ioc</h4><h6 id="用于创建对象"><a href="#用于创建对象" class="headerlink" title="用于创建对象"></a>用于创建对象</h6><p> 1.@Component 作用：把资源让spring管理，相当于在xml中配置了一个bean 属性：指定bean的id，如果不指定value的属性，默认bean的id为当前类名，首字母小写<br> 2.@Controller 一般用于表现层的注解<br> 3.@Service 一般用于业务层的注解<br> 4.@Respository一般用于持久层的注解(如果注解中只有一个属性要赋值时，且名称为value，value在赋值时可以不写)</p>
+<h6 id="用于注入数据"><a href="#用于注入数据" class="headerlink" title="用于注入数据"></a>用于注入数据</h6><p>  1.@Autowired 作用：自动按照类型注入，当使用注解注入属性时，set方法可以省略，他只能注入其他bean类型当多个类型匹配时，要使用对象的变量名称作为bean的id<br>  2.@Qualifier作用自动注入的基础上，在按照Bean的id注入,给字段注入时不能单独使用，必须和@Autowire一起使用。属性：指定bean的id<br>  3.@Resource作用:按照bean的id注入，只能注入其他bean类型。属性:指定bean的id<br>  4.@Value作用：注入基本数据类型和String类型value:指定值</p>
+<h6 id="改变作用范围的"><a href="#改变作用范围的" class="headerlink" title="改变作用范围的"></a>改变作用范围的</h6><p>  1.@Scope 作用：指定bean的作用范围。属性：value:取值singleton prototype request session globalsession<br>  2.@PostConstruct初始化方法<br>  3.@PreDestroy销毁方法</p>
+<h6 id="注解配置类"><a href="#注解配置类" class="headerlink" title="注解配置类"></a>注解配置类</h6><p>  1.@Configuration作用指定当前是一个配置类获取容器时需要使用AnnotationApplicationContext value指定配置类的字节码<br>  2.@ComponentScan用于在spring在初始时要扫描的包<br>  3.@Bean 该注解只能写在方法上，使用这个方法创建一个对象，放入spring容器中 name：指定id<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class JdbcConfig &#123;  @Value(&quot;$&#123;jdbc.driver&#125;&quot;) </span><br><span class="line">private String driver;</span><br><span class="line">@Value(&quot;$&#123;jdbc.url&#125;&quot;) </span><br><span class="line">private String url;</span><br><span class="line">@Value(&quot;$&#123;jdbc.username&#125;&quot;)</span><br><span class="line">private String username; </span><br><span class="line">@Value(&quot;$&#123;jdbc.password&#125;&quot;) </span><br><span class="line">private String password; </span><br><span class="line"></span><br><span class="line">@Bean(name = &quot;dataSource&quot;)</span><br><span class="line">public DataSource createDataSource()&#123;</span><br><span class="line">    ComboPooledDataSource ds = new ComboPooledDataSource();</span><br><span class="line">    ds.setUser(&quot;root&quot;);</span><br><span class="line">    ds.setPassword(&quot;admin&quot;);</span><br><span class="line">    ds.setDriverClass(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    ds.setJdbcUrl(&quot;jdbc:mysql://ee50&quot;)；</span><br><span class="line">    return ds;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>  4.@PropertySource作用：加载。properties 文件中位置,value[]指定文件位置<br>  5.如果有两个配置类但是要建立配置文件与配置文件之间的关系用@Import ,导入其他配置类，在引入其他配置类时可以不用写@Comfiguration<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  示例代码： @Configuration @ComponentScan(basePackages = &quot;com.itheima.spring&quot;) @Import(&#123; JdbcConfig.class&#125;) public class SpringConfiguration &#123; &#125; </span><br><span class="line"> </span><br><span class="line">@Configuration @PropertySource(&quot;classpath:jdbc.properties&quot;) public class JdbcConfig&#123; &#125;</span><br></pre></td></tr></table></figure><br>6.没有配置文件如何获取容器呢，也可以通过注解，ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.calss)</p>
 
       
 
@@ -359,7 +389,100 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/31/picture/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/04/spring-day02-annotation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-树与二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/">树与二叉树</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
+  	<time datetime="2019-11-04T07:54:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="树的练习和总结"><a href="#树的练习和总结" class="headerlink" title="树的练习和总结"></a>树的练习和总结</h2><h4 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h4><pre><code>1.在二叉树的第i层上至多有2^(i-1)个结点
+2.深度为k的二叉树至多有2^k-1个结点</code></pre><h4 id="满二叉树和完全二叉树"><a href="#满二叉树和完全二叉树" class="headerlink" title="满二叉树和完全二叉树"></a>满二叉树和完全二叉树</h4><pre><code>3.对于任何一颗二叉树T,tade 终端结点树为n0，度为2的结点为n2则 n0 = n2 + 1
+4.满二叉树深度为k且含有2^k-1个结点的二叉树，完全二叉树结点&lt;满二叉树
+5.满二叉树每一层上的结点树都是最大结点数，都是2^(i-1)
+6.完全二叉树的叶子结点值可能在层次最大的两层上出现
+7.完全二叉树的右分支最大层层次为l则左分支下最大层必定为l或者l + 1
+8.具有n个结点的完全二叉树的深度为 k = log2(n)下取值+ 1
+9. 结点为n的完全二叉树编号，任意结点i有i = 0 无双亲，i &gt; 1 双亲是结点 i/2的向下取值, 2i&gt;n i无左孩子， 2i+1 &gt; n则结点无右孩子，否则右孩子为2i+1
+10.完全二叉树结点 = 分支结点 + 叶子结点  分支结点 =  结点数/2的向下取值</code></pre><h4 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h4><ol>
+<li>树转换成二叉树，因为转换的规则唯一转化为唯一二叉树</li>
+<li>3个节点构造出5中不同的二叉树</li>
+<li>完全二叉树的的结点数为1001求 叶子结点（设叶子结点数为n0,度为1的结点数为n1，度为2的结点个数为n2，可得 n0 + n1 + n2 = 10001   由二叉树性质得n0 = n2 + 1,推出 2n2+ 1 +n1 = 10001，对于完全二叉树来说度为1的点只可能为0或者1，n1 = 1 || 0 -&gt; n2 = 500）</li>
+<li>求二叉树的高度，每一层只有一个结点高度最高为n， 最低为完全二叉树log2(n)+1</li>
+<li>深度为k的满m二叉树共有m^k-1个结点，第h层有m^(h-1);</li>
+<li>树的二叉链表存储结构就是树的孩子兄弟表示法，链表中结点的左指针指向该结点的第一个孩子节点，右指针指向下一个兄弟结点，树的根节点没有兄弟节点，跟的右指针为空</li>
+<li>树的存储结构有3种，双亲表示法，孩子表示法，孩子兄弟表示法，孩子兄弟表示法最常用，任何一颗树都能通过孩子兄弟表示法转化为二叉树进行存储</li>
+<li>哈弗曼树中没有度为1的结点，只有度为0和度为2的结点</li>
+<li>线索二叉树利用二叉链表的空链域来存放结点新的前驱和后继信息</li>
+<li>二叉链表作为存储结构时，只能找到结点的左孩子和右孩子，不能直接得到结点在任一序列中的前驱和后继信息，这种信息只能在遍历中得到，引入线索二叉树来保存这种动态过程中得到的有关前驱和后继的信息</li>
+<li>森林和二叉树的转换 ： 若F中有t个终端节点,n为终端结点，则结点总数为N = t + n 左右指针域的个数为 N左 = N右 = t + n，其中非空域 = 分支个数 = N分 = N - 1 = t + n - 1</li>
+<li>森林转化成二叉树的规则为左孩子右兄弟，因为有n个非终端结点，有且仅有n个节点有孩子，转化为二叉树后则有n个非空的左指针域 N左非 = n</li>
+<li>非空的有指针域的个数 N右非空 = N非空 - N左非空 = t + n - 1 - n = t - 1</li>
+<li>空的右指针域的个数为N右空 = N右 - N右非空 = t + n -（t-1） = n + 1</li>
+<li>哈夫曼树在构造是，重复在森林f中选择两个根结点权值最小的树作为左右子树，然后在继续构造一个新的二叉树，新的二叉树的根节点的权值为左子树和右子树权值之和</li>
+<li></li>
+</ol>
+<h4 id="二叉树算法设计-二叉链表做诶二叉树的存储结构"><a href="#二叉树算法设计-二叉链表做诶二叉树的存储结构" class="headerlink" title="二叉树算法设计(二叉链表做诶二叉树的存储结构)"></a>二叉树算法设计(二叉链表做诶二叉树的存储结构)</h4><p>   `1.统计二叉树的叶结点个数</p>
+<pre><code>int LeafNode(BiTree T){
+    if (T == NULL)   return 0;
+    else if (T-&gt;lchild == NULL &amp;&amp; T-&gt;rchild == NULL)  return 1;
+    else    return LeafNode(T-&gt;lchild) + LeafNode(T-&gt;rchild);
+}</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/">展开全文 >></a>
         </p>
       
 
@@ -730,146 +853,6 @@
 
 
   
-    <article id="post-尝试在写一次" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/29/%E5%B0%9D%E8%AF%95%E5%9C%A8%E5%86%99%E4%B8%80%E6%AC%A1/">尝试在写一次</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/29/%E5%B0%9D%E8%AF%95%E5%9C%A8%E5%86%99%E4%B8%80%E6%AC%A1/" class="archive-article-date">
-  	<time datetime="2019-10-29T13:03:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我决定在试一次</p>
-<hr>
-<p>在添加一个图片进去</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/29/%E5%B0%9D%E8%AF%95%E5%9C%A8%E5%86%99%E4%B8%80%E6%AC%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/29/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-29T10:50:42.808Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/29/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -962,6 +945,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Spring</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
