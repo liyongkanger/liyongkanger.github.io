@@ -45,7 +45,7 @@
 			<img src="\img\myself.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">努力的康康</a></h1>
+		  <h1 class="header-author"><a href="/">康康</a></h1>
 		</hgroup>
 		
 
@@ -78,7 +78,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 8
+                                           总文章数 9
                                  </nav>
 
 		<nav class="header-nav">
@@ -111,7 +111,7 @@
 				<img src="\img\myself.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">努力的康康</h1>
+			  <h1 class="header-author js-header-author">康康</h1>
 			</hgroup>
 			
 			
@@ -166,6 +166,68 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-java容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/06/java%E5%AE%B9%E5%99%A8/">java容器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/06/java%E5%AE%B9%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2019-11-06T02:15:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/06/java%E5%AE%B9%E5%99%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-mybatis-day01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -693,6 +755,83 @@ private static void main(String[] args) throw IOExeception{
 
 
   
+    <article id="post-spring-day02-annotation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/spring-day02-annotation/">spring_day01_ioc</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/spring-day02-annotation/" class="archive-article-date">
+  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="spring-day02-ioc"><a href="#spring-day02-ioc" class="headerlink" title="spring_day02_ioc"></a>spring_day02_ioc</h3><h4 id="1-使用注解来管理spring-ioc"><a href="#1-使用注解来管理spring-ioc" class="headerlink" title="1.使用注解来管理spring ioc"></a>1.使用注解来管理spring ioc</h4><h6 id="用于创建对象"><a href="#用于创建对象" class="headerlink" title="用于创建对象"></a>用于创建对象</h6><p> 1.@Component 作用：把资源让spring管理，相当于在xml中配置了一个bean 属性：指定bean的id，如果不指定value的属性，默认bean的id为当前类名，首字母小写<br> 2.@Controller 一般用于表现层的注解<br> 3.@Service 一般用于业务层的注解<br> 4.@Respository一般用于持久层的注解(如果注解中只有一个属性要赋值时，且名称为value，value在赋值时可以不写)</p>
+<h6 id="用于注入数据"><a href="#用于注入数据" class="headerlink" title="用于注入数据"></a>用于注入数据</h6><p>  1.@Autowired 作用：自动按照类型注入，当使用注解注入属性时，set方法可以省略，他只能注入其他bean类型当多个类型匹配时，要使用对象的变量名称作为bean的id<br>  2.@Qualifier作用自动注入的基础上，在按照Bean的id注入,给字段注入时不能单独使用，必须和@Autowire一起使用。属性：指定bean的id<br>  3.@Resource作用:按照bean的id注入，只能注入其他bean类型。属性:指定bean的id<br>  4.@Value作用：注入基本数据类型和String类型value:指定值</p>
+<h6 id="改变作用范围的"><a href="#改变作用范围的" class="headerlink" title="改变作用范围的"></a>改变作用范围的</h6><p>  1.@Scope 作用：指定bean的作用范围。属性：value:取值singleton prototype request session globalsession<br>  2.@PostConstruct初始化方法<br>  3.@PreDestroy销毁方法</p>
+<h6 id="注解配置类"><a href="#注解配置类" class="headerlink" title="注解配置类"></a>注解配置类</h6><p>  1.@Configuration作用指定当前是一个配置类获取容器时需要使用AnnotationApplicationContext value指定配置类的字节码<br>  2.@ComponentScan用于在spring在初始时要扫描的包<br>  3.@Bean 该注解只能写在方法上，使用这个方法创建一个对象，放入spring容器中 name：指定id<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class JdbcConfig &#123;  @Value(&quot;$&#123;jdbc.driver&#125;&quot;) </span><br><span class="line">private String driver;</span><br><span class="line">@Value(&quot;$&#123;jdbc.url&#125;&quot;) </span><br><span class="line">private String url;</span><br><span class="line">@Value(&quot;$&#123;jdbc.username&#125;&quot;)</span><br><span class="line">private String username; </span><br><span class="line">@Value(&quot;$&#123;jdbc.password&#125;&quot;) </span><br><span class="line">private String password; </span><br><span class="line"></span><br><span class="line">@Bean(name = &quot;dataSource&quot;)</span><br><span class="line">public DataSource createDataSource()&#123;</span><br><span class="line">    ComboPooledDataSource ds = new ComboPooledDataSource();</span><br><span class="line">    ds.setUser(&quot;root&quot;);</span><br><span class="line">    ds.setPassword(&quot;admin&quot;);</span><br><span class="line">    ds.setDriverClass(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    ds.setJdbcUrl(&quot;jdbc:mysql://ee50&quot;)；</span><br><span class="line">    return ds;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>  4.@PropertySource作用：加载。properties 文件中位置,value[]指定文件位置<br>  5.如果有两个配置类但是要建立配置文件与配置文件之间的关系用@Import ,导入其他配置类，在引入其他配置类时可以不用写@Comfiguration<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  示例代码： @Configuration @ComponentScan(basePackages = &quot;com.itheima.spring&quot;) @Import(&#123; JdbcConfig.class&#125;) public class SpringConfiguration &#123; &#125; </span><br><span class="line"> </span><br><span class="line">@Configuration @PropertySource(&quot;classpath:jdbc.properties&quot;) public class JdbcConfig&#123; &#125;</span><br></pre></td></tr></table></figure><br>6.没有配置文件如何获取容器呢，也可以通过注解，ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.calss)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/spring-day02-annotation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-spring-day01-ioc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -750,83 +889,6 @@ private static void main(String[] args) throw IOExeception{
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/03/spring-day01-ioc/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-spring-day02-annotation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/spring-day02-annotation/">spring_day01_ioc</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/03/spring-day02-annotation/" class="archive-article-date">
-  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="spring-day02-ioc"><a href="#spring-day02-ioc" class="headerlink" title="spring_day02_ioc"></a>spring_day02_ioc</h3><h4 id="1-使用注解来管理spring-ioc"><a href="#1-使用注解来管理spring-ioc" class="headerlink" title="1.使用注解来管理spring ioc"></a>1.使用注解来管理spring ioc</h4><h6 id="用于创建对象"><a href="#用于创建对象" class="headerlink" title="用于创建对象"></a>用于创建对象</h6><p> 1.@Component 作用：把资源让spring管理，相当于在xml中配置了一个bean 属性：指定bean的id，如果不指定value的属性，默认bean的id为当前类名，首字母小写<br> 2.@Controller 一般用于表现层的注解<br> 3.@Service 一般用于业务层的注解<br> 4.@Respository一般用于持久层的注解(如果注解中只有一个属性要赋值时，且名称为value，value在赋值时可以不写)</p>
-<h6 id="用于注入数据"><a href="#用于注入数据" class="headerlink" title="用于注入数据"></a>用于注入数据</h6><p>  1.@Autowired 作用：自动按照类型注入，当使用注解注入属性时，set方法可以省略，他只能注入其他bean类型当多个类型匹配时，要使用对象的变量名称作为bean的id<br>  2.@Qualifier作用自动注入的基础上，在按照Bean的id注入,给字段注入时不能单独使用，必须和@Autowire一起使用。属性：指定bean的id<br>  3.@Resource作用:按照bean的id注入，只能注入其他bean类型。属性:指定bean的id<br>  4.@Value作用：注入基本数据类型和String类型value:指定值</p>
-<h6 id="改变作用范围的"><a href="#改变作用范围的" class="headerlink" title="改变作用范围的"></a>改变作用范围的</h6><p>  1.@Scope 作用：指定bean的作用范围。属性：value:取值singleton prototype request session globalsession<br>  2.@PostConstruct初始化方法<br>  3.@PreDestroy销毁方法</p>
-<h6 id="注解配置类"><a href="#注解配置类" class="headerlink" title="注解配置类"></a>注解配置类</h6><p>  1.@Configuration作用指定当前是一个配置类获取容器时需要使用AnnotationApplicationContext value指定配置类的字节码<br>  2.@ComponentScan用于在spring在初始时要扫描的包<br>  3.@Bean 该注解只能写在方法上，使用这个方法创建一个对象，放入spring容器中 name：指定id<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class JdbcConfig &#123;  @Value(&quot;$&#123;jdbc.driver&#125;&quot;) </span><br><span class="line">private String driver;</span><br><span class="line">@Value(&quot;$&#123;jdbc.url&#125;&quot;) </span><br><span class="line">private String url;</span><br><span class="line">@Value(&quot;$&#123;jdbc.username&#125;&quot;)</span><br><span class="line">private String username; </span><br><span class="line">@Value(&quot;$&#123;jdbc.password&#125;&quot;) </span><br><span class="line">private String password; </span><br><span class="line"></span><br><span class="line">@Bean(name = &quot;dataSource&quot;)</span><br><span class="line">public DataSource createDataSource()&#123;</span><br><span class="line">    ComboPooledDataSource ds = new ComboPooledDataSource();</span><br><span class="line">    ds.setUser(&quot;root&quot;);</span><br><span class="line">    ds.setPassword(&quot;admin&quot;);</span><br><span class="line">    ds.setDriverClass(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    ds.setJdbcUrl(&quot;jdbc:mysql://ee50&quot;)；</span><br><span class="line">    return ds;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>  4.@PropertySource作用：加载。properties 文件中位置,value[]指定文件位置<br>  5.如果有两个配置类但是要建立配置文件与配置文件之间的关系用@Import ,导入其他配置类，在引入其他配置类时可以不用写@Comfiguration<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  示例代码： @Configuration @ComponentScan(basePackages = &quot;com.itheima.spring&quot;) @Import(&#123; JdbcConfig.class&#125;) public class SpringConfiguration &#123; &#125; </span><br><span class="line"> </span><br><span class="line">@Configuration @PropertySource(&quot;classpath:jdbc.properties&quot;) public class JdbcConfig&#123; &#125;</span><br></pre></td></tr></table></figure><br>6.没有配置文件如何获取容器呢，也可以通过注解，ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.calss)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/spring-day02-annotation/">展开全文 >></a>
         </p>
       
 
@@ -1207,7 +1269,7 @@ private static void main(String[] args) throw IOExeception{
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 努力的康康
+    		&copy; 2019 康康
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1291,10 +1353,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
               </li>
              
@@ -1304,6 +1362,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
