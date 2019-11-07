@@ -8,12 +8,14 @@
   <link rel="dns-prefetch" href="https://yoursite.com">
   <title>java容器 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="java容器 1136 一个图一个类三个知识点六个接口java.util是工具包提供一些工具类 Collecton接口定义了一组对象的方法，其子接口Set没有顺序不可重复，List有顺序可以重复 （Colletion c = new ArrayList(); ArrayList()可以替换以后更改更加方便）123456789101112Collection方法举例import java.util.">
+<meta property="og:type" content="article">
 <meta property="og:title" content="java容器">
 <meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;java%E5%AE%B9%E5%99%A8&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
+<meta property="og:description" content="java容器 1136 一个图一个类三个知识点六个接口java.util是工具包提供一些工具类 Collecton接口定义了一组对象的方法，其子接口Set没有顺序不可重复，List有顺序可以重复 （Colletion c = new ArrayList(); ArrayList()可以替换以后更改更加方便）123456789101112Collection方法举例import java.util.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-06T02:15:05.305Z">
+<meta property="og:updated_time" content="2019-11-06T05:02:59.158Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -79,7 +81,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 9
+                                           总文章数 12
                                  </nav>
 
 		<nav class="header-nav">
@@ -186,7 +188,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="java容器"><a href="#java容器" class="headerlink" title="java容器"></a>java容器</h4><ol>
+<li>1136 一个图一个类三个知识点六个接口java.util是工具包提供一些工具类</li>
+<li>Collecton接口定义了一组对象的方法，其子接口Set没有顺序不可重复，List有顺序可以重复 （Colletion c = new ArrayList(); ArrayList()可以替换以后更改更加方便）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Collection方法举例</span><br><span class="line">import java.util.*；</span><br><span class="line">public class Test&#123;</span><br><span class="line">     public static void main(String[] args)&#123;</span><br><span class="line">         Collection c = new ArrayList(); //方便以后更改代码，ArrayList() 可以替换成为LinkList();</span><br><span class="line">         c.add(&quot;hello&quot;);</span><br><span class="line">         c.add(new Name(&quot;f1&quot;,&quot;f2&quot;));</span><br><span class="line">         c.add(new Integer(100));</span><br><span class="line">         System.out.println(c.size());</span><br><span class="line">         System.out.println(c);//里面装对象不可是基础类型</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+在利用Connection中的remove时，如要重写equals方法应该重写equls方法，对象做索引的时候hasCode()方法起作用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pubic boolean equals(Object obj)&#123;</span><br><span class="line">    if (obj instanceof Name )&#123;</span><br><span class="line">    Name name = (Name) obj;</span><br><span class="line">    return (firstName.equals(name.firstName) &amp;&amp; (LastName.eauals(name.firstName)));</span><br><span class="line">&#125;else </span><br><span class="line">    return super.eauals(obj);</span><br><span class="line">&#125;</span><br><span class="line">public int hasCode()&#123;</span><br><span class="line">    return firstName.hasCode();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Iterator接口"><a href="#Iterator接口" class="headerlink" title="Iterator接口"></a>Iterator接口</h5>接口里面含有三个方法，hasNext(),next(),remove(),通常在遍历中使用，<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Collection c = new HashSet();</span><br><span class="line">        c.add(new Name(&quot;f1&quot;,&quot;f2&quot;));</span><br><span class="line">        c.add(new Name(&quot;f3&quot;,&quot;f4&quot;));</span><br><span class="line">        c.add(new Name(&quot;f5&quot;,&quot;f6&quot;));</span><br><span class="line">        Iterator i = c.iterator();</span><br><span class="line">        while(i.hasnext())&#123;</span><br><span class="line">       //next()的返回值为Object类型需要转换为相应的类型 hashSet没顺序</span><br><span class="line">            Name n = (Name)i.next();</span><br><span class="line">            System.out.Print(n.getFistName()+&quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">---</span><br><span class="line">Iterator对象在remove方法中是迭代过程中删除元素的唯一安全方法</span><br><span class="line">Collection c = new HasSet();</span><br><span class="line">c.add(new Name(&apos;fff1&apos;,&apos;lllll2&apos;));</span><br><span class="line">c.add(new Name(&apos;3ffff&apos;,&apos;llll3&apos;));</span><br><span class="line">for(Iterator i = c.iterator(); i.hasNext();)</span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li><h2 id="for-object-o-c-相当于把c中的元素拿出来给o，不能访问下标志，与使用Iteration时不能删除第三个"><a href="#for-object-o-c-相当于把c中的元素拿出来给o，不能访问下标志，与使用Iteration时不能删除第三个" class="headerlink" title="for(object o: c){}相当于把c中的元素拿出来给o，不能访问下标志，与使用Iteration时不能删除第三个"></a>for(object o: c){}相当于把c中的元素拿出来给o，不能访问下标志，与使用Iteration时不能删除第三个</h2><h4 id="set接口"><a href="#set接口" class="headerlink" title="set接口"></a>set接口</h4>1.set接口是Collection的子接口，Set接口没有提供额外的方法，但是Set接口的容器类中的元素是没有顺序的，而且是不可以重复的，<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public  static void main(String[] args)&#123;</span><br><span class="line">    Set s = new HashSet();</span><br><span class="line">    s.add(&quot;hello&quot;);</span><br><span class="line">    s.add(&quot;world&quot;);</span><br><span class="line">    s.add(new Name(&quot;f2&quot;,&quot;f3&quot;));</span><br><span class="line">    s.add(new Name(&quot;f2&quot;,&quot;f3&quot;));//相同的元素不会被加入</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br><span class="line"> ---</span><br><span class="line"> public static void main(String[] args)&#123;</span><br><span class="line">     Set s1 = new HashSet();</span><br><span class="line">     Set s2 = new HashSet();</span><br><span class="line">     s1.add(&apos;a&apos;);s1.add(&apos;b&apos;);s1.add(&apos;c&apos;);</span><br><span class="line">     s2.add(&apos;d&apos;);s2.add(&quot;a&quot;);s2.add(&quot;b&quot;);</span><br><span class="line">     Set sn = new HashSet(s1);//sn 复制 s1</span><br><span class="line">     sn.retainAll(s2);// sn与s2求交集</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h4>1.方法： get(),set(),indexof(),lastIndexOf()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">List l = new LinkedList();</span><br><span class="line">for(int i = 0; i &lt; 5; i++)  l.add(&quot;a&quot;+i);</span><br><span class="line">l.add(3,&quot;a100&quot;);//在第三个位置上加a100</span><br><span class="line">常用算法类 java.util.Collections</span><br><span class="line">void sort(List)；//排序</span><br><span class="line">void shuffle(List);//随机排列</span><br><span class="line">void reverse(List;//逆序排列</span><br><span class="line">void fill(List, Object)重写整个list容器</span><br><span class="line">void copy(List dest, List src);//将src内容拷贝到dest中</span><br><span class="line">int binarySearch(List,Object)//对于顺序的容器进行折半查找的方法查找特定队对象</span><br><span class="line">----</span><br><span class="line">List l1 = new LinkedList();</span><br><span class="line">List l2 = new LinksedList();</span><br><span class="line">for(int i = 0; i &lt;= 9 ; i++) l1.add(&quot;a&quot;+i);</span><br><span class="line">Collections.shuffle(l1);//随机排列</span><br><span class="line">Collections.reverse(l1);//逆序排列</span><br><span class="line">Collections.sort(l1);//排序</span><br><span class="line">---</span><br><span class="line">Comparable接口  上面的Collections.sort怎么确定容器中对象的大小呢？ 所有的排序类都实现了java.lang.Comparable接口，Comparable接口就是其中的一个方法，实现了Compara接口的类通过实现comparaTo(Objecet o)方法从来确定该类的排序方式</span><br></pre></td></tr></table></figure>
+<h4 id="选择数据结构"><a href="#选择数据结构" class="headerlink" title="选择数据结构"></a>选择数据结构</h4>1.Array读快改慢 2. Linked改快读慢3.Hash两个之间<h4 id="Map-接口"><a href="#Map-接口" class="headerlink" title="Map 接口"></a>Map 接口</h4>1.实现Map接口的类用来存储键-值 对，包含索引，实现类有HashMap和TreeMap(用hash表实现和红黑树实现),键值对中的键用来标识，不可重复(equals == hascode)<br>2.方法 Object put(Object key, Object value);<br>Object get(Object key);<br>Object remove(Obeject);<br>boolean contaionsKey(Object value);<br>boolean contaionsValue(Objecet value);<br>int size();<br>boolean isEmpty();<br>void putAll(Map t);//加另外一个Map进来<br>void clean();<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Map m1 = new HashMap();</span><br><span class="line">        Map m2 = new TreeMap();</span><br><span class="line">        m1.put(&quot;one&quot;, new Integer(1));</span><br><span class="line">        m1.put(&quot;two&quot;,new Integer(2)）；</span><br><span class="line">        m1.put(&quot;three&quot;,new Integer(3));</span><br><span class="line">        m2.put(&quot;A&quot;,Integer(1));</span><br><span class="line">        m2.put(&quot;B&quot;,Integer(2);</span><br><span class="line">        System.out.println(m1.size());</span><br><span class="line">        system.out.println(m1.containssKey(&quot;one&quot;);</span><br><span class="line">        system.out.println(m2.containsValue(new IntegerValue(1)));</span><br><span class="line">        if (m1.contaionsKey(&quot;two&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            int i = ((Integer)m1.get((&quot;two&quot;).intValue();</span><br><span class="line">        &#125;</span><br><span class="line">        Map m3 = new HashMap(m1);</span><br><span class="line">        m3.putAll(m2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Auto-boxing-unboxing"><a href="#Auto-boxing-unboxing" class="headerlink" title="Auto-boxing/unboxing"></a>Auto-boxing/unboxing</h4><ol>
+<li>在合适的时候自动打包，解包(自动将基础转化为对象，将对象转化为基础类型)</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m1.put(&quot;one&quot;,1);//自动打包其实1还是为一个对象</span><br><span class="line">int i = (Integer)m1.get(&quot;one&quot;)；//自动解包</span><br></pre></td></tr></table></figure>
+public class TestArgsWords{<br>private static final int ONE = 1;<br>public static void main(String args[]){<br>  Map m = new HashMap();<br>  for (int i = 0 ; i &lt; args.length; i++){<pre><code>int freq = (Integer) m.get(args[i] == null ? 0 : (Integer)m.get(argsp[i]));
+m.put(args[i], freq ==0 ? ONE : freq + 1);
+system.out.println(m.size());</code></pre>  }<br>}<br>}<pre><code>
+
+
+
+</code></pre></li>
+</ol>
+</li>
+</ol>
+
       
 
       
@@ -279,6 +304,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/11/06/java-%E6%B3%9B%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java 泛型
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/11/04/mybatis-day01/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">mybatis_day01</div>
@@ -308,7 +342,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#java容器"><span class="toc-number">1.</span> <span class="toc-text">java容器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Iterator接口"><span class="toc-number">1.1.</span> <span class="toc-text">Iterator接口</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for-object-o-c-相当于把c中的元素拿出来给o，不能访问下标志，与使用Iteration时不能删除第三个"><span class="toc-number"></span> <span class="toc-text">for(object o: c){}相当于把c中的元素拿出来给o，不能访问下标志，与使用Iteration时不能删除第三个</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#set接口"><span class="toc-number">1.</span> <span class="toc-text">set接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#List接口"><span class="toc-number">2.</span> <span class="toc-text">List接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选择数据结构"><span class="toc-number">3.</span> <span class="toc-text">选择数据结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Map-接口"><span class="toc-number">4.</span> <span class="toc-text">Map 接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Auto-boxing-unboxing"><span class="toc-number">5.</span> <span class="toc-text">Auto-boxing/unboxing</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -436,15 +470,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
               </li>
              
               <li class="article-tag-list-item">

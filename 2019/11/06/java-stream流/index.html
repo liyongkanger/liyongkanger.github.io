@@ -6,14 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursite.com">
-  <title>分类 | 康康的博客</title>
+  <title>java stream流 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;index.html">
+  <meta name="description" content="java 流1.java.io包中定义了多种流型类，输入流输出流，字节流，字符流，节点流和处理流  例如： 输入流字节流InputStream 输入流字符流Reader 输出流字节流 OutputStream 输出流字符流Writer  2.输入流和输出流都是在程序的角度上，处理单位的不同字节流010101，字符流一个字符字符的读2个字节  3.节点流直接接在数据源上，在外面套在节点流一样是处理流">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java stream流">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;java-stream%E6%B5%81&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
+<meta property="og:description" content="java 流1.java.io包中定义了多种流型类，输入流输出流，字节流，字符流，节点流和处理流  例如： 输入流字节流InputStream 输入流字符流Reader 输出流字节流 OutputStream 输出流字符流Writer  2.输入流和输出流都是在程序的角度上，处理单位的不同字节流010101，字符流一个字符字符的读2个字节  3.节点流直接接在数据源上，在外面套在节点流一样是处理流">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-05T11:27:30.382Z">
+<meta property="og:updated_time" content="2019-11-06T08:10:30.766Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -166,27 +168,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-java-stream流" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      分类
+      java stream流
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2019-11-05T11:01:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
+        <a href="/2019/11/06/java-stream%E6%B5%81/" class="archive-article-date">
+  	<time datetime="2019-11-06T05:32:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="java-流"><a href="#java-流" class="headerlink" title="java 流"></a>java 流</h3><p>1.java.io包中定义了多种流型类，输入流输出流，字节流，字符流，节点流和处理流<br>  例如： 输入流字节流InputStream 输入流字符流Reader 输出流字节流 OutputStream 输出流字符流Writer<br>  2.输入流和输出流都是在程序的角度上，处理单位的不同字节流010101，字符流一个字符字符的读2个字节<br>  3.节点流直接接在数据源上，在外面套在节点流一样是处理流</p>
+<h5 id="InputStream-字节流"><a href="#InputStream-字节流" class="headerlink" title="InputStream 字节流"></a>InputStream 字节流</h5><ol>
+<li>FileInputStream PipledInputStream FilterInputStream……</li>
+<li>int read() throws IOException//读取一个字节返回<br>int read(byte[] buffer) throws IOException//读取一系列并且存储在数组buffer中//byte[] buffer字节数组，读满了在执行操作<br>int read(byte[] buffer, int offset, int length) //从buffer数组的length位置开始读取字节数，返回实际读取的字节数<br>int clse();<h4 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h4><ol>
+<li>对称InPutStream, 方法：void write(int b) throws IOException</li>
+<li>在close()之前先写flush()，<h4 id="Reader-Writer"><a href="#Reader-Writer" class="headerlink" title="Reader Writer"></a>Reader Writer</h4></li>
+<li>中文为2个字节类比前面的流</li>
+</ol>
+<hr>
+FileInputStream实例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class TestFileInputStream&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int b = 0;</span><br><span class="line">        FileInputStream in = null;</span><br><span class="line">        try&#123;</span><br><span class="line">            in = new FileInputStream(&quot;d:\\wenjian.txt&quot;)；</span><br><span class="line">        &#125;catch(FileNotFoundExeception)</span><br><span class="line">        System.out.prinln(&quot;找不到&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    try&#123;</span><br><span class="line">        long num = 0;</span><br><span class="line">        while(b=in.read() !=null)&#123;</span><br><span class="line">            System.out.print((char)b);</span><br><span class="line">            num++;</span><br><span class="line">        &#125;</span><br><span class="line">        in.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+FileWriter实例<figure class="highlight plain"><figcaption><span>class TestFileWriter&#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        FileWriter fw = null;</span><br><span class="line">         try&#123;</span><br><span class="line">             fw = new FileWriter(&quot;d：wenjian.txt&quot;);</span><br><span class="line">             for(int i = 0; i &lt; 10000;i++)</span><br><span class="line">             fw.writer(c);</span><br><span class="line">             fw.close();</span><br><span class="line">         &#125;catch(IOException);</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="处理流类型"><a href="#处理流类型" class="headerlink" title="处理流类型"></a>处理流类型</h4></li>
+</ol>
+<hr>
+<ol>
+<li>osw = new OutputStreamWriter(new FileOutStream(“d:wenjian.txt),true)，true的作用是最追加，如果没有true每次写入文件时，处理流方便写入，不用一个一个字节的输入，ISO_8859_1所有西方语言</li>
+</ol>
+<hr>
+<h4 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h4><ol>
+<li>DataInputStream 和 DataOutPutStream 继承inputstream和outStream，属于处理流 ，在之前的流中都是字节数流进行输入输出，如果要输入输出一个long类型的数转换成字节数组太浪费空间和麻烦，所以我们有数据流,double 8 个字节,</li>
+<li>需要经常去查API文档，<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class TestDataStream&#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">        DataOutputStream dos = new DataOutputStream(baos);</span><br><span class="line">        try&#123;</span><br><span class="line">            dao.writeDouble(Math.randow());</span><br><span class="line">            dos.writeBoolean(true);</span><br><span class="line">            ByteAppayInputStream bais = new ByteArrayInputStream(bais.toByteArray());</span><br><span class="line">            DataInputStream dis = new DataInputStream();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;//先写的先读</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="打印流-Print流"><a href="#打印流-Print流" class="headerlink" title="打印流 Print流"></a>打印流 Print流</h4><ol>
+<li>PrintWriter和PrintStream 字节和字符，用这个流不会抛异常，自动有flush功能<br>System.setOut(“某个流”),在使用System.out.print（）则不会打印到屏幕而是取决于你用的那个流<h4 id="object-流"><a href="#object-流" class="headerlink" title="object 流"></a>object 流</h4></li>
+<li>直接将Object写入或者读出以后补充</li>
+</ol>
+<hr>
+总结：<br>InputStream/OutputStream<br>Reader/Writer<br>FileInputStream/FileOutputStream<br>FileReader/FileWriter<br>BufferedInputStream/BufferedWriter<br>BufferedReader/BufferedWriter<br>ByteArrayinputstream/bytearrao<br>Datainputstream/out<br>PrintStream/PrintWriter<br>Objectinputstream/out</li>
+</ol>
+
       
 
       
@@ -265,7 +296,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/categories/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2019/11/06/java-stream%E6%B5%81/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,6 +308,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/11/06/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java多线程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/06/java-%E6%B3%9B%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java 泛型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -298,7 +348,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#java-流"><span class="toc-number">1.</span> <span class="toc-text">java 流</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#InputStream-字节流"><span class="toc-number">1.0.1.</span> <span class="toc-text">InputStream 字节流</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OutputStream"><span class="toc-number">1.1.</span> <span class="toc-text">OutputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Reader-Writer"><span class="toc-number">1.2.</span> <span class="toc-text">Reader Writer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#处理流类型"><span class="toc-number">1.3.</span> <span class="toc-text">处理流类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据流"><span class="toc-number">1.4.</span> <span class="toc-text">数据流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打印流-Print流"><span class="toc-number">1.5.</span> <span class="toc-text">打印流 Print流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#object-流"><span class="toc-number">1.6.</span> <span class="toc-text">object 流</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -315,8 +365,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://yoursite.com/categories/index.html", 
-    sourceId: "",
+    url: "https://yoursite.com/2019/11/06/java-stream%E6%B5%81/", 
+    sourceId: "java-stream流",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -351,7 +401,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
