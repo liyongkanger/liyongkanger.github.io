@@ -8,7 +8,24 @@
   <link rel="dns-prefetch" href="https://yoursite.com">
   <title>mysql基础操作 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MYSQL操作DDL:操作数据库,表  1.C(create) 创建  创建数据库： create database if not exists; 数据可m名称 创建数据库并指定字符集 create database 数据库名称 character set 字符集utf8;  2.R(Retrieve)查询  查询数据库的名称： show databases;  3.U(Updata)修改  修改">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+    <style>
+    .pace .pace-progress {
+        background: #6d6d6d; /*进度条颜色*/
+        height: 2px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #6d6d6d; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #6d6d6d;    /*上边框颜色*/
+        border-left-color: #6d6d6d;    /*左边框颜色*/
+    }
+  </style> 
+
+ <meta name="description" content="MYSQL操作DDL:操作数据库,表  1.C(create) 创建  创建数据库： create database if not exists; 数据可m名称 创建数据库并指定字符集 create database 数据库名称 character set 字符集utf8;  2.R(Retrieve)查询  查询数据库的名称： show databases;  3.U(Updata)修改  修改">
 <meta name="keywords" content="-MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql基础操作">
@@ -16,7 +33,7 @@
 <meta property="og:site_name" content="康康的博客">
 <meta property="og:description" content="MYSQL操作DDL:操作数据库,表  1.C(create) 创建  创建数据库： create database if not exists; 数据可m名称 创建数据库并指定字符集 create database 数据库名称 character set 字符集utf8;  2.R(Retrieve)查询  查询数据库的名称： show databases;  3.U(Updata)修改  修改">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-05T11:40:27.718Z">
+<meta property="og:updated_time" content="2019-12-16T13:55:14.451Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -64,6 +81,8 @@
 	        
 				<li><a href="/categories">分类</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -82,7 +101,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 15
+                                           总文章数 16
                                  </nav>
 
 		<nav class="header-nav">
@@ -128,6 +147,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -148,13 +169,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">随笔</a></li>
+					<li style="width: 20%"><a href="/tags">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">标签</a></li>
+					<li style="width: 20%"><a href="/tags">标签</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 20%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 20%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -209,7 +232,8 @@
 <p>5.使用数据库</p>
 <ul>
 <li>查询数据库名称select database();</li>
-<li>使用数据库 ：use 数据库名称;<h6 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h6></li>
+<li>使用数据库 ：use 数据库名称;<a id="more"></a>
+<h6 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h6></li>
 </ul>
 <p>1.创建  create table 表名（<br>                           第一个列名 数据类型，<br>                           第二个列名 数据类型)；注意最后一个不加逗号<br>2.数据库类型  int,double,date,datetime,varchar<br>  创建表 :create table student(<br>                    id int,<br>                    name varchar(32),<br>                    age int ,<br>                    score double(4,1),<br>                    birthday date,<br>                    insert_time timestamp<br>                );<br>  复制表  create table 表名 like 被复制的表名</p>
 <p>3.查询某个数据库中所有的表名称 show tables<br>  查询某个表结构 desc 表名</p>
@@ -403,15 +427,17 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+
     	<div class="footer-left">
     		&copy; 2019 努力的康康
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> Welcome to kangkang's blog
+</div>
+   </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -488,6 +514,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-java基础</a>
               </li>
              
@@ -496,15 +526,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">

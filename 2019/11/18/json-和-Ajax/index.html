@@ -6,16 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursite.com">
-  <title>json 和 Ajax | 康康的博客</title>
+  <title>json-和-Ajax | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ajax和json同步和异步的概念和区别：1.同步：客户端必须等待服务器的响应，在等待客户端不能做别的操作2.异步：客户端在等待服务器端的响应过程中，可以做其他操作，ajax不更新整个页面的前提下完成与后台数据的获取  1.原生Ajax方式了解即可用的不多2.JQeuryf实现Ajaxy异步实现： $.ajax()   语法：$.ajax({z键值对})  ; $.get() $.post() 1">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+    <style>
+    .pace .pace-progress {
+        background: #6d6d6d; /*进度条颜色*/
+        height: 2px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #6d6d6d; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #6d6d6d;    /*上边框颜色*/
+        border-left-color: #6d6d6d;    /*左边框颜色*/
+    }
+  </style> 
+
+ <meta name="description" content="Ajax和json同步和异步的概念和区别：1.同步：客户端必须等待服务器的响应，在等待客户端不能做别的操作2.异步：客户端在等待服务器端的响应过程中，可以做其他操作，ajax不更新整个页面的前提下完成与后台数据的获取  1.原生Ajax方式了解即可用的不多2.JQeuryf实现Ajaxy异步实现： $.ajax()   语法：$.ajax({z键值对})  ; $.get() $.post() 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="json 和 Ajax">
+<meta property="og:title" content="json-和-Ajax">
 <meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;18&#x2F;json-%E5%92%8C-Ajax&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
 <meta property="og:description" content="Ajax和json同步和异步的概念和区别：1.同步：客户端必须等待服务器的响应，在等待客户端不能做别的操作2.异步：客户端在等待服务器端的响应过程中，可以做其他操作，ajax不更新整个页面的前提下完成与后台数据的获取  1.原生Ajax方式了解即可用的不多2.JQeuryf实现Ajaxy异步实现： $.ajax()   语法：$.ajax({z键值对})  ; $.get() $.post() 1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T12:18:38.457Z">
+<meta property="og:updated_time" content="2019-12-16T13:54:05.311Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -63,6 +80,8 @@
 	        
 				<li><a href="/categories">分类</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -81,7 +100,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 15
+                                           总文章数 16
                                  </nav>
 
 		<nav class="header-nav">
@@ -127,6 +146,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -147,13 +168,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">随笔</a></li>
+					<li style="width: 20%"><a href="/tags">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">标签</a></li>
+					<li style="width: 20%"><a href="/tags">标签</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 20%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 20%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -175,13 +198,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      json 和 Ajax
+      json-和-Ajax
     </h1>
   
 
         
         <a href="/2019/11/18/json-%E5%92%8C-Ajax/" class="archive-article-date">
-  	<time datetime="2019-11-18T12:17:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-18</time>
+  	<time datetime="2019-11-18T12:17:59.180Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-18</time>
 </a>
         
       </header>
@@ -191,7 +214,7 @@
         <h3 id="Ajax和json"><a href="#Ajax和json" class="headerlink" title="Ajax和json"></a>Ajax和json</h3><p>同步和异步的概念和区别：<br>1.同步：客户端必须等待服务器的响应，在等待客户端不能做别的操作<br>2.异步：客户端在等待服务器端的响应过程中，可以做其他操作，ajax不更新整个页面的前提下完成与后台数据的获取</p>
 <hr>
 <p>1.原生Ajax方式了解即可用的不多<br>2.JQeuryf实现Ajaxy异步实现：<br> $.ajax()   语法：$.ajax({z键值对})  ;<br> $.get()<br> $.post()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">实际例子：</span><br><span class="line">需要引入jq中的ajax文件&lt;script src =&quot;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">//定义方法</span><br><span class="line">function fun()&#123;</span><br><span class="line">    //使用$.ajax()发送异步请求</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url:&quot;ajaxServlet&quot;,//请求路径</span><br><span class="line">        type:&quot;POST&quot;, //请求方式</span><br><span class="line">  //    date:&quot;username=jack&amp;age=23&quot;,//请求参数</span><br><span class="line">        date:&#123;&quot;username&quot;:jack&quot;,&quot;age&quot;:23&#125;,</span><br><span class="line">        success:function(date)&#123;</span><br><span class="line">            //响应成功后的回调函数</span><br><span class="line">            alert(date); //弹出警告</span><br><span class="line">        &#125;,</span><br><span class="line">        error:function()&#123;</span><br><span class="line">            //如果q响应出错，会执行的回调函数</span><br><span class="line">            alert(&quot;出错了&quot;)</span><br><span class="line">        &#125;,//注意要写逗号，最后一个不写逗号</span><br><span class="line">        dateType:&quot;text&quot;//设置了响应数据的格式</span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">---</span><br><span class="line">$.get()发送get请求</span><br><span class="line">$.$.get(url,[data],[callback],[type])</span><br><span class="line">url:请求路径，请求参数，回调函数，响应结果的类型</span><br><span class="line">function fun()&#123;</span><br><span class="line">    $.get(&quot;ajaxServlet&quot;,&#123;username:&quot;rose&quot;&#125;,function()&#123;</span><br><span class="line">        alter(data);</span><br><span class="line">    &#125;,&quot;text&quot;);</span><br><span class="line">&#125;</span><br><span class="line">---</span><br><span class="line">function fun()&#123;</span><br><span class="line">    $.post(&quot;ajaxServlet&quot;,&#123;username:&quot;rose&quot;&#125;,function()&#123;</span><br><span class="line">        alter(data);</span><br><span class="line">    &#125;,&quot;text&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">实际例子：</span><br><span class="line">需要引入jq中的ajax文件&lt;script src =&quot;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">//定义方法</span><br><span class="line">function fun()&#123;</span><br><span class="line">    //使用$.ajax()发送异步请求</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url:&quot;ajaxServlet&quot;,//请求路径</span><br><span class="line">        type:&quot;POST&quot;, //请求方式</span><br><span class="line">  //    date:&quot;username=jack&amp;age=23&quot;,//请求参数</span><br><span class="line">        date:&#123;&quot;username&quot;:jack&quot;,&quot;age&quot;:23&#125;,</span><br><span class="line">        success:function(date)&#123;</span><br><span class="line">            //响应成功后的回调函数</span><br><span class="line">            alert(date); //弹出警告</span><br><span class="line">        &#125;,</span><br><span class="line">        error:function()&#123;</span><br><span class="line">            //如果q响应出错，会执行的回调函数</span><br><span class="line">            alert(&quot;出错了&quot;)</span><br><span class="line">        &#125;,//注意要写逗号，最后一个不写逗号</span><br><span class="line">        dateType:&quot;text&quot;//设置了响应数据的格式</span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">---</span><br><span class="line">$.get()发送get请求</span><br><span class="line">$.$.get(url,[data],[callback],[type])</span><br><span class="line">url:请求路径，请求参数，回调函数，响应结果的类型</span><br><span class="line">function fun()&#123;</span><br><span class="line">    $.get(&quot;ajaxServlet&quot;,&#123;username:&quot;rose&quot;&#125;,function()&#123;</span><br><span class="line">        alter(data);</span><br><span class="line">    &#125;,&quot;text&quot;);</span><br><span class="line">&#125;</span><br><span class="line">---</span><br><span class="line">function fun()&#123;</span><br><span class="line">    $.post(&quot;ajaxServlet&quot;,&#123;username:&quot;rose&quot;&#125;,function()&#123;</span><br><span class="line">        alter(data);</span><br><span class="line">    &#125;,&quot;text&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>1.概念 javaScript对象表示法<br>var p = {“name”:”张三”,”age”：23,”gender”:”男”};</p>
 <ul>
 <li>json现在多用于储存和交换文本信息的语法，比xml更小更快</li>
@@ -234,6 +257,9 @@
 <li><p>List数组</p>
 </li>
 <li><p>map 键值对</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">校验用户名:</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;script src=&quot;js/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">$(function ()&#123; // 给username绑定blu事件离焦事件r</span><br><span class="line">    $(&quot;#username&quot;).blur(function()&#123;</span><br><span class="line">           //获取username文本输入框的值</span><br><span class="line">          var username =  $(this).val();</span><br><span class="line">           //发送ajax请求</span><br><span class="line">           //期望服务器返回的数据格式&#123;&quot;userExis&quot;:true,&quot;msy&quot;:&quot;请换一个&quot;&#125;</span><br><span class="line">           $.get(&quot;findUserServlet&quot;,&#123;username:username&#125;,function(data)&#123;</span><br><span class="line">               //判断userExsit键的值是否为true</span><br><span class="line">               var span = $(&quot;#s_username&quot;);</span><br><span class="line">               if(data.userExsit)&#123;</span><br><span class="line">                   //用户名存在</span><br><span class="line">                   span.css(&quot;color&quot;,&quot;green&quot;);</span><br><span class="line">                   span.html(data.msg);</span><br><span class="line">               &#125;else&#123;</span><br><span class="line">                   //用户名不存在</span><br><span class="line">                    span.css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line">                   span.html(data.msg);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;,&quot;json&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">  &lt;from&gt;</span><br><span class="line">  &lt;input type=&quot;text&quot; name =&quot;username&quot; palaceholder=&quot;请输入用户名&quot;&gt;&lt;br&gt;</span><br><span class="line">  &lt;span id = &quot;s_username&quot;&gt;&lt;/span&gt;</span><br><span class="line">  &lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;请输入密码&quot;&gt;&lt;br&gt;</span><br><span class="line">  &lt;input type=&quot;submit&quot; values=&quot;注册&quot;&gt;&lt;br&gt;</span><br><span class="line">  &lt;/form&gt;</span><br><span class="line">  前端代码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">后端</span><br><span class="line">//1.获取用户名</span><br><span class="line">String username = request.getParameter(&quot;username&quot;);</span><br><span class="line">//2.调用service查询用户名是否存在</span><br><span class="line">//3.期待服务器响应返回的数据格式</span><br><span class="line">//4.将map转为json</span><br><span class="line">//解决中文乱码问题</span><br><span class="line">response.setContentType(&quot;text/html;charact=utf-8&quot;);</span><br><span class="line">ObjectMapper mapper = new ObjectMapper();</span><br><span class="line">//将数据传给客户端</span><br><span class="line">mapper.witerValue(response.getWriter(),map);</span><br></pre></td></tr></table></figure>
+<p>服务器响应的数据在客户端使用时，要想当做json数据格式使用时<br>1.$.get(type),将最后一个type指定为json<br>2.在服务器端设置个json类型<br>response.setContentType(“application/json,characset=utf-8”);</p>
 </li>
 </ol>
 
@@ -329,6 +355,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/12/11/ssm%E6%95%B4%E5%90%88crud/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          &#39;ssm整合crud&#39;
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/11/07/java%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">java小游戏坦克大战</div>
@@ -397,15 +432,17 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+
     	<div class="footer-left">
     		&copy; 2019 努力的康康
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> Welcome to kangkang's blog
+</div>
+   </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -482,6 +519,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-java基础</a>
               </li>
              
@@ -490,15 +531,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">

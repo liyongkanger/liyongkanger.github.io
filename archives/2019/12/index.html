@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursite.com">
-  <title>Socket实例 | 康康的博客</title>
+  <title>Archives: 2019/12 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -25,15 +25,11 @@
     }
   </style> 
 
- <meta name="description" content="Socket编程实例 客户端Echo Client ` 代码如下 public class EchoClient{ private Strin host = &amp;quot;localhost&amp;quot;; private int port  = 8000; Private Socket socket; public EchoClient() throw IOException{     socket">
-<meta name="keywords" content="-Socket">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Socket实例">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;03&#x2F;Socket%E5%AE%9E%E4%BE%8B&#x2F;index.html">
+ <meta property="og:type" content="website">
+<meta property="og:title" content="康康的博客">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;12&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
-<meta property="og:description" content="Socket编程实例 客户端Echo Client ` 代码如下 public class EchoClient{ private Strin host = &amp;quot;localhost&amp;quot;; private int port  = 8000; Private Socket socket; public EchoClient() throw IOException{     socket">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-16T13:55:48.621Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -192,277 +188,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Socket实例" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Socket实例
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/12/11/ssm%E6%95%B4%E5%90%88crud/" class="archive-article-date">
+  	<time datetime="2019-12-11T08:01:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/11/ssm%E6%95%B4%E5%90%88crud/">&#39;ssm整合crud&#39;</a>
     </h1>
   
 
-        
-        <a href="/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/" class="archive-article-date">
-  	<time datetime="2019-11-03T15:27:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Socket编程实例"><a href="#Socket编程实例" class="headerlink" title="Socket编程实例"></a>Socket编程实例</h2><p> 客户端Echo Client<br> ` 代码如下</p>
-<pre><code>public class EchoClient{
-private Strin host = &quot;localhost&quot;;
-private int port  = 8000;
-Private Socket socket;
-public EchoClient() throw IOException{
-    socket = new Socket(host,port);
-}//利用构造函数进行初始化
-//修饰输入
-private BufferedReader getReader(Socket socket) throws IOException{
-    InputStream socketIn = socket.getInputStream();
-    return  new BufferedReader(new InputStreamReader(socketIn));
-   }
-//修饰输出
-private PrintWriter getWriter(Socket socket) throw IOException{
-    OutputStream socketOut = socket.getOutputStream();
-    return new PrintWriter(socketOUt,true);
-}
-public void talke() throws IOException{
-    BufferedReader br =getReader(socket);//调用上面的方法
-    PrintWriter pw = getWriter(socket);//输出
-    BufferedReader localReader = new BufferedReader(new InputStreamReader(System.in));
-    String msg = null;
-    while((msg =localReader.readLine()) != null){
-        pw.println(msg);
-        System.out.println(br.readLine());
-        if (msg.equals(&quot;bye&quot;)   break;
-    }
-    socket.close();
-}
+        <div class="article-info info-on-right">
+          
+          
 
-private static void main(String[] args) throw IOExeception{
-    new EchoClient().talk();
-}</code></pre><p> }<br> <a id="more"></a><br> 服务器端代码<br>  `代码如下</p>
-<pre><code>public class EchoSever{
- private int port = 8000;
- private ServerSocket serverSocket;
- //构造函数
- public EchoServer() throws IOException{
-     serverSocket = new ServerSocket(port);
-     System.out.println(&quot;服务启动&quot;);
- }
- public String echo(String msg){
-     return &quot;echo&quot;+msg;
- }
- //装饰输出跟客户端一样
- private PrintWriter getWriter(Socket socket) throw IOException{
-     OutputStream socketOut = socket.getOutputStream();
-     return new PrintWriter(SocketOut, true);
- }//输入
- public BufferedReader getReader(Socket socket) throws IOExcption{
-     InputStream socketIn = sokcet.getInputStream();
-     return new BufferedReader(new InputStreamReader(socketIn));
- }
- public void service(){
-     while(true){
-        Socket socket = null;
-        socket = serverSocket.accept();   
-       System.out.println(&quot;New connection accepted&quot;
-        + socket.getIneAddress()+&quot;:&quot;+socket.getPort());
-
-        BufferedReader br = getRead(socket);
-        PrintWriter pw = getWriter(socket);
-        String msg = null;
-        while((msg = br.readLine())!= null){
-            System.out.println(msg);
-            pw.println(echo(msg));
-            if (msg.equals(&quot;bys&quot;)){
-                break;
-            }
-        }
-        if (socket !=null)  socket.close( );
-     }
-     }
-     public static void main(String[] args) throws IOEception{
-         new EchoServer().service();
-
- }</code></pre><p>  }</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Socket</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          树与二叉树
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mysql基础操作</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Socket编程实例"><span class="toc-number">1.</span> <span class="toc-text">Socket编程实例</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "https://yoursite.com/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/", 
-    sourceId: "Socket实例",
-    productKey: "true",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -487,8 +255,8 @@ private static void main(String[] args) throw IOExeception{
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

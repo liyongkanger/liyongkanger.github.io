@@ -8,7 +8,24 @@
   <link rel="dns-prefetch" href="https://yoursite.com">
   <title>spring_day01_ioc | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##关于jdbc的简单用法  1.注册驱动       DriverManager.registerDriver(new com.mysql.jdbc.Driver());       或者Class.forName(“com.sql.jdbc.Driver”);  2.获取连接       Connection conn = DriverManager.getConnection(“jdbc:m">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+    <style>
+    .pace .pace-progress {
+        background: #6d6d6d; /*进度条颜色*/
+        height: 2px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #6d6d6d; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #6d6d6d;    /*上边框颜色*/
+        border-left-color: #6d6d6d;    /*左边框颜色*/
+    }
+  </style> 
+
+ <meta name="description" content="##关于jdbc的简单用法  1.注册驱动       DriverManager.registerDriver(new com.mysql.jdbc.Driver());       或者Class.forName(“com.sql.jdbc.Driver”);  2.获取连接       Connection conn = DriverManager.getConnection(“jdbc:m">
 <meta name="keywords" content="-Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring_day01_ioc">
@@ -16,7 +33,7 @@
 <meta property="og:site_name" content="康康的博客">
 <meta property="og:description" content="##关于jdbc的简单用法  1.注册驱动       DriverManager.registerDriver(new com.mysql.jdbc.Driver());       或者Class.forName(“com.sql.jdbc.Driver”);  2.获取连接       Connection conn = DriverManager.getConnection(“jdbc:m">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-05T11:40:00.310Z">
+<meta property="og:updated_time" content="2019-12-16T13:56:08.122Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -64,6 +81,8 @@
 	        
 				<li><a href="/categories">分类</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -82,7 +101,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 15
+                                           总文章数 16
                                  </nav>
 
 		<nav class="header-nav">
@@ -128,6 +147,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -148,13 +169,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">随笔</a></li>
+					<li style="width: 20%"><a href="/tags">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">标签</a></li>
+					<li style="width: 20%"><a href="/tags">标签</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 20%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 20%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -191,6 +214,7 @@
       
         <p>##关于jdbc的简单用法<br>  1.注册驱动<br>       DriverManager.registerDriver(new com.mysql.jdbc.Driver());<br>       或者Class.forName(“com.sql.jdbc.Driver”);<br>  2.获取连接<br>       Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/数据库名称，”root”,”admin”);<br>  3.获取操作数据库的预处理对象<br>       PrepareStatement pstm = conn.prepareStatement(“select * from account”);<br>  4.执行sql语句得到结果集<br>       ResultSet rs = pstm.executeQuery();<br>  5.便利结果集<br>      while(rs.next()){System.out.println(rs.getString(“name”);)}<br>  6.释放资源  rs.close()  pstm.close(); conn.close();  规则先打开的最后关闭</p>
 <hr>
+<a id="more"></a>
 <p>##spring中使用xml进行配置<br> #1.spring中两个核心功能一个是ioc一个是aop,ioc是一个容器，使用ioc容器可以很好的降低程序间的耦合，两个特性，控制反转和依赖注入<br>    将对象的实例化交给spring去创建减少使用new的关键字，通过注入的方式给变量对象赋值<br>    一般进行xml进行配置的时候xml中主要使用<bean>标签，其中含有class属性和id属性，class一般是所创建对象的包名的全部路径，id是实例化对象的名字，通过这<br>    两个属性来确定具体的位置。init-method：指定类中的初始化方法名称。  destroy-method：指定类中销毁方法名称。scope：指定对象的作用范围 </bean></p>
 <p> #2.在主函数中如何使用java bean<br>        1.获取核心容器的对象<br>           ApplicationContext  applicationContext = new ClassPathXmlApplicationContext(“bean.xml”);<br>        2.根据id获取Bean对象<br>            IAccountService   accountService = (IAccountService)accountService.getBean(“配置文件中的id”)；<br>        3.根据创建好的对象调用它的方法<br>              accountService.saveAccount();<br>  #3.在bean.xml中的DI依赖注入<br>        1.复杂类型/集合类型注入的方式：有三种第一种：使用构造函数提供第二种：使用set方法提供第三种：使用注解提供<br>        2.构造函数注入：使用的标签:constructor-arg 标签出现的位置：bean标签的内部标签中的属性 type：用于指定要注入的数据的数据类型，该数据类型也是构造函数中某个或某些参数的类型 index：用于指定要注入的数据给构造函数中指定索引位置的参数赋值。<br>           索引的位置是从0开始 name：用于指定给构造函数中指定名称的参数赋值(使用较少)<br>           <code>&lt;constructor-arg value = &quot;&quot;  name = &quot;&quot;&gt; &lt;constructor-arg name = &quot;复杂属性&quot; ref=&quot;值&quot; &gt;
         3.配置一个日期对象</code><bean class="java.util.Date" id="now"><br>        4.使用set方法然后通过配置注入, 复杂类型的注入/集合类型的注入用于给List结构集合注入的标签： list array set 用于个Map结构集合注入的标签:map props 结构相同，标签可以互换 –&gt;<br>              <code>&lt;property name = &quot;myStrs&quot;&gt;  &lt;set&gt;&lt;value&gt;AAA&lt;/value&gt;&lt;/set&gt;&lt;/property&gt;</code>&lt;property name = “myList”      <array><value>AAA</value></array><br>              <code>&lt;property name = &quot;myMap&quot;&gt; &lt;props&gt;&lt;prop key = &quot;test&quot;&gt;ccc&lt;/prop&gt;&lt;/props&gt;</code><property name="muProps"><map><entry value="aaa" key="test"></entry></map>  </property></bean></p>
@@ -383,15 +407,17 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+
     	<div class="footer-left">
     		&copy; 2019 努力的康康
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> Welcome to kangkang's blog
+</div>
+   </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -468,6 +494,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-java基础</a>
               </li>
              
@@ -476,15 +506,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">

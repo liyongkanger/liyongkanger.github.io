@@ -8,7 +8,24 @@
   <link rel="dns-prefetch" href="https://yoursite.com">
   <title>康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+    <style>
+    .pace .pace-progress {
+        background: #6d6d6d; /*进度条颜色*/
+        height: 2px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #6d6d6d; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #6d6d6d;    /*上边框颜色*/
+        border-left-color: #6d6d6d;    /*左边框颜色*/
+    }
+  </style> 
+
+ <meta property="og:type" content="website">
 <meta property="og:title" content="康康的博客">
 <meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
@@ -60,6 +77,8 @@
 	        
 				<li><a href="/categories">分类</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -78,7 +97,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 15
+                                           总文章数 16
                                  </nav>
 
 		<nav class="header-nav">
@@ -124,6 +143,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -144,13 +165,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">随笔</a></li>
+					<li style="width: 20%"><a href="/tags">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">标签</a></li>
+					<li style="width: 20%"><a href="/tags">标签</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 20%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 20%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -166,6 +189,88 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-树与二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/">树与二叉树</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
+  	<time datetime="2019-11-04T07:54:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="树的练习和总结"><a href="#树的练习和总结" class="headerlink" title="树的练习和总结"></a>树的练习和总结</h2><h4 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h4><pre><code>1.在二叉树的第i层上至多有2^(i-1)个结点
+2.深度为k的二叉树至多有2^k-1个结点</code></pre><h4 id="满二叉树和完全二叉树"><a href="#满二叉树和完全二叉树" class="headerlink" title="满二叉树和完全二叉树"></a>满二叉树和完全二叉树</h4><pre><code>3.对于任何一颗二叉树T,tade 终端结点树为n0，度为2的结点为n2则 n0 = n2 + 1
+4.满二叉树深度为k且含有2^k-1个结点的二叉树，完全二叉树结点&lt;满二叉树
+5.满二叉树每一层上的结点树都是最大结点数，都是2^(i-1)
+6.完全二叉树的叶子结点值可能在层次最大的两层上出现
+7.完全二叉树的右分支最大层层次为l则左分支下最大层必定为l或者l + 1
+8.具有n个结点的完全二叉树的深度为 k = log2(n)下取值+ 1
+9. 结点为n的完全二叉树编号，任意结点i有i = 0 无双亲，i &gt; 1 双亲是结点 i/2的向下取值, 2i&gt;n i无左孩子， 2i+1 &gt; n则结点无右孩子，否则右孩子为2i+1
+10.完全二叉树结点 = 分支结点 + 叶子结点  分支结点 =  结点数/2的向下取值</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/04/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Socket实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -220,53 +325,8 @@ public void talke() throws IOException{
 
 private static void main(String[] args) throw IOExeception{
     new EchoClient().talk();
-}</code></pre><p> }</p>
-<p> 服务器端代码<br>  `代码如下</p>
-<pre><code>public class EchoSever{
- private int port = 8000;
- private ServerSocket serverSocket;
- //构造函数
- public EchoServer() throws IOException{
-     serverSocket = new ServerSocket(port);
-     System.out.println(&quot;服务启动&quot;);
- }
- public String echo(String msg){
-     return &quot;echo&quot;+msg;
- }
- //装饰输出跟客户端一样
- private PrintWriter getWriter(Socket socket) throw IOException{
-     OutputStream socketOut = socket.getOutputStream();
-     return new PrintWriter(SocketOut, true);
- }//输入
- public BufferedReader getReader(Socket socket) throws IOExcption{
-     InputStream socketIn = sokcet.getInputStream();
-     return new BufferedReader(new InputStreamReader(socketIn));
- }
- public void service(){
-     while(true){
-        Socket socket = null;
-        socket = serverSocket.accept();   
-       System.out.println(&quot;New connection accepted&quot;
-        + socket.getIneAddress()+&quot;:&quot;+socket.getPort());
-
-        BufferedReader br = getRead(socket);
-        PrintWriter pw = getWriter(socket);
-        String msg = null;
-        while((msg = br.readLine())!= null){
-            System.out.println(msg);
-            pw.println(echo(msg));
-            if (msg.equals(&quot;bys&quot;)){
-                break;
-            }
-        }
-        if (socket !=null)  socket.close( );
-     }
-     }
-     public static void main(String[] args) throws IOEception{
-         new EchoServer().service();
-
- }</code></pre><p>  }</p>
-
+}</code></pre><p> }<br></p>
+        
       
 
       
@@ -359,20 +419,8 @@ private static void main(String[] args) throw IOExeception{
 <p>5.使用数据库</p>
 <ul>
 <li>查询数据库名称select database();</li>
-<li>使用数据库 ：use 数据库名称;<h6 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h6></li>
-</ul>
-<p>1.创建  create table 表名（<br>                           第一个列名 数据类型，<br>                           第二个列名 数据类型)；注意最后一个不加逗号<br>2.数据库类型  int,double,date,datetime,varchar<br>  创建表 :create table student(<br>                    id int,<br>                    name varchar(32),<br>                    age int ,<br>                    score double(4,1),<br>                    birthday date,<br>                    insert_time timestamp<br>                );<br>  复制表  create table 表名 like 被复制的表名</p>
-<p>3.查询某个数据库中所有的表名称 show tables<br>  查询某个表结构 desc 表名</p>
-<p>4.修改<br>   修改表名： alter table 表名rename to 新表名<br>   修改表的字符集： alter table 表名 character set 字符集<br>   添加一列： alter table 表名 add 列名 数据类型<br>   修改列名称 类型 alter table 表名 change 列名 新类别 新数据类型/ alter table 表名 modify 列名 新数据类型<br>   删除列 alter table 表名 drop 列名</p>
-<ol start="5">
-<li>删除  drop table if exists 表名</li>
-</ol>
-<p>6.添加数据  insert into 表名(列名1，列名2，列名3)value(值1，值2，值3)<br>  删除数据  delete from 表名 where + 条件</p>
-<ol start="7">
-<li>修改数据 update 表名 set 列名1 = 值1， 列名2 = 值2 where + 条件</li>
-</ol>
-<p>8.select * from 表名    select 字段 from 表名  where 条件 group by 分组字段 having 分组之后的条件  order by 排序(默认升序) limit分页限定 </p>
-
+<li>使用数据库 ：use 数据库名称;</li></ul>
+        
       
 
       
@@ -447,18 +495,7 @@ private static void main(String[] args) throw IOExeception{
       
         <p>##关于jdbc的简单用法<br>  1.注册驱动<br>       DriverManager.registerDriver(new com.mysql.jdbc.Driver());<br>       或者Class.forName(“com.sql.jdbc.Driver”);<br>  2.获取连接<br>       Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/数据库名称，”root”,”admin”);<br>  3.获取操作数据库的预处理对象<br>       PrepareStatement pstm = conn.prepareStatement(“select * from account”);<br>  4.执行sql语句得到结果集<br>       ResultSet rs = pstm.executeQuery();<br>  5.便利结果集<br>      while(rs.next()){System.out.println(rs.getString(“name”);)}<br>  6.释放资源  rs.close()  pstm.close(); conn.close();  规则先打开的最后关闭</p>
 <hr>
-<p>##spring中使用xml进行配置<br> #1.spring中两个核心功能一个是ioc一个是aop,ioc是一个容器，使用ioc容器可以很好的降低程序间的耦合，两个特性，控制反转和依赖注入<br>    将对象的实例化交给spring去创建减少使用new的关键字，通过注入的方式给变量对象赋值<br>    一般进行xml进行配置的时候xml中主要使用<bean>标签，其中含有class属性和id属性，class一般是所创建对象的包名的全部路径，id是实例化对象的名字，通过这<br>    两个属性来确定具体的位置。init-method：指定类中的初始化方法名称。  destroy-method：指定类中销毁方法名称。scope：指定对象的作用范围 </bean></p>
-<p> #2.在主函数中如何使用java bean<br>        1.获取核心容器的对象<br>           ApplicationContext  applicationContext = new ClassPathXmlApplicationContext(“bean.xml”);<br>        2.根据id获取Bean对象<br>            IAccountService   accountService = (IAccountService)accountService.getBean(“配置文件中的id”)；<br>        3.根据创建好的对象调用它的方法<br>              accountService.saveAccount();<br>  #3.在bean.xml中的DI依赖注入<br>        1.复杂类型/集合类型注入的方式：有三种第一种：使用构造函数提供第二种：使用set方法提供第三种：使用注解提供<br>        2.构造函数注入：使用的标签:constructor-arg 标签出现的位置：bean标签的内部标签中的属性 type：用于指定要注入的数据的数据类型，该数据类型也是构造函数中某个或某些参数的类型 index：用于指定要注入的数据给构造函数中指定索引位置的参数赋值。<br>           索引的位置是从0开始 name：用于指定给构造函数中指定名称的参数赋值(使用较少)<br>           <code>&lt;constructor-arg value = &quot;&quot;  name = &quot;&quot;&gt; &lt;constructor-arg name = &quot;复杂属性&quot; ref=&quot;值&quot; &gt;
-        3.配置一个日期对象</code><bean class="java.util.Date" id="now"><br>        4.使用set方法然后通过配置注入, 复杂类型的注入/集合类型的注入用于给List结构集合注入的标签： list array set 用于个Map结构集合注入的标签:map props 结构相同，标签可以互换 –&gt;<br>              <code>&lt;property name = &quot;myStrs&quot;&gt;  &lt;set&gt;&lt;value&gt;AAA&lt;/value&gt;&lt;/set&gt;&lt;/property&gt;</code>&lt;property name = “myList”      <array><value>AAA</value></array><br>              <code>&lt;property name = &quot;myMap&quot;&gt; &lt;props&gt;&lt;prop key = &quot;test&quot;&gt;ccc&lt;/prop&gt;&lt;/props&gt;</code><property name="muProps"><map><entry value="aaa" key="test"></entry></map>  </property></bean></p>
-<hr>
-<pre><code>  简单类型：`&lt;bean id = &quot;&quot; class =&quot;&quot;&gt;  &lt;property name = &quot;name&quot; value =&quot;text&quot;&gt; &lt;/property&gt;              
-5.在使用meavn工程中spring的依赖
-                     `&lt;packaging&gt;jar&lt;/packaging&gt;
-                     `&lt;dependencies&gt; &lt;dependency&gt;
-                     `&lt;groupId&gt;org.springframework&lt;/groupId&gt;
-                     `&lt;artifactId&gt;spring-context&lt;/artifactId&gt;
-                     `&lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-                     `&lt;/dependency&gt;   &lt;/dependencies&gt;</code></pre>
+        
       
 
       
@@ -534,8 +571,7 @@ private static void main(String[] args) throw IOExeception{
         <h3 id="spring-day02-ioc"><a href="#spring-day02-ioc" class="headerlink" title="spring_day02_ioc"></a>spring_day02_ioc</h3><h4 id="1-使用注解来管理spring-ioc"><a href="#1-使用注解来管理spring-ioc" class="headerlink" title="1.使用注解来管理spring ioc"></a>1.使用注解来管理spring ioc</h4><h6 id="用于创建对象"><a href="#用于创建对象" class="headerlink" title="用于创建对象"></a>用于创建对象</h6><p> 1.@Component 作用：把资源让spring管理，相当于在xml中配置了一个bean 属性：指定bean的id，如果不指定value的属性，默认bean的id为当前类名，首字母小写<br> 2.@Controller 一般用于表现层的注解<br> 3.@Service 一般用于业务层的注解<br> 4.@Respository一般用于持久层的注解(如果注解中只有一个属性要赋值时，且名称为value，value在赋值时可以不写)</p>
 <h6 id="用于注入数据"><a href="#用于注入数据" class="headerlink" title="用于注入数据"></a>用于注入数据</h6><p>  1.@Autowired 作用：自动按照类型注入，当使用注解注入属性时，set方法可以省略，他只能注入其他bean类型当多个类型匹配时，要使用对象的变量名称作为bean的id<br>  2.@Qualifier作用自动注入的基础上，在按照Bean的id注入,给字段注入时不能单独使用，必须和@Autowire一起使用。属性：指定bean的id<br>  3.@Resource作用:按照bean的id注入，只能注入其他bean类型。属性:指定bean的id<br>  4.@Value作用：注入基本数据类型和String类型value:指定值</p>
 <h6 id="改变作用范围的"><a href="#改变作用范围的" class="headerlink" title="改变作用范围的"></a>改变作用范围的</h6><p>  1.@Scope 作用：指定bean的作用范围。属性：value:取值singleton prototype request session globalsession<br>  2.@PostConstruct初始化方法<br>  3.@PreDestroy销毁方法</p>
-<h6 id="注解配置类"><a href="#注解配置类" class="headerlink" title="注解配置类"></a>注解配置类</h6><p>  1.@Configuration作用指定当前是一个配置类获取容器时需要使用AnnotationApplicationContext value指定配置类的字节码<br>  2.@ComponentScan用于在spring在初始时要扫描的包<br>  3.@Bean 该注解只能写在方法上，使用这个方法创建一个对象，放入spring容器中 name：指定id<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class JdbcConfig &#123;  @Value(&quot;$&#123;jdbc.driver&#125;&quot;) </span><br><span class="line">private String driver;</span><br><span class="line">@Value(&quot;$&#123;jdbc.url&#125;&quot;) </span><br><span class="line">private String url;</span><br><span class="line">@Value(&quot;$&#123;jdbc.username&#125;&quot;)</span><br><span class="line">private String username; </span><br><span class="line">@Value(&quot;$&#123;jdbc.password&#125;&quot;) </span><br><span class="line">private String password; </span><br><span class="line"></span><br><span class="line">@Bean(name = &quot;dataSource&quot;)</span><br><span class="line">public DataSource createDataSource()&#123;</span><br><span class="line">    ComboPooledDataSource ds = new ComboPooledDataSource();</span><br><span class="line">    ds.setUser(&quot;root&quot;);</span><br><span class="line">    ds.setPassword(&quot;admin&quot;);</span><br><span class="line">    ds.setDriverClass(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    ds.setJdbcUrl(&quot;jdbc:mysql://ee50&quot;)；</span><br><span class="line">    return ds;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>  4.@PropertySource作用：加载。properties 文件中位置,value[]指定文件位置<br>  5.如果有两个配置类但是要建立配置文件与配置文件之间的关系用@Import ,导入其他配置类，在引入其他配置类时可以不用写@Comfiguration<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  示例代码： @Configuration @ComponentScan(basePackages = &quot;com.itheima.spring&quot;) @Import(&#123; JdbcConfig.class&#125;) public class SpringConfiguration &#123; &#125; </span><br><span class="line"> </span><br><span class="line">@Configuration @PropertySource(&quot;classpath:jdbc.properties&quot;) public class JdbcConfig&#123; &#125;</span><br></pre></td></tr></table></figure><br>6.没有配置文件如何获取容器呢，也可以通过注解，ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.calss)</p>
-
+        
       
 
       
@@ -633,261 +669,8 @@ private static void main(String[] args) throw IOExeception{
 
 
 4. 常见的数据库软件
-    * 参见《MySQL基础.pdf》</code></pre><h1 id="MySQL数据库软件"><a href="#MySQL数据库软件" class="headerlink" title="MySQL数据库软件"></a>MySQL数据库软件</h1><pre><code>1. 安装
-    * 参见《MySQL基础.pdf》
-2. 卸载
-    1. 去mysql的安装目录找到my.ini文件
-        * 复制 datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
-    2. 卸载MySQL
-    3. 删除C:/ProgramData目录下的MySQL文件夹。
-
-3. 配置
-    * MySQL服务启动
-        1. 手动。
-        2. cmd--&gt; services.msc 打开服务的窗口
-        3. 使用管理员打开cmd
-            * net start mysql : 启动mysql的服务
-            * net stop mysql:关闭mysql服务
-    * MySQL登录
-        1. mysql -uroot -p密码
-        2. mysql -hip -uroot -p连接目标的密码
-        3. mysql --host=ip --user=root --password=连接目标的密码
-    * MySQL退出
-        1. exit
-        2. quit
-
-    * MySQL目录结构
-        1. MySQL安装目录：basedir=&quot;D:/develop/MySQL/&quot;
-            * 配置文件 my.ini
-        2. MySQL数据目录：datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
-            * 几个概念
-                * 数据库：文件夹
-                * 表：文件
-                * 数据：数据</code></pre><h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><pre><code>1.什么是SQL？
-    Structured Query Language：结构化查询语言
-    其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。
-
-2.SQL通用语法
-    1. SQL 语句可以单行或多行书写，以分号结尾。
-    2. 可使用空格和缩进来增强语句的可读性。
-    3. MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。
-    4. 3 种注释
-        * 单行注释: -- 注释内容 或 # 注释内容(mysql 特有) 
-        * 多行注释: /* 注释 */
-
-3. SQL分类
-    1) DDL(Data Definition Language)数据定义语言
-        用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等
-    2) DML(Data Manipulation Language)数据操作语言
-        用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等
-    3) DQL(Data Query Language)数据查询语言
-        用来查询数据库中表的记录(数据)。关键字：select, where 等
-    4) DCL(Data Control Language)数据控制语言(了解)
-        用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等</code></pre><h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><pre><code>1. 操作数据库：CRUD
-    1. C(Create):创建
-        * 创建数据库：
-            * create database 数据库名称;
-        * 创建数据库，判断不存在，再创建：
-            * create database if not exists 数据库名称;
-        * 创建数据库，并指定字符集
-            * create database 数据库名称 character set 字符集名;
-
-        * 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk
-            * create database if not exists db4 character set gbk;
-    2. R(Retrieve)：查询
-        * 查询所有数据库的名称:
-            * show databases;
-        * 查询某个数据库的字符集:查询某个数据库的创建语句
-            * show create database 数据库名称;
-    3. U(Update):修改
-        * 修改数据库的字符集
-            * alter database 数据库名称 character set 字符集名称;
-    4. D(Delete):删除
-        * 删除数据库
-            * drop database 数据库名称;
-        * 判断数据库存在，存在再删除
-            * drop database if exists 数据库名称;
-    5. 使用数据库
-        * 查询当前正在使用的数据库名称
-            * select database();
-        * 使用数据库
-            * use 数据库名称;
-
-
-2. 操作表
-    1. C(Create):创建
-        1. 语法：
-            create table 表名(
-                列名1 数据类型1,
-                列名2 数据类型2,
-                ....
-                列名n 数据类型n
-            );
-            * 注意：最后一列，不需要加逗号（,）
-            * 数据库类型：
-                1. int：整数类型
-                    * age int,
-                2. double:小数类型
-                    * score double(5,2)
-                3. date:日期，只包含年月日，yyyy-MM-dd
-                4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss
-                5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss    
-                    * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值
-
-                6. varchar：字符串
-                    * name varchar(20):姓名最大20个字符
-                    * zhangsan 8个字符  张三 2个字符
-
-
-        * 创建表
-            create table student(
-                id int,
-                name varchar(32),
-                age int ,
-                score double(4,1),
-                birthday date,
-                insert_time timestamp
-            );
-        * 复制表：
-            * create table 表名 like 被复制的表名;          
-    2. R(Retrieve)：查询
-        * 查询某个数据库中所有的表名称
-            * show tables;
-        * 查询表结构
-            * desc 表名;
-    3. U(Update):修改
-        1. 修改表名
-            alter table 表名 rename to 新的表名;
-        2. 修改表的字符集
-            alter table 表名 character set 字符集名称;
-        3. 添加一列
-            alter table 表名 add 列名 数据类型;
-        4. 修改列名称 类型
-            alter table 表名 change 列名 新列别 新数据类型;
-            alter table 表名 modify 列名 新数据类型;
-        5. 删除列
-            alter table 表名 drop 列名;
-    4. D(Delete):删除
-        * drop table 表名;
-        * drop table  if exists 表名 ;</code></pre><ul>
-<li>客户端图形化工具：SQLYog</li>
-</ul>
-<h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><pre><code>1. 添加数据：
-    * 语法：
-        * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);
-    * 注意：
-        1. 列名和值要一一对应。
-        2. 如果表名后，不定义列名，则默认给所有列添加值
-            insert into 表名 values(值1,值2,...值n);
-        3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来
-2. 删除数据：
-    * 语法：
-        * delete from 表名 [where 条件]
-    * 注意：
-        1. 如果不加条件，则删除表中所有记录。
-        2. 如果要删除所有记录
-            1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作
-            2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。
-3. 修改数据：
-    * 语法：
-        * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];
-
-    * 注意：
-        1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre><h2 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h2><pre><code>* select * from 表名;
-
-1. 语法：
-    select
-        字段列表
-    from
-        表名列表
-    where
-        条件列表
-    group by
-        分组字段
-    having
-        分组之后的条件
-    order by
-        排序
-    limit
-        分页限定
-
-
-2. 基础查询
-    1. 多个字段的查询
-        select 字段名1，字段名2... from 表名；
-        * 注意：
-            * 如果查询所有字段，则可以使用*来替代字段列表。
-    2. 去除重复：
-        * distinct
-    3. 计算列
-        * 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）
-        * ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null
-            * 表达式1：哪个字段需要判断是否为null
-            * 如果该字段为null后的替换值。
-    4. 起别名：
-        * as：as也可以省略
-
-
-3. 条件查询
-    1. where子句后跟条件
-    2. 运算符
-        * &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;
-        * BETWEEN...AND  
-        * IN( 集合) 
-        * LIKE：模糊查询
-            * 占位符：
-                * _:单个任意字符
-                * %：多个任意字符
-        * IS NULL  
-        * and  或 &amp;&amp;
-        * or  或 || 
-        * not  或 !
-
-            -- 查询年龄大于20岁
-
-            SELECT * FROM student WHERE age &gt; 20;
-
-            SELECT * FROM student WHERE age &gt;= 20;
-
-            -- 查询年龄等于20岁
-            SELECT * FROM student WHERE age = 20;
-
-            -- 查询年龄不等于20岁
-            SELECT * FROM student WHERE age != 20;
-            SELECT * FROM student WHERE age &lt;&gt; 20;
-
-            -- 查询年龄大于等于20 小于等于30
-
-            SELECT * FROM student WHERE age &gt;= 20 &amp;&amp;  age &lt;=30;
-            SELECT * FROM student WHERE age &gt;= 20 AND  age &lt;=30;
-            SELECT * FROM student WHERE age BETWEEN 20 AND 30;
-
-            -- 查询年龄22岁，18岁，25岁的信息
-            SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25
-            SELECT * FROM student WHERE age IN (22,18,25);
-
-            -- 查询英语成绩为null
-            SELECT * FROM student WHERE english = NULL; -- 不对的。null值不能使用 = （!=） 判断
-
-            SELECT * FROM student WHERE english IS NULL;
-
-            -- 查询英语成绩不为null
-            SELECT * FROM student WHERE english  IS NOT NULL;
-
-
-
-            -- 查询姓马的有哪些？ like
-            SELECT * FROM student WHERE NAME LIKE &apos;马%&apos;;
-            -- 查询姓名第二个字是化的人
-
-            SELECT * FROM student WHERE NAME LIKE &quot;_化%&quot;;
-
-            -- 查询姓名是3个字的人
-            SELECT * FROM student WHERE NAME LIKE &apos;___&apos;;
-
-
-            -- 查询姓名中包含德的人
-            SELECT * FROM student WHERE NAME LIKE &apos;%德%&apos;;</code></pre>
+    * 参见《MySQL基础.pdf》</code></pre>
+        
       
 
       
@@ -942,15 +725,17 @@ private static void main(String[] args) throw IOExeception{
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+
     	<div class="footer-left">
     		&copy; 2019 努力的康康
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> Welcome to kangkang's blog
+</div>
+   </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -1027,6 +812,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-java基础</a>
               </li>
              
@@ -1035,15 +824,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">

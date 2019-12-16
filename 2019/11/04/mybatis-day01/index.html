@@ -8,7 +8,24 @@
   <link rel="dns-prefetch" href="https://yoursite.com">
   <title>mybatis_day01 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mybatis的框架概述  mybatis是一个优秀的基于java的持久层框架，他内部封装了jdbc,使开发者只需要关注sql语句本身而不用花费精力去处理加载驱动，创建连接，创建statement等繁杂过程  mybatis通过xml过着注解的方式将要执行的statement配置起来，并且通过java对象和statement中的sql的动态参数进行映射成为最终的执行的语句，最后有mybatis框架">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+    <style>
+    .pace .pace-progress {
+        background: #6d6d6d; /*进度条颜色*/
+        height: 2px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #6d6d6d; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #6d6d6d;    /*上边框颜色*/
+        border-left-color: #6d6d6d;    /*左边框颜色*/
+    }
+  </style> 
+
+ <meta name="description" content="Mybatis的框架概述  mybatis是一个优秀的基于java的持久层框架，他内部封装了jdbc,使开发者只需要关注sql语句本身而不用花费精力去处理加载驱动，创建连接，创建statement等繁杂过程  mybatis通过xml过着注解的方式将要执行的statement配置起来，并且通过java对象和statement中的sql的动态参数进行映射成为最终的执行的语句，最后有mybatis框架">
 <meta name="keywords" content="-Mybatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mybatis_day01">
@@ -16,7 +33,7 @@
 <meta property="og:site_name" content="康康的博客">
 <meta property="og:description" content="Mybatis的框架概述  mybatis是一个优秀的基于java的持久层框架，他内部封装了jdbc,使开发者只需要关注sql语句本身而不用花费精力去处理加载驱动，创建连接，创建statement等繁杂过程  mybatis通过xml过着注解的方式将要执行的statement配置起来，并且通过java对象和statement中的sql的动态参数进行映射成为最终的执行的语句，最后有mybatis框架">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-05T12:11:05.989Z">
+<meta property="og:updated_time" content="2019-12-16T13:54:22.104Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -64,6 +81,8 @@
 	        
 				<li><a href="/categories">分类</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -82,7 +101,7 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 15
+                                           总文章数 16
                                  </nav>
 
 		<nav class="header-nav">
@@ -128,6 +147,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -148,13 +169,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">随笔</a></li>
+					<li style="width: 20%"><a href="/tags">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/tags">标签</a></li>
+					<li style="width: 20%"><a href="/tags">标签</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 20%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 20%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -189,7 +212,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Mybatis的框架概述"><a href="#Mybatis的框架概述" class="headerlink" title="Mybatis的框架概述"></a>Mybatis的框架概述</h3><p>  mybatis是一个优秀的基于java的持久层框架，他内部封装了jdbc,使开发者只需要关注sql语句本身而不用花费精力去处理加载驱动，创建连接，创建statement等繁杂过程<br>  mybatis通过xml过着注解的方式将要执行的statement配置起来，并且通过java对象和statement中的sql的动态参数进行映射成为最终的执行的语句，最后有mybatis框架执行sql并将结果集映射为java对象并且返回。<br>  Jdbc编程回顾<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">    Connection connnection = null;</span><br><span class="line">    PreparedStatement preparedStatement = null</span><br><span class="line">    ResultSet resultset = null</span><br><span class="line">    //加载驱动</span><br><span class="line">    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    //通过驱动来获取管理类数据库的连接</span><br><span class="line">    connection = DriverManager.getConnection(&quot;jdbc:mysql://locatlhost:3306/mybaits?characterEncoding =utf-8&quot;,&quot;root&quot;,&quot;admin&quot;);</span><br><span class="line">    //定义sql语句？表示占位符</span><br><span class="line">    String sql = &quot;select * from user&quot;;</span><br><span class="line">    //预处理对象</span><br><span class="line">    PrepareStatement = connection.prepareStatement(sql);</span><br><span class="line">    //设置参数</span><br><span class="line">    prepareStatement.setString(1,&quot;wangwu&quot;)；</span><br><span class="line">    //向数据库发出sql请求查询，查询出结果集</span><br><span class="line">    resultSet = preparedStatement.executeQery();</span><br><span class="line">    //遍历结果集</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="Mybatis的框架概述"><a href="#Mybatis的框架概述" class="headerlink" title="Mybatis的框架概述"></a>Mybatis的框架概述</h3><p>  mybatis是一个优秀的基于java的持久层框架，他内部封装了jdbc,使开发者只需要关注sql语句本身而不用花费精力去处理加载驱动，创建连接，创建statement等繁杂过程<br>  mybatis通过xml过着注解的方式将要执行的statement配置起来，并且通过java对象和statement中的sql的动态参数进行映射成为最终的执行的语句，最后有mybatis框架执行sql并将结果集映射为java对象并且返回。<br>  Jdbc编程回顾<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">      Connection connnection = null;</span><br><span class="line">      PreparedStatement preparedStatement = null</span><br><span class="line">      ResultSet resultset = null</span><br><span class="line">      //加载驱动</span><br><span class="line">      Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">      //通过驱动来获取管理类数据库的连接</span><br><span class="line">      connection = DriverManager.getConnection(&quot;jdbc:mysql://locatlhost:3306/mybaits?characterEncoding =utf-8&quot;,&quot;root&quot;,&quot;admin&quot;);</span><br><span class="line">      //定义sql语句？表示占位符</span><br><span class="line">      String sql = &quot;select * from user&quot;;</span><br><span class="line">      //预处理对象</span><br><span class="line">      PrepareStatement = connection.prepareStatement(sql);</span><br><span class="line">      //设置参数</span><br><span class="line">      prepareStatement.setString(1,&quot;wangwu&quot;)；</span><br><span class="line">      //向数据库发出sql请求查询，查询出结果集</span><br><span class="line">      resultSet = preparedStatement.executeQery();</span><br><span class="line">      //遍历结果集</span><br><span class="line">  &#125;</span><br><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="mybatis创建"><a href="#mybatis创建" class="headerlink" title="mybatis创建"></a>mybatis创建</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">创建一个meavn工程添加依赖</span><br><span class="line"> &lt;dependencies&gt;    &lt;dependency&gt;     &lt;groupId&gt;org.mybatis&lt;/groupId&gt;     &lt;artifactId&gt;mybatis&lt;/artifactId&gt;     &lt;version&gt;3.4.5&lt;/version&gt;    &lt;/dependency&gt;    &lt;dependency&gt;     &lt;groupId&gt;junit&lt;/groupId&gt;     &lt;artifactId&gt;junit&lt;/artifactId&gt;     &lt;version&gt;4.10&lt;/version&gt;     &lt;scope&gt;test&lt;/scope&gt;    &lt;/dependency&gt;    &lt;dependency&gt;     &lt;groupId&gt;mysql&lt;/groupId&gt;     &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;     &lt;version&gt;5.1.6&lt;/version&gt;     &lt;scope&gt;runtime&lt;/scope&gt;    &lt;/dependency&gt;    &lt;dependency&gt;     &lt;groupId&gt;log4j&lt;/groupId&gt;     &lt;artifactId&gt;log4j&lt;/artifactId&gt;     &lt;version&gt;1.2.12&lt;/version&gt;    &lt;/dependency&gt;   &lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="编写持久层接口的映射文件"><a href="#编写持久层接口的映射文件" class="headerlink" title="编写持久层接口的映射文件"></a>编写持久层接口的映射文件</h4>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">要求在resources文件中创建的xml文件必须和持久层接口在相同的包中，必须以持久层接口名称命名文件，扩展名为.xml</span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE mapper     PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;     &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt; </span><br><span class="line"></span><br><span class="line">&lt;mapper namespace = &quot;com.itheima.com.dao.IUserDao&quot;</span><br><span class="line">&lt;selsect id = &quot;findAll&quot; resultType =&quot;com.itheima.domain.User&quot;&gt;</span><br><span class="line">select * from User</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="编写SqlMapConfig-xml"><a href="#编写SqlMapConfig-xml" class="headerlink" title="编写SqlMapConfig.xml"></a>编写SqlMapConfig.xml</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE mapper     PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;     &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt; </span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;！-- 配置mybatis的环境 --&gt;</span><br><span class="line">&lt;environments default = &quot;mysql&quot;&gt;</span><br><span class="line">&lt;!-- 配置mysql环境--&gt;</span><br><span class="line">&lt;environment id = &quot;mysql&quot;&gt;</span><br><span class="line">  &lt;!-- 配置事务类型--&gt;</span><br><span class="line"> &lt;transactionManager type = &quot;JDBC&quot;&gt; &lt;/transactionManager&gt;</span><br><span class="line"> &lt;!--配置连接数据库的信息：用的是数据源连接池--&gt;</span><br><span class="line"> &lt;dataSource type = &quot;POOLED&quot;&gt;</span><br><span class="line"> &lt;property name = &quot;driver&quot; value = &quot;com.mysql.jdbc.Driver&quot;/&gt;</span><br><span class="line"> &lt;property name =&quot;url&quot; value = &quot;jdbc:mysql://localhost:3306/ee50/&quot;/&gt;</span><br><span class="line"> &lt;property name = &quot;username&quot; value = &quot;root&quot;/&gt;</span><br><span class="line"> &lt;property name = &quot;password value = &quot;admin&quot;/&gt;    &lt;/dataSource&gt;</span><br><span class="line">&lt;/environment&gt;</span><br><span class="line">&lt;/environments&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--告知mybatis映射的位置 --&gt;</span><br><span class="line">&lt;mappers&gt; </span><br><span class="line">&lt;mapper resource = &quot;com/itheima/dao/IUserDao.xml&quot;/&gt;&lt;/mappers&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br></pre></td></tr></table></figure>
@@ -379,15 +402,17 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+
     	<div class="footer-left">
     		&copy; 2019 努力的康康
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> Welcome to kangkang's blog
+</div>
+   </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -464,6 +489,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-java基础</a>
               </li>
              
@@ -472,15 +501,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
