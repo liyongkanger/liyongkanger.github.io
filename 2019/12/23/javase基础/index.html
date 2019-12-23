@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursite.com">
-  <title>Archives: 2019/11 | 康康的博客</title>
+  <title>javase基础 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -25,11 +25,15 @@
     }
   </style> 
 
- <meta property="og:type" content="website">
-<meta property="og:title" content="康康的博客">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;11&#x2F;page&#x2F;2&#x2F;index.html">
+ <meta name="description" content="Java基础知识点1.JDK 和 JRE有什么区别？ JDK： Java Development Kit 的简称， Java 开发工具包， 提供Java的开发环境 和运行环境。 JRE： Java Runtime Environment的简称， Java 的运行环境，为Java提供了运行所需要的环境。  具体来说JDK其实包含了JRE， 同时还包含了编译Java源码的编译器javac,还包含很多J">
+<meta name="keywords" content="-Java基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javase基础">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;23&#x2F;javase%E5%9F%BA%E7%A1%80&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
+<meta property="og:description" content="Java基础知识点1.JDK 和 JRE有什么区别？ JDK： Java Development Kit 的简称， Java 开发工具包， 提供Java的开发环境 和运行环境。 JRE： Java Runtime Environment的简称， Java 的运行环境，为Java提供了运行所需要的环境。  具体来说JDK其实包含了JRE， 同时还包含了编译Java源码的编译器javac,还包含很多J">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-23T13:29:24.218Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -183,177 +187,278 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-javase基础" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javase基础
+    </h1>
+  
+
+        
+        <a href="/2019/12/23/javase%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2019-12-23T13:28:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java基础知识点"><a href="#Java基础知识点" class="headerlink" title="Java基础知识点"></a>Java基础知识点</h1><h4 id="1-JDK-和-JRE有什么区别？"><a href="#1-JDK-和-JRE有什么区别？" class="headerlink" title="1.JDK 和 JRE有什么区别？"></a>1.JDK 和 JRE有什么区别？</h4><ul>
+<li>JDK： Java Development Kit 的简称， Java 开发工具包， 提供Java的开发环境 和运行环境。</li>
+<li>JRE： Java Runtime Environment的简称， Java 的运行环境，为Java提供了运行所需要的环境。</li>
+</ul>
+<p>具体来说JDK其实包含了JRE， 同时还包含了编译Java源码的编译器javac,还包含很多Java程序调试和分析的工具，简单来讲你需要运行Java程序，只需要安装jre就可以了，如果你需要编写Java程序，需要安装jdk。</p>
+<h4 id="2-和equals的区别是什么？"><a href="#2-和equals的区别是什么？" class="headerlink" title="2. == 和equals的区别是什么？"></a>2. == 和equals的区别是什么？</h4><h5 id="解读"><a href="#解读" class="headerlink" title="==解读"></a>==解读</h5><p>对于基本类型和引用类型==的作用是不相同的</p>
+<ul>
+<li>基本类型：比较的是值是否形同；</li>
+<li>引用类型比较的是引用是否相同；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String x = &quot;string&quot;;</span><br><span class="line">String y = &quot;string&quot;;</span><br><span class="line">String z = new String(&quot;string&quot;);</span><br><span class="line">System.out.println(&quot;x == y&quot;) ;// true;</span><br><span class="line">System.out.println(&quot;x == z&quot;);// false;</span><br><span class="line">System.out.println(&quot;x.equals(y&quot;); // true;</span><br><span class="line">System.out.println(&quot;x.equals(z)&quot;); // true;</span><br></pre></td></tr></table></figure>
+代码解读：因为x和y只向的是同一个引用，所以== 也是true,而new String()方法则重写开辟空间内存，所以==结果为false，而equals比较的一直是值，所以都为true。<h3 id="equals-解读"><a href="#equals-解读" class="headerlink" title="equals 解读"></a>equals 解读</h3>equals本质上就是== ，只不过String和Integer等重写了equals方法，把它变成了值得比较。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Cat&#123;</span><br><span class="line">    public Cat(String name)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    private String name;</span><br><span class="line">    pbulic String getName()&#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setName(String name)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Cat c1 = new Cat(&quot;王磊&quot;);</span><br><span class="line">Cat c2 = new Cat(&quot;王磊&quot;);</span><br><span class="line">System.out.println(&quot;c1.equals(c2)&quot;); // false</span><br></pre></td></tr></table></figure>
+为什么会产生false，前面不是说比较的是值吗？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals(Object obj)&#123;</span><br><span class="line">    return (this == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+原来equals的本质就是==<br>为什么两个String对象，那么返回值为什么是true呢？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1 = new String(&quot;helloworld&quot;);</span><br><span class="line">String s2 = new String (&quot;helloworld&quot;);</span><br><span class="line">System.out.println(&quot;s1.equals(s2)&quot;); //true</span><br></pre></td></tr></table></figure>
+查看String equals方法查看答案<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals(Object anObject)&#123;</span><br><span class="line">    if (this == anObject)&#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    if (anObject instanceof String)&#123;</span><br><span class="line">        String anotherString = (String)anObject;</span><br><span class="line">        int n = value.length;</span><br><span class="line">        if (n == anotherString.value.length)&#123;</span><br><span class="line">            char v1[] = value;</span><br><span class="line">            char v2[] = anotherString.value;</span><br><span class="line">            int i = 0;</span><br><span class="line">             while(n-- != 0)&#123;</span><br><span class="line">                 if (v1[i] !=v2[i] )</span><br><span class="line">                   return false;</span><br><span class="line">                   i++;</span><br><span class="line">             &#125;</span><br><span class="line">             return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+String 重写了Object的equals方法，把引用比较改成了值比价<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4>== 对于基本类型来说是值比价，对于引用类型来说比较的是引用，而equals默认情况下是引用比价，只是很多类重写了equals方法，比如String， Integer 把他变成了值比较，所以一般情况下equals比价的是值是否相等。<h3 id="3-两个对象的hashCode-相同，则equals-也一定为true-对嘛？"><a href="#3-两个对象的hashCode-相同，则equals-也一定为true-对嘛？" class="headerlink" title="3.两个对象的hashCode()相同，则equals()也一定为true,对嘛？"></a>3.两个对象的hashCode()相同，则equals()也一定为true,对嘛？</h3></li>
+<li>不对，两个对象的hashCode()相同，equals()也不一定相等<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String str1 = &quot;通话&quot;;</span><br><span class="line">String str2 = &quot;重地&quot;;</span><br><span class="line">System.out.println(&quot;String.format(&quot;str1: %d | str2: %d&quot;, str1.hashCode(), str2.hashCode()));</span><br><span class="line">System.out.println(&quot;str1.equals(str2)&quot;);</span><br><span class="line">//str1 : 1179395  str2: 1179395</span><br><span class="line">//false</span><br></pre></td></tr></table></figure>
+很显然hashCode相同但是equals为false，因为在散列表中，hashCode相等即两个键值对的哈希值相等，然而哈希值相等不能得出键值对相等。<h3 id="4-final-在Java中有什么作用？"><a href="#4-final-在Java中有什么作用？" class="headerlink" title="4. final 在Java中有什么作用？"></a>4. final 在Java中有什么作用？</h3></li>
+<li>final 修饰的类叫做最终类，该类不能被继承</li>
+<li>final修饰的方法不能被重写。</li>
+<li>final修饰的变量叫常量，常亮必须初始化，初始化后不能被修改<h3 id="5-Java中Math-round-1-5-等于多少？"><a href="#5-Java中Math-round-1-5-等于多少？" class="headerlink" title="5.Java中Math.round(-1.5)等于多少？"></a>5.Java中Math.round(-1.5)等于多少？</h3>等于 -1， 因为在数轴上取值时，中间值(0.5)向右取整，所以正0.5是向上取整，-0.5直接舍弃。<h3 id="String属于基础的数据类型嘛？"><a href="#String属于基础的数据类型嘛？" class="headerlink" title="String属于基础的数据类型嘛？"></a>String属于基础的数据类型嘛？</h3>String不属于基础类型，基础类型只有8种，byet, boolean, char ,short, int , float, double, long 而Stirng 属于对象。<h3 id="7-Java中操作字符串有那些类，他们之间的区别是什么？"><a href="#7-Java中操作字符串有那些类，他们之间的区别是什么？" class="headerlink" title="7.Java中操作字符串有那些类，他们之间的区别是什么？"></a>7.Java中操作字符串有那些类，他们之间的区别是什么？</h3>操作字符串的类有：String, StringBuffer, StringBuilder.</li>
+</ul>
+<p>String 和 StringBuffer, StringBuilder 的区别在于String声明的都是不可变的对象，每次操作都会生成新的String对象， 然后将指针指向新的String对象，而StringBuffer，StringBuilder可以在原有对象的基础上进行操作，所以经常改变字符串内容的情况下最好不要使用String。</p>
+<p>StringBuffer和StringBuilder的最大区别在于，StringBuffer是线程安全的，而StringBuilder是非线程安全的，但StringBuilder的性能要高于StringBuffer，所以在单线程环境下推荐使用StringBuilder，而多线程的环境下使用StringBuffer。</p>
+<a id="more"></a>
+<h3 id="8-String-str-“i”-和String-str-new-String-“i”-一样吗？"><a href="#8-String-str-“i”-和String-str-new-String-“i”-一样吗？" class="headerlink" title="8.String str = “i” 和String str = new String(“i”)一样吗？"></a>8.String str = “i” 和String str = new String(“i”)一样吗？</h3><p>不一样，因为内存的分配方式不一样。String str = “i”的方式，Java虚拟机会将其分配到常量池中，而String str = new String(“i”)则会被分配到堆内存中</p>
+<h3 id="9-如何将字符串反转？"><a href="#9-如何将字符串反转？" class="headerlink" title="9. 如何将字符串反转？"></a>9. 如何将字符串反转？</h3><p>使用 StringBuilder 或者 StringBuffer的reverse()方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer stringBuffer = new StringBuffer();</span><br><span class="line">stringBuffer.append(&quot;abcdefg&quot;);</span><br><span class="line">System.out.prinlnt(&quot;stringBuffer.reverse()&quot;);//gfedcba</span><br></pre></td></tr></table></figure>
+<h3 id="10-String-类的常用方法都有哪些"><a href="#10-String-类的常用方法都有哪些" class="headerlink" title="10. String 类的常用方法都有哪些?"></a>10. String 类的常用方法都有哪些?</h3><ul>
+<li>indexOf(): 返回指定字符的索引</li>
+<li>charAt(): 返回指定索引处的字符</li>
+<li>replace():字符替换</li>
+<li>trim(): 去除字符串两端空白</li>
+<li>split(): 去分割字符串，返回一个分割后的字符串数组</li>
+<li>getBytes(): 返回字符串的byte类数组</li>
+<li>length():返回字符串长度</li>
+<li>toLowerCase():将字符串转成些小写字母</li>
+<li>toUpperCase():将字符串转化成大写字母</li>
+<li>substring()：截取字符串。</li>
+<li>equals():比较字符串<h3 id="11-抽象类必须要有抽象方法吗？"><a href="#11-抽象类必须要有抽象方法吗？" class="headerlink" title="11.抽象类必须要有抽象方法吗？"></a>11.抽象类必须要有抽象方法吗？</h3>不需要，抽象类不一定非要有抽象方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">abstract class Cat&#123;</span><br><span class="line">    public static void sayHi()&#123;</span><br><span class="line">        System.out.println(&quot;hi~&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">可以正常运行</span><br></pre></td></tr></table></figure>
+<h3 id="12-普通类和抽象类有哪些区别？"><a href="#12-普通类和抽象类有哪些区别？" class="headerlink" title="12.普通类和抽象类有哪些区别？"></a>12.普通类和抽象类有哪些区别？</h3></li>
+<li>普通类不能包含抽象方法，抽象类可以包含抽象方法。</li>
+<li>抽象类不能直接实例化，普通类可以直接实例化<h3 id="13-抽象类能使用final修饰嘛？"><a href="#13-抽象类能使用final修饰嘛？" class="headerlink" title="13.抽象类能使用final修饰嘛？"></a>13.抽象类能使用final修饰嘛？</h3>不能，定义抽象类就是让其他类继承的，如果定义为final该类就不能被继承，这样会彼此产生矛盾，所以final不能修饰抽象类<h3 id="14-接口和抽象类有什么区别？"><a href="#14-接口和抽象类有什么区别？" class="headerlink" title="14.接口和抽象类有什么区别？"></a>14.接口和抽象类有什么区别？</h3></li>
+<li>实现： 抽象类的子类使用extends来继承； 接口必须使用implements来实现接口</li>
+<li>构造函数：抽象类可以有抽象函数，接口不能有</li>
+<li>main方法:抽象类中可以有main方法，并且我们能让他运行，但是接口不能含有main方法</li>
+<li>实现数量：类可以实现很多个接口；但是只能继承一个抽象类</li>
+<li>访问修饰符：接口中的方法默认使用public修饰，抽象类中的方法可以使任意访问修饰符<h3 id="15-Java中io流分为几种？"><a href="#15-Java中io流分为几种？" class="headerlink" title="15.Java中io流分为几种？"></a>15.Java中io流分为几种？</h3>按功能分：输入流(input)输出流(output).<br>按类型分：字节流和字符流<br>字节流和字符流的区别是：字节流按8位传输以字节为单位输出数据，字符流按16位传输以字符位单位输入数据。<h3 id="16-BIO-NIO-AIO有什么去区别？"><a href="#16-BIO-NIO-AIO有什么去区别？" class="headerlink" title="16.BIO, NIO, AIO有什么去区别？"></a>16.BIO, NIO, AIO有什么去区别？</h3></li>
+<li>BIO: block io 同步阻塞式io，就是我们平常使用的传统io,他的特点是模式简单方便实用，并发处理能力低</li>
+<li>NIO： new io 同步非阻塞 io, 是传统io的升级，客服端和服务器端都是通过Channel通讯，实现了多路复用</li>
+<li>AIO: asynchronous io 是nio的升级，实现了异步非阻塞io,异步io的操作基于事件和回调机制。<h3 id="17-Files的常用方法有哪些"><a href="#17-Files的常用方法有哪些" class="headerlink" title="17.Files的常用方法有哪些"></a>17.Files的常用方法有哪些</h3></li>
+<li>Files.exists():检测文件路径是否存在</li>
+<li>Files.createFile():创建文件</li>
+<li>Files.createDirectory():创建文件夹</li>
+<li>Files.delete：删除一个文件或者目录</li>
+<li>Files.copy()：复制一个文件</li>
+<li>File.move();移动文件</li>
+<li>File.size():查看文件数量</li>
+<li>File.write()写入文件<h3 id="18-Java容器"><a href="#18-Java容器" class="headerlink" title="18.Java容器"></a>18.Java容器</h3>Collection :List, Queue, Set<br>List: Vector, ArrayList, LIstedList<br>Queue： ListQueue, PriorityQueue<br>Set: HashSet, TreeSet<br>Vector:Stack<br>Map:HashMap, TreeMap<br>HashSet:LinkHashSet<h3 id="19-Collection-和-Collections有什么区别"><a href="#19-Collection-和-Collections有什么区别" class="headerlink" title="19.Collection 和 Collections有什么区别"></a>19.Collection 和 Collections有什么区别</h3></li>
+<li>java.util.Collection是一个集合接口(集合类的一个顶级接口)。它提供了对集合对象进行基本的操作的通用接口方法。collection接口在Java类库中有很多具体的体现。Collection接口的意义是为了各种具体的集合提供了最大化的统一操作方式，其直接继承接口有List和Set.</li>
+<li>Collections则是集合类的一个工具类/帮助类,期中提供了一系列的静态方法，用于对集合元素进行排序，搜索，以及线程安全等的各种操作。<h3 id="20-List-Set-Map-之间的区别是什么？"><a href="#20-List-Set-Map-之间的区别是什么？" class="headerlink" title="20. List, Set , Map 之间的区别是什么？"></a>20. List, Set , Map 之间的区别是什么？</h3></li>
+</ul>
+<h3 id="21-HashMap-和-Hashtable有什么区别？"><a href="#21-HashMap-和-Hashtable有什么区别？" class="headerlink" title="21.HashMap 和 Hashtable有什么区别？"></a>21.HashMap 和 Hashtable有什么区别？</h3><ul>
+<li>hashMap去掉了HashTable 的contains方法，但是加上了containsValue()和containsKey()方法</li>
+<li>hashTabble是同步的，而HashMap是非同步的，效率上要HashMap要更高</li>
+<li>hashmap允许空键值对，而hashTable不允许<h3 id="22-如何决定使用hashMap还是TreeMap"><a href="#22-如何决定使用hashMap还是TreeMap" class="headerlink" title="22. 如何决定使用hashMap还是TreeMap"></a>22. 如何决定使用hashMap还是TreeMap</h3>对于在Map中插入，删除和定位元素这类操作，HashMap是最好的选择，然而加入你需要对一个有序的key集合进行遍历，TreeMap是更好地选择。基于你的collection的大小，也许向HashMap中添加元素会更快，将map换位TreeMap进行有序的key的遍历。<h3 id="说一下hashMap的实现原理？"><a href="#说一下hashMap的实现原理？" class="headerlink" title="说一下hashMap的实现原理？"></a>说一下hashMap的实现原理？</h3>hashMap概述：HashMap 是基于哈希表的Map接口的非同步实现。此实现提供所有可选择的映射操作，并允许使用null值和null键。此类不保证映射得顺序，特别他不保证该顺序永久不变。<br>HashMap的数据结构： 在Java变成语言当中，最基本的接口就是两种，一个是数组，另一个是模拟指针(引用)，所有的数据结构都可以用这连个基本接口来构造，Hashmap也不例外，HashMap实际上是一个链表的散列的数据结构口，即数组和链表的结合体。<br>当我们往HashMap中put元素时，首先根据key的hashcode重新计算hash值，根据hash值得到的这个元素在数组中的位置（下标）如果该数组在该位置上已经存放了其他元素，那么在这个位置上的元素将以链表的形式存放，新加入的放在链头，最先加入的放在链尾，如果数组中该位置没有元素，那么直接将该元素放到数组的该位置上。<br>需要注意jdk 1.8 中对HashMap的实现坐了优化，当链表中的结点数据超过8个以后，该链表会转为红黑树来提高查询效率，从原来0(n)到O(logn)<h3 id="24-说一下HashSet的实现原理"><a href="#24-说一下HashSet的实现原理" class="headerlink" title="24.说一下HashSet的实现原理"></a>24.说一下HashSet的实现原理</h3></li>
+<li>HashSet底层由HashMap实现</li>
+<li>HashSet的值存放于hashMap的key上</li>
+<li>HashMap的Value统一为Present<h3 id="25-ArryList-和LinkList的区别是什么？"><a href="#25-ArryList-和LinkList的区别是什么？" class="headerlink" title="25.ArryList 和LinkList的区别是什么？"></a>25.ArryList 和LinkList的区别是什么？</h3>最明显的区别是ArrayList底层数据结构是数组，支持随机访问，而LinkList的底层数据结构是双向循环链表，不支持随机访问。使用下标访问一个元素，ArrayList的时间复杂度是O(1)，而LinkList是O(n);<h3 id="26-如何实现数组和List之间的转换？"><a href="#26-如何实现数组和List之间的转换？" class="headerlink" title="26 如何实现数组和List之间的转换？"></a>26 如何实现数组和List之间的转换？</h3></li>
+<li>List转换为数组：调用ArrayList的toArray方法</li>
+<li>数组转化成List：调用Arrays的asList方法<h3 id="ArrayList-和-Vector-的区别是什么？"><a href="#ArrayList-和-Vector-的区别是什么？" class="headerlink" title="ArrayList 和 Vector 的区别是什么？"></a>ArrayList 和 Vector 的区别是什么？</h3></li>
+<li>Vector是同步的，而Arraylist不是，然而你寻求在迭代的时候对列表进行改变，你应该使用CopyOnWriteArrayList</li>
+<li>ArrayList比Vector快，因为有同步不会过载</li>
+<li>ArrayList更加通用，因为我们可以使用Collections工具类轻易的后去同步列表和只读列表<h3 id="28-Array和ArrayList有什么区别"><a href="#28-Array和ArrayList有什么区别" class="headerlink" title="28.Array和ArrayList有什么区别"></a>28.Array和ArrayList有什么区别</h3></li>
+<li>Array可以容纳基本类型和对象，ArrayList只能容纳对象</li>
+<li>Array是指定大小的，而ArrayList大小是固定的</li>
+<li>Array没有提供ArrayList那么多功能比如 addAll，removeAll和iterator等<h3 id="29-在Queue中poll-和remove-有什么区别？"><a href="#29-在Queue中poll-和remove-有什么区别？" class="headerlink" title="29.在Queue中poll()和remove()有什么区别？"></a>29.在Queue中poll()和remove()有什么区别？</h3>poll()和remove()都是从队列中取出一个元素，但是poll()在获取元素失败时会返回空，但是remove()失败时候会抛出异常<h3 id="30-哪些集合类是线程安全"><a href="#30-哪些集合类是线程安全" class="headerlink" title="30.哪些集合类是线程安全"></a>30.哪些集合类是线程安全</h3></li>
+<li>vector</li>
+<li>stack</li>
+<li>hashtavle</li>
+<li>enumration<h3 id="31-迭代器Iterator"><a href="#31-迭代器Iterator" class="headerlink" title="31.迭代器Iterator"></a>31.迭代器Iterator</h3>迭代器是一种设计模式，他是一个对象，他可以遍历并选择序列中的对象，而开发人员不需要了解该序列的底层结构，迭代器通常被称为轻量级对象，因为创建他代价小<h3 id="32-Iterator怎么使用？有设么特点"><a href="#32-Iterator怎么使用？有设么特点" class="headerlink" title="32.Iterator怎么使用？有设么特点"></a>32.Iterator怎么使用？有设么特点</h3>Java中的Iterator功能比价简单，并且只能单向移动：</li>
+</ul>
+<p>1.使用方法iterator()要求容器返回一个iterator.第一次调用Iterator的next()方法时，它返回序列的第一个元素<br>2.使用next()获得序列中的下一个元素<br>3.使用hasNext()检查序列中是否还有元素<br>4.使用remove()将迭代器新返回的元素删除<br>Iterator是Java迭代器最简单的实现，为List设计的ListIterator具有更多的功能，它可以从两个方向遍历List，也可以从List中插入和删除元素。</p>
+<h3 id="33-Iterator和ListIterator有什么区别"><a href="#33-Iterator和ListIterator有什么区别" class="headerlink" title="33.Iterator和ListIterator有什么区别"></a>33.Iterator和ListIterator有什么区别</h3><ul>
+<li>Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历List。</li>
+<li>Iterator对集合只能是前向遍历，ListIterator既可以前向也可以后向。</li>
+<li>ListIterator实现了Iterator接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个和后一个元素的索引，等等</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/" class="archive-article-date">
-  	<time datetime="2019-11-03T15:27:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/Socket%E5%AE%9E%E4%BE%8B/">Socket实例</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Socket</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Java基础</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2019-11-03T12:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/mysql%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">mysql基础操作</a>
-    </h1>
-  
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2019/12/23/javase%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
+<div align="center" class="post-count">
+字数：3.3k字 | 预计阅读时长：12分钟
+</div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/spring-day01-ioc/" class="archive-article-date">
-  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/17/web-sevice/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">web_sevice</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/spring-day01-ioc/">spring_day01_ioc</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java基础知识点"><span class="toc-number">1.</span> <span class="toc-text">Java基础知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-JDK-和-JRE有什么区别？"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1.JDK 和 JRE有什么区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-和equals的区别是什么？"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2. == 和equals的区别是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#解读"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">==解读</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#equals-解读"><span class="toc-number">1.0.1.</span> <span class="toc-text">equals 解读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#总结："><span class="toc-number">1.0.1.1.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-两个对象的hashCode-相同，则equals-也一定为true-对嘛？"><span class="toc-number">1.0.2.</span> <span class="toc-text">3.两个对象的hashCode()相同，则equals()也一定为true,对嘛？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-final-在Java中有什么作用？"><span class="toc-number">1.0.3.</span> <span class="toc-text">4. final 在Java中有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Java中Math-round-1-5-等于多少？"><span class="toc-number">1.0.4.</span> <span class="toc-text">5.Java中Math.round(-1.5)等于多少？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String属于基础的数据类型嘛？"><span class="toc-number">1.0.5.</span> <span class="toc-text">String属于基础的数据类型嘛？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Java中操作字符串有那些类，他们之间的区别是什么？"><span class="toc-number">1.0.6.</span> <span class="toc-text">7.Java中操作字符串有那些类，他们之间的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-String-str-“i”-和String-str-new-String-“i”-一样吗？"><span class="toc-number">1.0.7.</span> <span class="toc-text">8.String str = “i” 和String str = new String(“i”)一样吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-如何将字符串反转？"><span class="toc-number">1.0.8.</span> <span class="toc-text">9. 如何将字符串反转？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-String-类的常用方法都有哪些"><span class="toc-number">1.0.9.</span> <span class="toc-text">10. String 类的常用方法都有哪些?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-抽象类必须要有抽象方法吗？"><span class="toc-number">1.0.10.</span> <span class="toc-text">11.抽象类必须要有抽象方法吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-普通类和抽象类有哪些区别？"><span class="toc-number">1.0.11.</span> <span class="toc-text">12.普通类和抽象类有哪些区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-抽象类能使用final修饰嘛？"><span class="toc-number">1.0.12.</span> <span class="toc-text">13.抽象类能使用final修饰嘛？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-接口和抽象类有什么区别？"><span class="toc-number">1.0.13.</span> <span class="toc-text">14.接口和抽象类有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-Java中io流分为几种？"><span class="toc-number">1.0.14.</span> <span class="toc-text">15.Java中io流分为几种？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-BIO-NIO-AIO有什么去区别？"><span class="toc-number">1.0.15.</span> <span class="toc-text">16.BIO, NIO, AIO有什么去区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-Files的常用方法有哪些"><span class="toc-number">1.0.16.</span> <span class="toc-text">17.Files的常用方法有哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-Java容器"><span class="toc-number">1.0.17.</span> <span class="toc-text">18.Java容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-Collection-和-Collections有什么区别"><span class="toc-number">1.0.18.</span> <span class="toc-text">19.Collection 和 Collections有什么区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-List-Set-Map-之间的区别是什么？"><span class="toc-number">1.0.19.</span> <span class="toc-text">20. List, Set , Map 之间的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-HashMap-和-Hashtable有什么区别？"><span class="toc-number">1.0.20.</span> <span class="toc-text">21.HashMap 和 Hashtable有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-如何决定使用hashMap还是TreeMap"><span class="toc-number">1.0.21.</span> <span class="toc-text">22. 如何决定使用hashMap还是TreeMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说一下hashMap的实现原理？"><span class="toc-number">1.0.22.</span> <span class="toc-text">说一下hashMap的实现原理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-说一下HashSet的实现原理"><span class="toc-number">1.0.23.</span> <span class="toc-text">24.说一下HashSet的实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-ArryList-和LinkList的区别是什么？"><span class="toc-number">1.0.24.</span> <span class="toc-text">25.ArryList 和LinkList的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26-如何实现数组和List之间的转换？"><span class="toc-number">1.0.25.</span> <span class="toc-text">26 如何实现数组和List之间的转换？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList-和-Vector-的区别是什么？"><span class="toc-number">1.0.26.</span> <span class="toc-text">ArrayList 和 Vector 的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28-Array和ArrayList有什么区别"><span class="toc-number">1.0.27.</span> <span class="toc-text">28.Array和ArrayList有什么区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#29-在Queue中poll-和remove-有什么区别？"><span class="toc-number">1.0.28.</span> <span class="toc-text">29.在Queue中poll()和remove()有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#30-哪些集合类是线程安全"><span class="toc-number">1.0.29.</span> <span class="toc-text">30.哪些集合类是线程安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#31-迭代器Iterator"><span class="toc-number">1.0.30.</span> <span class="toc-text">31.迭代器Iterator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-Iterator怎么使用？有设么特点"><span class="toc-number">1.0.31.</span> <span class="toc-text">32.Iterator怎么使用？有设么特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-Iterator和ListIterator有什么区别"><span class="toc-number">1.0.32.</span> <span class="toc-text">33.Iterator和ListIterator有什么区别</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/spring-day02-annotation/" class="archive-article-date">
-  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/spring-day02-annotation/">spring_day01_ioc</a>
-    </h1>
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://yoursite.com/2019/12/23/javase%E5%9F%BA%E7%A1%80/", 
+    sourceId: "javase基础",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/11/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2019/11/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
   
 
 
@@ -379,8 +484,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

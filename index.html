@@ -95,8 +95,8 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 16
-                                           总字数 <span class="post-count">12.5k</span>
+                                           总文章数 20
+                                           总字数 <span class="post-count">16.3k</span>
                                  </nav>
 
 		<nav class="header-nav">
@@ -184,6 +184,313 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-javase基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/23/javase%E5%9F%BA%E7%A1%80/">javase基础</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/23/javase%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2019-12-23T13:28:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java基础知识点"><a href="#Java基础知识点" class="headerlink" title="Java基础知识点"></a>Java基础知识点</h1><h4 id="1-JDK-和-JRE有什么区别？"><a href="#1-JDK-和-JRE有什么区别？" class="headerlink" title="1.JDK 和 JRE有什么区别？"></a>1.JDK 和 JRE有什么区别？</h4><ul>
+<li>JDK： Java Development Kit 的简称， Java 开发工具包， 提供Java的开发环境 和运行环境。</li>
+<li>JRE： Java Runtime Environment的简称， Java 的运行环境，为Java提供了运行所需要的环境。</li>
+</ul>
+<p>具体来说JDK其实包含了JRE， 同时还包含了编译Java源码的编译器javac,还包含很多Java程序调试和分析的工具，简单来讲你需要运行Java程序，只需要安装jre就可以了，如果你需要编写Java程序，需要安装jdk。</p>
+<h4 id="2-和equals的区别是什么？"><a href="#2-和equals的区别是什么？" class="headerlink" title="2. == 和equals的区别是什么？"></a>2. == 和equals的区别是什么？</h4><h5 id="解读"><a href="#解读" class="headerlink" title="==解读"></a>==解读</h5><p>对于基本类型和引用类型==的作用是不相同的</p>
+<ul>
+<li>基本类型：比较的是值是否形同；</li>
+<li>引用类型比较的是引用是否相同；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String x = &quot;string&quot;;</span><br><span class="line">String y = &quot;string&quot;;</span><br><span class="line">String z = new String(&quot;string&quot;);</span><br><span class="line">System.out.println(&quot;x == y&quot;) ;// true;</span><br><span class="line">System.out.println(&quot;x == z&quot;);// false;</span><br><span class="line">System.out.println(&quot;x.equals(y&quot;); // true;</span><br><span class="line">System.out.println(&quot;x.equals(z)&quot;); // true;</span><br></pre></td></tr></table></figure>
+代码解读：因为x和y只向的是同一个引用，所以== 也是true,而new String()方法则重写开辟空间内存，所以==结果为false，而equals比较的一直是值，所以都为true。<h3 id="equals-解读"><a href="#equals-解读" class="headerlink" title="equals 解读"></a>equals 解读</h3>equals本质上就是== ，只不过String和Integer等重写了equals方法，把它变成了值得比较。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Cat&#123;</span><br><span class="line">    public Cat(String name)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    private String name;</span><br><span class="line">    pbulic String getName()&#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setName(String name)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Cat c1 = new Cat(&quot;王磊&quot;);</span><br><span class="line">Cat c2 = new Cat(&quot;王磊&quot;);</span><br><span class="line">System.out.println(&quot;c1.equals(c2)&quot;); // false</span><br></pre></td></tr></table></figure>
+为什么会产生false，前面不是说比较的是值吗？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals(Object obj)&#123;</span><br><span class="line">    return (this == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+原来equals的本质就是==<br>为什么两个String对象，那么返回值为什么是true呢？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1 = new String(&quot;helloworld&quot;);</span><br><span class="line">String s2 = new String (&quot;helloworld&quot;);</span><br><span class="line">System.out.println(&quot;s1.equals(s2)&quot;); //true</span><br></pre></td></tr></table></figure>
+查看String equals方法查看答案<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public boolean equals(Object anObject)&#123;</span><br><span class="line">    if (this == anObject)&#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    if (anObject instanceof String)&#123;</span><br><span class="line">        String anotherString = (String)anObject;</span><br><span class="line">        int n = value.length;</span><br><span class="line">        if (n == anotherString.value.length)&#123;</span><br><span class="line">            char v1[] = value;</span><br><span class="line">            char v2[] = anotherString.value;</span><br><span class="line">            int i = 0;</span><br><span class="line">             while(n-- != 0)&#123;</span><br><span class="line">                 if (v1[i] !=v2[i] )</span><br><span class="line">                   return false;</span><br><span class="line">                   i++;</span><br><span class="line">             &#125;</span><br><span class="line">             return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+String 重写了Object的equals方法，把引用比较改成了值比价<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4>== 对于基本类型来说是值比价，对于引用类型来说比较的是引用，而equals默认情况下是引用比价，只是很多类重写了equals方法，比如String， Integer 把他变成了值比较，所以一般情况下equals比价的是值是否相等。<h3 id="3-两个对象的hashCode-相同，则equals-也一定为true-对嘛？"><a href="#3-两个对象的hashCode-相同，则equals-也一定为true-对嘛？" class="headerlink" title="3.两个对象的hashCode()相同，则equals()也一定为true,对嘛？"></a>3.两个对象的hashCode()相同，则equals()也一定为true,对嘛？</h3></li>
+<li>不对，两个对象的hashCode()相同，equals()也不一定相等<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String str1 = &quot;通话&quot;;</span><br><span class="line">String str2 = &quot;重地&quot;;</span><br><span class="line">System.out.println(&quot;String.format(&quot;str1: %d | str2: %d&quot;, str1.hashCode(), str2.hashCode()));</span><br><span class="line">System.out.println(&quot;str1.equals(str2)&quot;);</span><br><span class="line">//str1 : 1179395  str2: 1179395</span><br><span class="line">//false</span><br></pre></td></tr></table></figure>
+很显然hashCode相同但是equals为false，因为在散列表中，hashCode相等即两个键值对的哈希值相等，然而哈希值相等不能得出键值对相等。<h3 id="4-final-在Java中有什么作用？"><a href="#4-final-在Java中有什么作用？" class="headerlink" title="4. final 在Java中有什么作用？"></a>4. final 在Java中有什么作用？</h3></li>
+<li>final 修饰的类叫做最终类，该类不能被继承</li>
+<li>final修饰的方法不能被重写。</li>
+<li>final修饰的变量叫常量，常亮必须初始化，初始化后不能被修改<h3 id="5-Java中Math-round-1-5-等于多少？"><a href="#5-Java中Math-round-1-5-等于多少？" class="headerlink" title="5.Java中Math.round(-1.5)等于多少？"></a>5.Java中Math.round(-1.5)等于多少？</h3>等于 -1， 因为在数轴上取值时，中间值(0.5)向右取整，所以正0.5是向上取整，-0.5直接舍弃。<h3 id="String属于基础的数据类型嘛？"><a href="#String属于基础的数据类型嘛？" class="headerlink" title="String属于基础的数据类型嘛？"></a>String属于基础的数据类型嘛？</h3>String不属于基础类型，基础类型只有8种，byet, boolean, char ,short, int , float, double, long 而Stirng 属于对象。<h3 id="7-Java中操作字符串有那些类，他们之间的区别是什么？"><a href="#7-Java中操作字符串有那些类，他们之间的区别是什么？" class="headerlink" title="7.Java中操作字符串有那些类，他们之间的区别是什么？"></a>7.Java中操作字符串有那些类，他们之间的区别是什么？</h3>操作字符串的类有：String, StringBuffer, StringBuilder.</li>
+</ul>
+<p>String 和 StringBuffer, StringBuilder 的区别在于String声明的都是不可变的对象，每次操作都会生成新的String对象， 然后将指针指向新的String对象，而StringBuffer，StringBuilder可以在原有对象的基础上进行操作，所以经常改变字符串内容的情况下最好不要使用String。</p>
+<p>StringBuffer和StringBuilder的最大区别在于，StringBuffer是线程安全的，而StringBuilder是非线程安全的，但StringBuilder的性能要高于StringBuffer，所以在单线程环境下推荐使用StringBuilder，而多线程的环境下使用StringBuffer。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/23/javase%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：3.3k字 | 预计阅读时长：12分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-web-sevice" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/17/web-sevice/">web_sevice</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/17/web-sevice/" class="archive-article-date">
+  	<time datetime="2019-12-17T09:40:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="web-sevice技术"><a href="#web-sevice技术" class="headerlink" title="web sevice技术"></a>web sevice技术</h4><h3 id="webservice技术概括"><a href="#webservice技术概括" class="headerlink" title="webservice技术概括:"></a>webservice技术概括:</h3><p> 1.<a href="http://www.webxml.com.cn/zh_cn/web_services.aspx" target="_blank" rel="noopener">http://www.webxml.com.cn/zh_cn/web_services.aspx</a> webserive 免费服务，跨语言跨平台的语言服务，多个系统之间的交互和数据传递。<br> 2.Java中有三种Webserviec规范，JAX-WS,JAXM JAX-RS三种规范(1,3较多，3流行)，webService三要素 soap，wsdl,uddi<br> 3.JAX-WS（JAVA API FOR XML-WEBSERVICE）:<br> 4.Soap协议 ： http的基础上+xml数据，基于ws规范下协议，soap基于http<br> 5.wsdl：xml文件，通过这个文件描述webservice描述这个接口，接口的参数和返回类型<br> 6.uddi：命名服务，发布到公网时需要使用，<br> 7.企业中有很多系统，kpi系统考核系统，erp客户资源管理系统，我们需要统一资源管理和用户的授权，在不同的系统中需要调用平台的接口（如何获取-&gt; webservice），了解基于服务的架构设计<br> 8.有点，异构平台的互通性不同系统中的架构通信，和软件复用，传输xml数据，很方便的开发，缺点:xml会传输与内容无关的内容，基于soap协议(c和s转换机制)<br> 9.SOA面向服务的架构，</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/17/web-sevice/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：300字 | 预计阅读时长：1分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-web前端" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/17/web%E5%89%8D%E7%AB%AF/">web前端</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/17/web%E5%89%8D%E7%AB%AF/" class="archive-article-date">
+  	<time datetime="2019-12-17T09:38:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p> 1.<meta>是一个自结束标签，设置一些网页的原始数据也可以这样写L<meta charset="utf-8">告诉浏览器的页面编码为utf-8防止乱码设置字符集，html编码和浏览器解码需要保持一样,还可以设置网页的关键字<meta name="keywords" content="HTML5,javascript,前段,java"><br> 还可以指定网页的描述 <meta name="description" content="发布">搜索引擎在检索页面时也会检索关键字，还可以重定向 <meta http-equiv="refresh" content=":5;网址url"><br></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/17/web%E5%89%8D%E7%AB%AF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：260字 | 预计阅读时长：1分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-感悟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/17/%E6%84%9F%E6%82%9F/">&#39;感悟&#39;</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/17/%E6%84%9F%E6%82%9F/" class="archive-article-date">
+  	<time datetime="2019-12-17T03:21:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/.com//D:%5C%E5%8D%9A%E5%AE%A2%5Chexo%5Csource_posts%5C%E6%84%9F%E6%82%9F%5C1.jpg" alt></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/17/%E6%84%9F%E6%82%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：0字 | 预计阅读时长：1分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-ssm整合crud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -782,337 +1089,6 @@ class Consumer implements Runnable{
 
 
   
-    <article id="post-java-泛型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/06/java-%E6%B3%9B%E5%9E%8B/">java 泛型</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/06/java-%E6%B3%9B%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2019-11-06T05:04:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="java-泛型"><a href="#java-泛型" class="headerlink" title="java 泛型"></a>java 泛型</h3><p>1.List<String> c = new ArrayList<String>();list容器只装String类型的容器,Comparable<String>也可使用泛型，指定的类型作比较，集合时多指定类型，增强程序的稳定性和可读性</String></String></String></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class TestMap&#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        Map&lt;String, Integer&gt; m1 = HashMap&lt;String, Integer()&gt;();</span><br><span class="line">        m1.put(&quot;one&quot;,1);</span><br><span class="line">        m1.put(&quot;two&quot;,2)；</span><br><span class="line">        m1.out(&quot;three&quot;,3);</span><br><span class="line">        System.out.Println(m1.size());</span><br><span class="line">        System.out.println(m2.containsKey(&quot;one&quot;));</span><br><span class="line">        if (m1.contaionsKey(&quot;two&quot;))&#123;</span><br><span class="line">            int i = m.get(&quot;two&quot;);//泛型不用强制转化</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>总结 ： 一个图List,set,Map,一个类Collections，三个 知识点：for ,generic泛型,Auto-boxing/unboxing，六个接口 collection,set,list,map,Iterator,comparable</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/06/java-%E6%B3%9B%E5%9E%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：169字 | 预计阅读时长：1分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/06/java%E5%AE%B9%E5%99%A8/">java容器</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/06/java%E5%AE%B9%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2019-11-06T02:15:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="java容器"><a href="#java容器" class="headerlink" title="java容器"></a>java容器</h4><ol>
-<li>1136 一个图一个类三个知识点六个接口java.util是工具包提供一些工具类</li>
-<li>Collecton接口定义了一组对象的方法，其子接口Set没有顺序不可重复，List有顺序可以重复 （Colletion c = new ArrayList(); ArrayList()可以替换以后更改更加方便）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Collection方法举例</span><br><span class="line">import java.util.*；</span><br><span class="line">public class Test&#123;</span><br><span class="line">     public static void main(String[] args)&#123;</span><br><span class="line">         Collection c = new ArrayList(); //方便以后更改代码，ArrayList() 可以替换成为LinkList();</span><br><span class="line">         c.add(&quot;hello&quot;);</span><br><span class="line">         c.add(new Name(&quot;f1&quot;,&quot;f2&quot;));</span><br><span class="line">         c.add(new Integer(100));</span><br><span class="line">         System.out.println(c.size());</span><br><span class="line">         System.out.println(c);//里面装对象不可是基础类型</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-在利用Connection中的remove时，如要重写equals方法应该重写equls方法，对象做索引的时候hasCode()方法起作用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pubic boolean equals(Object obj)&#123;</span><br><span class="line">    if (obj instanceof Name )&#123;</span><br><span class="line">    Name name = (Name) obj;</span><br><span class="line">    return (firstName.equals(name.firstName) &amp;&amp; (LastName.eauals(name.firstName)));</span><br><span class="line">&#125;else </span><br><span class="line">    return super.eauals(obj);</span><br><span class="line">&#125;</span><br><span class="line">public int hasCode()&#123;</span><br><span class="line">    return firstName.hasCode();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/06/java%E5%AE%B9%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：1.2k字 | 预计阅读时长：5分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mybatis-day01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/mybatis-day01/">mybatis_day01</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/04/mybatis-day01/" class="archive-article-date">
-  	<time datetime="2019-11-04T11:45:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Mybatis的框架概述"><a href="#Mybatis的框架概述" class="headerlink" title="Mybatis的框架概述"></a>Mybatis的框架概述</h3><p>  mybatis是一个优秀的基于java的持久层框架，他内部封装了jdbc,使开发者只需要关注sql语句本身而不用花费精力去处理加载驱动，创建连接，创建statement等繁杂过程<br>  mybatis通过xml过着注解的方式将要执行的statement配置起来，并且通过java对象和statement中的sql的动态参数进行映射成为最终的执行的语句，最后有mybatis框架执行sql并将结果集映射为java对象并且返回。<br>  Jdbc编程回顾<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">      Connection connnection = null;</span><br><span class="line">      PreparedStatement preparedStatement = null</span><br><span class="line">      ResultSet resultset = null</span><br><span class="line">      //加载驱动</span><br><span class="line">      Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">      //通过驱动来获取管理类数据库的连接</span><br><span class="line">      connection = DriverManager.getConnection(&quot;jdbc:mysql://locatlhost:3306/mybaits?characterEncoding =utf-8&quot;,&quot;root&quot;,&quot;admin&quot;);</span><br><span class="line">      //定义sql语句？表示占位符</span><br><span class="line">      String sql = &quot;select * from user&quot;;</span><br><span class="line">      //预处理对象</span><br><span class="line">      PrepareStatement = connection.prepareStatement(sql);</span><br><span class="line">      //设置参数</span><br><span class="line">      prepareStatement.setString(1,&quot;wangwu&quot;)；</span><br><span class="line">      //向数据库发出sql请求查询，查询出结果集</span><br><span class="line">      resultSet = preparedStatement.executeQery();</span><br><span class="line">      //遍历结果集</span><br><span class="line">  &#125;</span><br><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="mybatis创建"><a href="#mybatis创建" class="headerlink" title="mybatis创建"></a>mybatis创建</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">创建一个meavn工程添加依赖</span><br><span class="line"> &lt;dependencies&gt;    &lt;dependency&gt;     &lt;groupId&gt;org.mybatis&lt;/groupId&gt;     &lt;artifactId&gt;mybatis&lt;/artifactId&gt;     &lt;version&gt;3.4.5&lt;/version&gt;    &lt;/dependency&gt;    &lt;dependency&gt;     &lt;groupId&gt;junit&lt;/groupId&gt;     &lt;artifactId&gt;junit&lt;/artifactId&gt;     &lt;version&gt;4.10&lt;/version&gt;     &lt;scope&gt;test&lt;/scope&gt;    &lt;/dependency&gt;    &lt;dependency&gt;     &lt;groupId&gt;mysql&lt;/groupId&gt;     &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;     &lt;version&gt;5.1.6&lt;/version&gt;     &lt;scope&gt;runtime&lt;/scope&gt;    &lt;/dependency&gt;    &lt;dependency&gt;     &lt;groupId&gt;log4j&lt;/groupId&gt;     &lt;artifactId&gt;log4j&lt;/artifactId&gt;     &lt;version&gt;1.2.12&lt;/version&gt;    &lt;/dependency&gt;   &lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="编写持久层接口的映射文件"><a href="#编写持久层接口的映射文件" class="headerlink" title="编写持久层接口的映射文件"></a>编写持久层接口的映射文件</h4>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">要求在resources文件中创建的xml文件必须和持久层接口在相同的包中，必须以持久层接口名称命名文件，扩展名为.xml</span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE mapper     PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;     &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt; </span><br><span class="line"></span><br><span class="line">&lt;mapper namespace = &quot;com.itheima.com.dao.IUserDao&quot;</span><br><span class="line">&lt;selsect id = &quot;findAll&quot; resultType =&quot;com.itheima.domain.User&quot;&gt;</span><br><span class="line">select * from User</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="编写SqlMapConfig-xml"><a href="#编写SqlMapConfig-xml" class="headerlink" title="编写SqlMapConfig.xml"></a>编写SqlMapConfig.xml</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE mapper     PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;     &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt; </span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;！-- 配置mybatis的环境 --&gt;</span><br><span class="line">&lt;environments default = &quot;mysql&quot;&gt;</span><br><span class="line">&lt;!-- 配置mysql环境--&gt;</span><br><span class="line">&lt;environment id = &quot;mysql&quot;&gt;</span><br><span class="line">  &lt;!-- 配置事务类型--&gt;</span><br><span class="line"> &lt;transactionManager type = &quot;JDBC&quot;&gt; &lt;/transactionManager&gt;</span><br><span class="line"> &lt;!--配置连接数据库的信息：用的是数据源连接池--&gt;</span><br><span class="line"> &lt;dataSource type = &quot;POOLED&quot;&gt;</span><br><span class="line"> &lt;property name = &quot;driver&quot; value = &quot;com.mysql.jdbc.Driver&quot;/&gt;</span><br><span class="line"> &lt;property name =&quot;url&quot; value = &quot;jdbc:mysql://localhost:3306/ee50/&quot;/&gt;</span><br><span class="line"> &lt;property name = &quot;username&quot; value = &quot;root&quot;/&gt;</span><br><span class="line"> &lt;property name = &quot;password value = &quot;admin&quot;/&gt;    &lt;/dataSource&gt;</span><br><span class="line">&lt;/environment&gt;</span><br><span class="line">&lt;/environments&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--告知mybatis映射的位置 --&gt;</span><br><span class="line">&lt;mappers&gt; </span><br><span class="line">&lt;mapper resource = &quot;com/itheima/dao/IUserDao.xml&quot;/&gt;&lt;/mappers&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="编写测试类"><a href="#编写测试类" class="headerlink" title="编写测试类"></a>编写测试类</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//1.读取配置文件</span><br><span class="line">InputStream in = Resources.getResourceAsStream(&quot;sqlMapConfig.xml&quot;);</span><br><span class="line">//2,创建sqlSessionFactory的构建者对象</span><br><span class="line">SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();</span><br><span class="line">//3.使用构建者创造工厂对象SqlSessionFactory</span><br><span class="line">SqlSessionFactory factory = builder.build(in);</span><br><span class="line">//4.使用SqlSessionFactory 生产sessionduixiang</span><br><span class="line">SqlSession session  = factory.openSession();</span><br><span class="line">//5.使用Sqlsession对象创建dao接口的代理对象</span><br><span class="line">IUerDao userDao = session.getMapper(IUserDao.class);</span><br><span class="line">//6.使用代理对象执行查询的所有方法</span><br><span class="line">List&lt;User&gt;users = userDao.findAll();</span><br><span class="line">for(User user :users) System.out.println(user);</span><br><span class="line">//7.释放资源</span><br><span class="line">session.close();</span><br><span class="line">in.close();</span><br></pre></td></tr></table></figure>
-<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>  通过实例我们可以得知，使用mybatis只需要编写Dao接口并且按照mybatis编写连个配置文件SqlMapConfig.xml和对应包下面的映射文件就可以实现功能，</p>
-<p>  ####基于注解的mybatis<br>  在持久层中添加注解<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface IUserDao&#123;</span><br><span class="line">    @Select(&quot;select * from user&quot;)</span><br><span class="line">    List&lt;User&gt; findAll();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br> 修改SqlMapConfig.xml<br> <mappers><br> <mapper class="com.itheima.dao,IUserDao"><br> <br> 在基于注解的Mybatis配置时，不要添加xml对应接口的映射文件（IUserDao.xml）</mapper></mappers></p>
-<hr>
-<p> 后来补充自定义mybatis框架了解设计模式</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-Mybatis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/04/mybatis-day01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：1k字 | 预计阅读时长：4分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-spring-整合junit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/spring-%E6%95%B4%E5%90%88junit/">spring 整合junit</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/04/spring-%E6%95%B4%E5%90%88junit/" class="archive-article-date">
-  	<time datetime="2019-11-04T11:28:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="spring-整合-junit"><a href="#spring-整合-junit" class="headerlink" title="spring 整合 junit"></a>spring 整合 junit</h3><h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><pre><code>在每个测试类中每个测试方法都去要这个
-ApplicationContext ac = new ClassPathXmlApplcicationContext(&quot;bean.xml&quot;);
-IAccountService as = ac.getBean(&quot;accountService&quot;,IAccountSevice.class);//代码作用获取容器
-如果程序自动创建容器就可以解决这个问题，那么我们通过junit的注解替换掉他的运行器，依靠spring的运行期来读取配置文件啊或者注解就可以创建容器 </code></pre><h4 id="Runwith注解"><a href="#Runwith注解" class="headerlink" title="@Runwith注解"></a>@Runwith注解</h4><pre><code>1. @RunWith(SpringJUnit4ClassRunner.class) 2.@ContextConfiguration(locations= {   &quot;classpath:bean.xml&quot;})
- public class AccountServiceTest { } 
-
- @ContextConfiguration 注解：  locations 属性：用于指定配置文件的位置。如果是类路径下，需要用 classpath:表明  classes 属性：用于指定注解的类。当不使用 xml 配置时，需要用此属性指定注解类的位置
-3.@Autowire 
-  public IAccountService ac;</code></pre><h4 id="测试类中的属性为什么不用xml配置"><a href="#测试类中的属性为什么不用xml配置" class="headerlink" title="测试类中的属性为什么不用xml配置"></a>测试类中的属性为什么不用xml配置</h4><pre><code>   答案是肯定的，没问题，可以使用。 那么为什么不采用配置到 xml 中的方式呢？ 这个原因是这样的：
-  第一：当我们在 xml 中配置了一个 bean，spring 加载配置文件创建容器时，就会创建对象。 
- 第二：测试类只是我们在测试功能时使用，而在项目中它并不参与程序逻辑，也不会解决需求上的问 题，所以创建完了，并没有使用。
-那么存在容器中就会造成资源的浪费。  所以，基于以上两点，我们不应该把测试配置到 xml 文件中。 </code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/04/spring-%E6%95%B4%E5%90%88junit/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：374字 | 预计阅读时长：1分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1213,15 +1189,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1233,7 +1217,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">-前端</a>
               </li>
              
               <li class="article-tag-list-item">
