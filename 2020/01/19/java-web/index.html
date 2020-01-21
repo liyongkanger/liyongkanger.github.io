@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursite.com">
-  <title>&#39;ssm整合crud&#39; | 康康的博客</title>
+  <title>java_web | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -25,14 +25,15 @@
     }
   </style> 
 
- <meta name="description" content="基于ssm整合和crud操作的一个小demo1.出现错误plugins-2-2,在pox.xml中添加如下代码解决 123456789101112131415161718192021222324&amp;lt;plugin&amp;gt;          &amp;lt;artifactId&amp;gt;maven-resources-plugin&amp;lt;&#x2F;artifactId&amp;gt;          &amp;lt;versio">
+ <meta name="description" content="Java web1.常见状态码：  200： 一切正常 300&#x2F;301： 页面重定向 404： 资源不存在 403：权限不足 500： 服务器内部错误（代码写错） 其他编码：积累  2 . jsp在html中嵌套Java代码（&amp;lt;% 代码 %&amp;gt;） 1在web.xml中 &amp;lt;welcome-flie&amp;gt; index.jsp&amp;lt;welcom-file&amp;gt;首页自动找这个页面 3">
+<meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;ssm整合crud&#39;">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;11&#x2F;ssm%E6%95%B4%E5%90%88crud&#x2F;index.html">
+<meta property="og:title" content="java_web">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;19&#x2F;java-web&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
-<meta property="og:description" content="基于ssm整合和crud操作的一个小demo1.出现错误plugins-2-2,在pox.xml中添加如下代码解决 123456789101112131415161718192021222324&amp;lt;plugin&amp;gt;          &amp;lt;artifactId&amp;gt;maven-resources-plugin&amp;lt;&#x2F;artifactId&amp;gt;          &amp;lt;versio">
+<meta property="og:description" content="Java web1.常见状态码：  200： 一切正常 300&#x2F;301： 页面重定向 404： 资源不存在 403：权限不足 500： 服务器内部错误（代码写错） 其他编码：积累  2 . jsp在html中嵌套Java代码（&amp;lt;% 代码 %&amp;gt;） 1在web.xml中 &amp;lt;welcome-flie&amp;gt; index.jsp&amp;lt;welcom-file&amp;gt;首页自动找这个页面 3">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-11T08:02:11.192Z">
+<meta property="og:updated_time" content="2020-01-19T06:34:31.839Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -186,43 +187,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ssm整合crud" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java-web" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      &#39;ssm整合crud&#39;
+      java_web
     </h1>
   
 
         
-        <a href="/2019/12/11/ssm%E6%95%B4%E5%90%88crud/" class="archive-article-date">
-  	<time datetime="2019-12-11T08:01:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-11</time>
+        <a href="/2020/01/19/java-web/" class="archive-article-date">
+  	<time datetime="2020-01-19T06:32:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="基于ssm整合和crud操作的一个小demo"><a href="#基于ssm整合和crud操作的一个小demo" class="headerlink" title="基于ssm整合和crud操作的一个小demo"></a>基于ssm整合和crud操作的一个小demo</h3><p>1.出现错误plugins-2-2,在pox.xml中添加如下代码解决</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">          &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;</span><br><span class="line">          &lt;version&gt;3.0.2&lt;/version&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">          &lt;version&gt;3.8.0&lt;/version&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">          &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span><br><span class="line">          &lt;version&gt;2.22.1&lt;/version&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">          &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;</span><br><span class="line">          &lt;version&gt;3.2.2&lt;/version&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">          &lt;artifactId&gt;maven-install-plugin&lt;/artifactId&gt;</span><br><span class="line">          &lt;version&gt;2.5.2&lt;/version&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">          &lt;artifactId&gt;maven-deploy-plugin&lt;/artifactId&gt;</span><br><span class="line">          &lt;version&gt;2.8.2&lt;/version&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
-<p>1.自动注入失败可能没开启包的扫描，查询配置文件是否扫描dao,service,在dao,service上是否有注解<br>2.加强代码逻辑的思考，注意配置文件里面的内容</p>
-<hr>
-<h4 id="Resource结构"><a href="#Resource结构" class="headerlink" title="Resource结构"></a>Resource结构</h4><p>1.数据库连接配置文件c3p0.properties，里面包含url,driverclass,user,password,maxPoolSize,minPoolSize,initiaPoolSize,maxIdleTime<br>2.在friendMapper.xml中定义接口映射文件<mapper namespace=".....dao.friendMapper"><select id="方法名" resulttype="结果对象"><br>在mybatis-config <configuration><br><typeAliases><br><package name="...bean"><br></package></typeAliases><br>3.spring-config 包含两个配置文件applicationContext.xml和springmvc.xml<br>在applicationContext.xml中含有几点：</configuration></select></mapper></p>
+        <h3 id="Java-web"><a href="#Java-web" class="headerlink" title="Java web"></a>Java web</h3><p>1.常见状态码：</p>
 <ul>
-<li>读取c3p0.properties配置文件</li>
-<li>配置数据源(dataSource class:ComboPooledDataSource properties)</li>
-<li>开启事务注解扫描&lt;tx:annotation-driven transaction-manager&gt;</li>
-<li>spring事务管理器</li>
-<li>mybatis和spring整合</li>
-<li>开启Mapper接口扫描器扫描Dao层</li>
-<li>开启spring  IOC注解扫描扫描service层<br>在springmvc中配置：</li>
-<li>使用注解扫描器扫描@Controller</li>
-<li>加载注解驱动</li>
-<li>处理静态资源</li>
-<li>配置视图解析器</li>
+<li>200： 一切正常</li>
+<li>300/301： 页面重定向</li>
+<li>404： 资源不存在</li>
+<li>403：权限不足</li>
+<li>500： 服务器内部错误（代码写错）</li>
+<li>其他编码：积累</li>
+</ul>
+<p>2 . jsp在html中嵌套Java代码（&lt;% 代码 %&gt;）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在web.xml中 &lt;welcome-flie&gt; index.jsp&lt;welcom-file&gt;首页自动找这个页面</span><br></pre></td></tr></table></figure>
+<p>3 . 虚拟路径，一般在web-app目录下，修改路径方法：更改conf/server.xml里面的host路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Coontext docBase=&apos;&apos; path=&apos;&apos;&gt; docBase实际路径 path相对路径</span><br></pre></td></tr></table></figure>
+<p>4 . 虚拟主机</p>
+<ul>
+<li>在conf/server.xml中间配置<host appbase="webapp" naem="www.test.com"> 修改<Context> 然后在修改默认引擎，在本机中添加映射 /etc/host<br>5 .index.jsp就在webapp的目录下面，但是web-INF中的文件 无法通过浏览器客户端直接访问，只能通过转发访问，并不是任何内部跳转都能访问web-inf 原因是 跳转有2种方式： 请求转发 和 重定向</Context></host></li>
+</ul>
+<p>6.需要配置一个tomcat运行环境如果xml文件报错，增加servlet-api的jar包<br>7 .统一字符集编码</p>
+<ul>
+<li>编码分类： 设置jsp文件编码（jsp文件中的pageEncoding属性）， 设置浏览器阅读jsp文件的编码(jsp文件的content属性) 一般都设置成UTF-8 文本编码<br>8 . JSP的页面元素：</li>
+<li>脚本scriptlet    1,&lt;%  %&gt;局部变量，Java代码  2.&lt;%! %&gt;全局变量定义方法 3.&lt;%=  %&gt;打印代码</li>
+<li>修改web.xml 修改Java代码，需要重启Tomcat服务器，其他则不需要</li>
+<li>指令： page指令&lt;%@ page …. %&gt; page 指定的属性； language：jsp使用的脚本语言，import导入类， pageEncoding: jsp自身编码， contentType 浏览器解析jsp的编码（保持一致就可以了）</li>
+</ul>
+<ol start="9">
+<li>jsp的九大内置对象（自带不需要new)</li>
+</ol>
+<ul>
+<li>out : 输出对象，向客户端输出</li>
+<li>pageContext</li>
+<li>request : 请求对象，存储客户端向服务端请求信息  request常见方法：String getParameter(String name): 根据请求的字段名（key）返回值（vale）  String[] getParameterValues(String name）返回多个字段值（checkbox） void  setCharacterEncoding(‘编码格式’)(默认Tomcat的编码格式) getRequstDispatcher(‘b.jsp’).forward(request, response): 请求转发 的方式跳转页面 A -&gt; B  getServerletContext()获取项目的servletContext对象 </li>
+<li>response</li>
+<li>session</li>
+<li>application</li>
+<li>config</li>
+<li>page</li>
+<li>exploding</li>
+</ul>
+<p>10 . get 和 post请求方式的区别： </p>
+<ul>
+<li>地址栏提交方式 和 method =”get”方式都属于get请求方式,地址栏上显示请求信息(但是不会显示全部,会产生容纳不下报错)，post请求不显示例如文件上传用post,一般推荐用post</li>
+</ul>
+<p>11 .response 响应信息</p>
+<ul>
+<li>提供的方法：void  addCookie(Cookie cookie);服务端向客服端增加cookie对象</li>
+<li>void sendRedirect(String location) throws IOException:页面跳转的一种方式（重定向）</li>
+<li>void setContent(String type):设置服务端的contenttype类型</li>
 </ul>
 
       
@@ -253,6 +284,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -303,7 +345,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2019/12/11/ssm%E6%95%B4%E5%90%88crud/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2020/01/19/java-web/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -313,25 +355,16 @@
     </div>
   </div>
 <div align="center" class="post-count">
-字数：392字 | 预计阅读时长：1分钟
+字数：692字 | 预计阅读时长：2分钟
 </div>
 </article>
 
   
 <nav id="article-nav">
   
-    <a href="/2019/12/17/web%E5%89%8D%E7%AB%AF/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          web前端
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/18/json-%E5%92%8C-Ajax/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">json-和-Ajax</div>
+    <a href="/2019/12/25/%E5%BF%83%E6%83%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">心情</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -358,7 +391,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于ssm整合和crud操作的一个小demo"><span class="toc-number">1.</span> <span class="toc-text">基于ssm整合和crud操作的一个小demo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Resource结构"><span class="toc-number">1.1.</span> <span class="toc-text">Resource结构</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-web"><span class="toc-number">1.</span> <span class="toc-text">Java web</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -375,8 +408,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://yoursite.com/2019/12/11/ssm%E6%95%B4%E5%90%88crud/", 
-    sourceId: "ssm整合crud",
+    url: "https://yoursite.com/2020/01/19/java-web/", 
+    sourceId: "java-web",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };

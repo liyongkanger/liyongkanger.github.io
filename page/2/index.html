@@ -95,8 +95,8 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 20
-                                           总字数 <span class="post-count">16.3k</span>
+                                           总文章数 21
+                                           总字数 <span class="post-count">17k</span>
                                  </nav>
 
 		<nav class="header-nav">
@@ -184,6 +184,88 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-java-stream流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/06/java-stream%E6%B5%81/">java stream流</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/06/java-stream%E6%B5%81/" class="archive-article-date">
+  	<time datetime="2019-11-06T05:32:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="java-流"><a href="#java-流" class="headerlink" title="java 流"></a>java 流</h3><p>1.java.io包中定义了多种流型类，输入流输出流，字节流，字符流，节点流和处理流<br>  例如： 输入流字节流InputStream 输入流字符流Reader 输出流字节流 OutputStream 输出流字符流Writer<br>  2.输入流和输出流都是在程序的角度上，处理单位的不同字节流010101，字符流一个字符字符的读2个字节<br>  3.节点流直接接在数据源上，在外面套在节点流一样是处理流</p>
+<h5 id="InputStream-字节流"><a href="#InputStream-字节流" class="headerlink" title="InputStream 字节流"></a>InputStream 字节流</h5><ol>
+<li>FileInputStream PipledInputStream FilterInputStream……</li>
+<li>int read() throws IOException//读取一个字节返回<br>int read(byte[] buffer) throws IOException//读取一系列并且存储在数组buffer中//byte[] buffer字节数组，读满了在执行操作<br>int read(byte[] buffer, int offset, int length) //从buffer数组的length位置开始读取字节数，返回实际读取的字节数<br>int clse();<h4 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h4><ol>
+<li>对称InPutStream, 方法：void write(int b) throws IOException</li>
+<li>在close()之前先写flush()，</li></ol></li></ol>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/06/java-stream%E6%B5%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：636字 | 预计阅读时长：2分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-java-泛型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -301,7 +383,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
         		</li>
       		
 		</ul>
@@ -558,7 +640,7 @@ IAccountService as = ac.getBean(&quot;accountService&quot;,IAccountSevice.class)
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -808,84 +890,6 @@ private static void main(String[] args) throw IOExeception{
 
 
   
-    <article id="post-spring-day01-ioc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/spring-day01-ioc/">spring_day01_ioc</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/03/spring-day01-ioc/" class="archive-article-date">
-  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##关于jdbc的简单用法<br>  1.注册驱动<br>       DriverManager.registerDriver(new com.mysql.jdbc.Driver());<br>       或者Class.forName(“com.sql.jdbc.Driver”);<br>  2.获取连接<br>       Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/数据库名称，”root”,”admin”);<br>  3.获取操作数据库的预处理对象<br>       PrepareStatement pstm = conn.prepareStatement(“select * from account”);<br>  4.执行sql语句得到结果集<br>       ResultSet rs = pstm.executeQuery();<br>  5.便利结果集<br>      while(rs.next()){System.out.println(rs.getString(“name”);)}<br>  6.释放资源  rs.close()  pstm.close(); conn.close();  规则先打开的最后关闭</p>
-<hr>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/spring-day01-ioc/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：816字 | 预计阅读时长：3分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-spring-day02-annotation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -965,52 +969,28 @@ private static void main(String[] args) throw IOExeception{
 
 
   
-    <article id="post-my基本操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-spring-day01-ioc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">my基本操作</a>
+      <a class="article-title" href="/2019/11/03/spring-day01-ioc/">spring_day01_ioc</a>
     </h1>
   
 
         
-        <a href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2019-10-30T08:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
+        <a href="/2019/11/03/spring-day01-ioc/" class="archive-article-date">
+  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><ol>
-<li>数据库的基本概念</li>
-</ol>
-<ol start="2">
-<li><p>MySQL数据库软件</p>
-<ol>
-<li>安装</li>
-<li>卸载</li>
-<li>配置</li>
-</ol>
-</li>
-<li><p>SQL</p>
-</li>
-</ol>
-<h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><pre><code>1. 数据库的英文单词： DataBase 简称 ： DB
-2. 什么数据库？
-    * 用于存储和管理数据的仓库。
-
-3. 数据库的特点：
-    1. 持久化存储数据的。其实数据库就是一个文件系统
-    2. 方便存储和管理数据
-    3. 使用了统一的方式操作数据库 -- SQL
-
-
-4. 常见的数据库软件
-    * 参见《MySQL基础.pdf》</code></pre>
+        <p>##关于jdbc的简单用法<br>  1.注册驱动<br>       DriverManager.registerDriver(new com.mysql.jdbc.Driver());<br>       或者Class.forName(“com.sql.jdbc.Driver”);<br>  2.获取连接<br>       Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/数据库名称，”root”,”admin”);<br>  3.获取操作数据库的预处理对象<br>       PrepareStatement pstm = conn.prepareStatement(“select * from account”);<br>  4.执行sql语句得到结果集<br>       ResultSet rs = pstm.executeQuery();<br>  5.便利结果集<br>      while(rs.next()){System.out.println(rs.getString(“name”);)}<br>  6.释放资源  rs.close()  pstm.close(); conn.close();  规则先打开的最后关闭</p>
+<hr>
         
       
 
@@ -1019,11 +999,22 @@ private static void main(String[] args) throw IOExeception{
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/03/spring-day01-ioc/">展开全文 >></a>
         </p>
       
 
@@ -1032,7 +1023,7 @@ private static void main(String[] args) throw IOExeception{
     </div>
   </div>
 <div align="center" class="post-count">
-字数：2k字 | 预计阅读时长：8分钟
+字数：816字 | 预计阅读时长：3分钟
 </div>
 </article>
 
@@ -1058,7 +1049,7 @@ private static void main(String[] args) throw IOExeception{
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1071,7 +1062,7 @@ private static void main(String[] args) throw IOExeception{
     <div id="footer-info">
 
     	<div class="footer-left">
-    		&copy; 2019 努力的康康
+    		&copy; 2020 努力的康康
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> Welcome to kangkang's blog
@@ -1156,19 +1147,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1188,7 +1175,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

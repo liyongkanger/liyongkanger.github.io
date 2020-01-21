@@ -95,8 +95,8 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 20
-                                           总字数 <span class="post-count">16.3k</span>
+                                           总文章数 21
+                                           总字数 <span class="post-count">17k</span>
                                  </nav>
 
 		<nav class="header-nav">
@@ -185,6 +185,198 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java-web" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/19/java-web/">java_web</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/19/java-web/" class="archive-article-date">
+  	<time datetime="2020-01-19T06:32:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Java-web"><a href="#Java-web" class="headerlink" title="Java web"></a>Java web</h3><p>1.常见状态码：</p>
+<ul>
+<li>200： 一切正常</li>
+<li>300/301： 页面重定向</li>
+<li>404： 资源不存在</li>
+<li>403：权限不足</li>
+<li>500： 服务器内部错误（代码写错）</li>
+<li>其他编码：积累</li>
+</ul>
+<p>2 . jsp在html中嵌套Java代码（&lt;% 代码 %&gt;）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在web.xml中 &lt;welcome-flie&gt; index.jsp&lt;welcom-file&gt;首页自动找这个页面</span><br></pre></td></tr></table></figure>
+<p>3 . 虚拟路径，一般在web-app目录下，修改路径方法：更改conf/server.xml里面的host路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Coontext docBase=&apos;&apos; path=&apos;&apos;&gt; docBase实际路径 path相对路径</span><br></pre></td></tr></table></figure>
+<p>4 . 虚拟主机</p>
+<ul>
+<li>在conf/server.xml中间配置<host appbase="webapp" naem="www.test.com"> 修改<Context> 然后在修改默认引擎，在本机中添加映射 /etc/host<br>5 .index.jsp就在webapp的目录下面，但是web-INF中的文件 无法通过浏览器客户端直接访问，只能通过转发访问，并不是任何内部跳转都能访问web-inf 原因是 跳转有2种方式： 请求转发 和 重定向</Context></host></li>
+</ul>
+<p>6.需要配置一个tomcat运行环境如果xml文件报错，增加servlet-api的jar包<br>7 .统一字符集编码</p>
+<ul>
+<li>编码分类： 设置jsp文件编码（jsp文件中的pageEncoding属性）， 设置浏览器阅读jsp文件的编码(jsp文件的content属性) 一般都设置成UTF-8 文本编码<br>8 . JSP的页面元素：</li>
+<li>脚本scriptlet    1,&lt;%  %&gt;局部变量，Java代码  2.&lt;%! %&gt;全局变量定义方法 3.&lt;%=  %&gt;打印代码</li>
+<li>修改web.xml 修改Java代码，需要重启Tomcat服务器，其他则不需要</li>
+<li>指令： page指令&lt;%@ page …. %&gt; page 指定的属性； language：jsp使用的脚本语言，import导入类， pageEncoding: jsp自身编码， contentType 浏览器解析jsp的编码（保持一致就可以了）</li>
+</ul>
+<ol start="9">
+<li>jsp的九大内置对象（自带不需要new)</li>
+</ol>
+<ul>
+<li>out : 输出对象，向客户端输出</li>
+<li>pageContext</li>
+<li>request : 请求对象，存储客户端向服务端请求信息  request常见方法：String getParameter(String name): 根据请求的字段名（key）返回值（vale）  String[] getParameterValues(String name）返回多个字段值（checkbox） void  setCharacterEncoding(‘编码格式’)(默认Tomcat的编码格式) getRequstDispatcher(‘b.jsp’).forward(request, response): 请求转发 的方式跳转页面 A -&gt; B  getServerletContext()获取项目的servletContext对象 </li>
+<li>response</li>
+<li>session</li>
+<li>application</li>
+<li>config</li>
+<li>page</li>
+<li>exploding</li>
+</ul>
+<p>10 . get 和 post请求方式的区别： </p>
+<ul>
+<li>地址栏提交方式 和 method =”get”方式都属于get请求方式,地址栏上显示请求信息(但是不会显示全部,会产生容纳不下报错)，post请求不显示例如文件上传用post,一般推荐用post</li>
+</ul>
+<p>11 .response 响应信息</p>
+<ul>
+<li>提供的方法：void  addCookie(Cookie cookie);服务端向客服端增加cookie对象</li>
+<li>void sendRedirect(String location) throws IOException:页面跳转的一种方式（重定向）</li>
+<li>void setContent(String type):设置服务端的contenttype类型</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/19/java-web/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：692字 | 预计阅读时长：2分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-心情" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/25/%E5%BF%83%E6%83%85/">心情</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/25/%E5%BF%83%E6%83%85/" class="archive-article-date">
+  	<time datetime="2019-12-25T13:54:33.364Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="LOG"><a href="#LOG" class="headerlink" title=".LOG"></a>.LOG</h2><p>title: 心情<br>date: 2019-12-25 21:54:33<br>tags:</p>
+<hr>
+<p>为什么脆弱时候想你更多</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/25/%E5%BF%83%E6%83%85/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：21字 | 预计阅读时长：1分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-javase基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -240,7 +432,7 @@ String 重写了Object的equals方法，把引用比较改成了值比价<h4 id=
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
         		</li>
       		
 		</ul>
@@ -403,72 +595,6 @@ String 重写了Object的equals方法，把引用比较改成了值比价<h4 id=
   </div>
 <div align="center" class="post-count">
 字数：260字 | 预计阅读时长：1分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-感悟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/17/%E6%84%9F%E6%82%9F/">&#39;感悟&#39;</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/17/%E6%84%9F%E6%82%9F/" class="archive-article-date">
-  	<time datetime="2019-12-17T03:21:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/.com//D:%5C%E5%8D%9A%E5%AE%A2%5Chexo%5Csource_posts%5C%E6%84%9F%E6%82%9F%5C1.jpg" alt></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/17/%E6%84%9F%E6%82%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：0字 | 预计阅读时长：1分钟
 </div>
 </article>
 
@@ -801,7 +927,7 @@ String 重写了Object的equals方法，把引用比较改成了值比价<h4 id=
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
         		</li>
       		
 		</ul>
@@ -865,7 +991,7 @@ String 重写了Object的equals方法，把引用比较改成了值比价<h4 id=
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>title: java多线程<br>date: 2019-11-06 16:10:58<br>tags: -java基础<br>—### java多线程<br> 1.线程是一个程序内部的不同的执行路径<br> 2.进程是一个静态概念，同一时间cpu只执行一个线程</p>
+<p>title: java多线程<br>date: 2019-11-06 16:10:58<br>tags: java基础<br>—### java多线程<br> 1.线程是一个程序内部的不同的执行路径<br> 2.进程是一个静态概念，同一时间cpu只执行一个线程</p>
 <hr>
 <p> 2种方法创建新的线程<br> 第一种： 定义线程类实现Runnable接口<br> Thread myThread = new Thread(target)//targ为Runable接口类型<br> Runnable接口一直一个方法：<br> public void run()：永凯定义线程的运行<br> 使用Runnable接口为多个线程共享数据<br> 在实现Runnable接口的run方法定义中可以使用Thread的静态方法<br> public staticThread CurrentThread()获取当前线程的引用<br> 第二种：<br> 可以顶一个一Thread线程的子类重写run方法如：<br> class MyThread extends Thread{<br>     public void run(){<br>         …<br>     }<br>     然后生成该类对象 MyThread myThread = new Thread();<br> }<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> public class TestThread&#123;</span><br><span class="line">     public static void main(String[] args)&#123;</span><br><span class="line">         Runner1 r = new Runner1();//重点这一行</span><br><span class="line">         Thread t = new Thread(r);//重点这一行</span><br><span class="line">         t.strat();</span><br><span class="line">         for(int i = 0; i &lt; 100 ; i++)</span><br><span class="line">          System.out.println(&quot;main Thread&quot;);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> class runner1 implements Runnable&#123;</span><br><span class="line">     public void run()&#123;</span><br><span class="line">         for(int i =0;i &lt; 100; i++)</span><br><span class="line">           System.out.println(&quot;Runnable&quot;+i);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125; //注意方法调用t.run()和线程启动t.start()</span><br><span class="line"> ---</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">方法一:  Runner1 r =new Runner1(); </span><br><span class="line">          r.start();</span><br><span class="line">         Class  Runner1 extends Thread&#123;</span><br><span class="line">             public void run ()&#123;</span><br><span class="line">                 for(int i = 0 ;i &lt;100 ; i++)</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">能用接口就不要用继承太过于麻烦不好控制，java不支持多继承</span><br></pre></td></tr></table></figure></p>
 <h4 id="线程转换"><a href="#线程转换" class="headerlink" title="线程转换"></a>线程转换</h4><ol>
@@ -1007,91 +1133,9 @@ class Consumer implements Runnable{
 
 
   
-    <article id="post-java-stream流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/06/java-stream%E6%B5%81/">java stream流</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/06/java-stream%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2019-11-06T05:32:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="java-流"><a href="#java-流" class="headerlink" title="java 流"></a>java 流</h3><p>1.java.io包中定义了多种流型类，输入流输出流，字节流，字符流，节点流和处理流<br>  例如： 输入流字节流InputStream 输入流字符流Reader 输出流字节流 OutputStream 输出流字符流Writer<br>  2.输入流和输出流都是在程序的角度上，处理单位的不同字节流010101，字符流一个字符字符的读2个字节<br>  3.节点流直接接在数据源上，在外面套在节点流一样是处理流</p>
-<h5 id="InputStream-字节流"><a href="#InputStream-字节流" class="headerlink" title="InputStream 字节流"></a>InputStream 字节流</h5><ol>
-<li>FileInputStream PipledInputStream FilterInputStream……</li>
-<li>int read() throws IOException//读取一个字节返回<br>int read(byte[] buffer) throws IOException//读取一系列并且存储在数组buffer中//byte[] buffer字节数组，读满了在执行操作<br>int read(byte[] buffer, int offset, int length) //从buffer数组的length位置开始读取字节数，返回实际读取的字节数<br>int clse();<h4 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h4><ol>
-<li>对称InPutStream, 方法：void write(int b) throws IOException</li>
-<li>在close()之前先写flush()，</li></ol></li></ol>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/06/java-stream%E6%B5%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：636字 | 预计阅读时长：2分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1104,7 +1148,7 @@ class Consumer implements Runnable{
     <div id="footer-info">
 
     	<div class="footer-left">
-    		&copy; 2019 努力的康康
+    		&copy; 2020 努力的康康
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> Welcome to kangkang's blog
@@ -1189,19 +1233,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-Socket</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1221,7 +1261,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
