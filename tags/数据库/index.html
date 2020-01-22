@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursite.com">
-  <title>康康的博客</title>
+  <title>Tag: 数据库 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -27,7 +27,7 @@
 
  <meta property="og:type" content="website">
 <meta property="og:title" content="康康的博客">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;3&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E6%95%B0%E6%8D%AE%E5%BA%93&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -185,259 +185,58 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-spring-day01-ioc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/01/21/Redis/" class="archive-article-date">
+  	<time datetime="2020-01-21T08:41:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/spring-day01-ioc/">spring_day01_ioc</a>
+      <a class="archive-article-title" href="/2020/01/21/Redis/">Redis</a>
     </h1>
   
 
-        
-        <a href="/2019/11/03/spring-day01-ioc/" class="archive-article-date">
-  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##关于jdbc的简单用法<br>  1.注册驱动<br>       DriverManager.registerDriver(new com.mysql.jdbc.Driver());<br>       或者Class.forName(“com.sql.jdbc.Driver”);<br>  2.获取连接<br>       Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/数据库名称，”root”,”admin”);<br>  3.获取操作数据库的预处理对象<br>       PrepareStatement pstm = conn.prepareStatement(“select * from account”);<br>  4.执行sql语句得到结果集<br>       ResultSet rs = pstm.executeQuery();<br>  5.便利结果集<br>      while(rs.next()){System.out.println(rs.getString(“name”);)}<br>  6.释放资源  rs.close()  pstm.close(); conn.close();  规则先打开的最后关闭</p>
-<hr>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/spring-day01-ioc/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：816字 | 预计阅读时长：3分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-spring-day02-annotation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/spring-day02-annotation/">spring_day01_ioc</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/03/spring-day02-annotation/" class="archive-article-date">
-  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="spring-day02-ioc"><a href="#spring-day02-ioc" class="headerlink" title="spring_day02_ioc"></a>spring_day02_ioc</h3><h4 id="1-使用注解来管理spring-ioc"><a href="#1-使用注解来管理spring-ioc" class="headerlink" title="1.使用注解来管理spring ioc"></a>1.使用注解来管理spring ioc</h4><h6 id="用于创建对象"><a href="#用于创建对象" class="headerlink" title="用于创建对象"></a>用于创建对象</h6><p> 1.@Component 作用：把资源让spring管理，相当于在xml中配置了一个bean 属性：指定bean的id，如果不指定value的属性，默认bean的id为当前类名，首字母小写<br> 2.@Controller 一般用于表现层的注解<br> 3.@Service 一般用于业务层的注解<br> 4.@Respository一般用于持久层的注解(如果注解中只有一个属性要赋值时，且名称为value，value在赋值时可以不写)</p>
-<h6 id="用于注入数据"><a href="#用于注入数据" class="headerlink" title="用于注入数据"></a>用于注入数据</h6><p>  1.@Autowired 作用：自动按照类型注入，当使用注解注入属性时，set方法可以省略，他只能注入其他bean类型当多个类型匹配时，要使用对象的变量名称作为bean的id<br>  2.@Qualifier作用自动注入的基础上，在按照Bean的id注入,给字段注入时不能单独使用，必须和@Autowire一起使用。属性：指定bean的id<br>  3.@Resource作用:按照bean的id注入，只能注入其他bean类型。属性:指定bean的id<br>  4.@Value作用：注入基本数据类型和String类型value:指定值</p>
-<h6 id="改变作用范围的"><a href="#改变作用范围的" class="headerlink" title="改变作用范围的"></a>改变作用范围的</h6><p>  1.@Scope 作用：指定bean的作用范围。属性：value:取值singleton prototype request session globalsession<br>  2.@PostConstruct初始化方法<br>  3.@PreDestroy销毁方法</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/spring-day02-annotation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-<div align="center" class="post-count">
-字数：634字 | 预计阅读时长：2分钟
-</div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-my基本操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">my基本操作</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2019-10-30T08:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><ol>
-<li>数据库的基本概念</li>
-</ol>
-<ol start="2">
-<li><p>MySQL数据库软件</p>
-<ol>
-<li>安装</li>
-<li>卸载</li>
-<li>配置</li>
-</ol>
-</li>
-<li><p>SQL</p>
-</li>
-</ol>
-<h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><pre><code>1. 数据库的英文单词： DataBase 简称 ： DB
-2. 什么数据库？
-    * 用于存储和管理数据的仓库。
-
-3. 数据库的特点：
-    1. 持久化存储数据的。其实数据库就是一个文件系统
-    2. 方便存储和管理数据
-    3. 使用了统一的方式操作数据库 -- SQL
-
-
-4. 常见的数据库软件
-    * 参见《MySQL基础.pdf》</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：2k字 | 预计阅读时长：8分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
-  
 
 
           </div>
@@ -461,10 +260,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
