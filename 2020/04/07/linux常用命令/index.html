@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursite.com">
-  <title>Redis | 康康的博客</title>
+  <title>linux常用命令 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -25,15 +25,15 @@
     }
   </style> 
 
- <meta name="description" content="Redisredis命令 redis-server.exe –server-start redis-server.exe –server-stop redis-cli.exe -h 127.0.0.1 -p 6279 del key 删除key dump key 序列化给定key 返回被序列化的值 exists key 检查key是否存在 expire key seconds 为给定的key设置过">
-<meta name="keywords" content="数据库">
+ <meta name="description" content="Linux 操作(一切皆文件，所有文件都在 &#x2F;) sync 同步数据 （linux中没有输出代表成功） shutdown -h 10&#x2F;now&#x2F;20:30  -r+10 关机  reboot 重启 mkdir 文件名  pwd 显示当前目录 cd 目录名（绝对路径以&#x2F;, 相对路径） 删除目录  rmdir test1（只能删除空的目录） rmdir -p test1&#x2F;test2&#x2F;test3 递归删除">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;21&#x2F;Redis&#x2F;index.html">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;07&#x2F;linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
-<meta property="og:description" content="Redisredis命令 redis-server.exe –server-start redis-server.exe –server-stop redis-cli.exe -h 127.0.0.1 -p 6279 del key 删除key dump key 序列化给定key 返回被序列化的值 exists key 检查key是否存在 expire key seconds 为给定的key设置过">
+<meta property="og:description" content="Linux 操作(一切皆文件，所有文件都在 &#x2F;) sync 同步数据 （linux中没有输出代表成功） shutdown -h 10&#x2F;now&#x2F;20:30  -r+10 关机  reboot 重启 mkdir 文件名  pwd 显示当前目录 cd 目录名（绝对路径以&#x2F;, 相对路径） 删除目录  rmdir test1（只能删除空的目录） rmdir -p test1&#x2F;test2&#x2F;test3 递归删除">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-21T08:42:09.910Z">
+<meta property="og:updated_time" content="2020-04-07T09:20:52.169Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -187,53 +187,57 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Redis" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-linux常用命令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Redis
+      linux常用命令
     </h1>
   
 
         
-        <a href="/2020/01/21/Redis/" class="archive-article-date">
-  	<time datetime="2020-01-21T08:41:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+        <a href="/2020/04/07/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2020-04-07T09:20:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><h3 id="redis命令"><a href="#redis命令" class="headerlink" title="redis命令"></a>redis命令</h3><ul>
-<li>redis-server.exe –server-start</li>
-<li>redis-server.exe –server-stop</li>
-<li>redis-cli.exe -h 127.0.0.1 -p 6279</li>
-<li>del key 删除key</li>
-<li>dump key 序列化给定key 返回被序列化的值</li>
-<li>exists key 检查key是否存在</li>
-<li>expire key seconds 为给定的key设置过期的时间</li>
-<li>pexpire key millseconds 设置key的过期时间以毫秒计算</li>
-<li>ttl key 以秒做单位</li>
-<li>Redis有0~15个数据库</li>
-<li>？为占位符 * 通配符，命名要有意义</li>
-<li>select 0 ~ 15 访问数据库</li>
-<li>rename 修改key名称</li>
-<li>move   当前的key移动到给定的数据库的当中</li>
-<li>type key Redis支持5种数据类型，String，hash，list，set，zset(有序集合)</li>
-<li>set info:msg 活动限时3小时</li>
-<li>get info:msg</li>
-<li>expire key seconds 限时优惠活动，网站数据缓存，手机验证码，限制网站访问评率</li>
-<li>key命名： redis 单个key存入512M 大小 1. key不要太长，尽量不要超过1024字节，这样不仅消耗内存而且降低查找效率， 2.key也不要太短，太短的话可读性降低3.在一个项目中，key最好使用统一的命名模式，例如 user:123:password</li>
-<li>String类型是二进制类型，是二进制安全，可以传输不同类型，解码和编码都是用使用二进制</li>
-<li>setnx 给不存在的key赋值 </li>
-<li>getrange  keys start end</li>
-<li>getset q先将旧值取出然后赋新值</li>
-<li>incr key 自增 decr key 自减  incr key by number 自增自定义 decr by key 自减</li>
-<li></li>
+        <h3 id="Linux-操作-一切皆文件，所有文件都在"><a href="#Linux-操作-一切皆文件，所有文件都在" class="headerlink" title="Linux 操作(一切皆文件，所有文件都在 /)"></a>Linux 操作(一切皆文件，所有文件都在 /)</h3><ol>
+<li>sync 同步数据 （linux中没有输出代表成功）</li>
+<li>shutdown -h 10/now/20:30  -r+10 关机  reboot 重启</li>
+<li>mkdir 文件名  pwd 显示当前目录</li>
+<li>cd 目录名（绝对路径以/, 相对路径）</li>
+<li>删除目录  rmdir test1（只能删除空的目录） rmdir -p test1/test2/test3 递归删除了test1</li>
+<li>cp复制文件或者目录  </li>
+<li>chomod  777 (r : 4 w : 2 x : 1)  (属主权限 属组权限 其他用户权限)</li>
+<li>cat 查看从第一行  tac 从最后一行   cd /etc/sysconfig  系统配置 </li>
+<li>ifconfig 查看网络配置</li>
+<li>nl 带行号 more 一页一页看 空格翻页 enter 下一行</li>
+<li>硬链接 A —B 允许一个文件有多个路径，用户可以通过这种机制建立比价重要的文件放置误删</li>
+<li>软连接： 类似window的快捷方式， 删除源文件，则软连接的另外一个文件不能使用， ln 创建硬连接   ln -s 软连接 touch 创建文件</li>
+<li>添加用户 useradd -选项 用户名    -m 自动创建用户的主目录  -g 添加用户组 删除用户 userdel -r  用户名 可以在 /etc/passwd中查看用户 修改用户 usermod 对应内容 对应用户   usermod -d /home/233 lyk 修改完查看配置文件 </li>
+<li>passwd -l 用户 锁定 -d 删除这个密码  都不能登录</li>
+<li>创建一个用户组  groupadd  -g 520  -g指定id号不指定自增  groupdel 删除用户组  groupmod  修改用户组 -g -n 修改名字</li>
+<li>磁盘操作 df -h 查看磁盘空间  du 精确某个文件的容量 du -sm</li>
+<li>mount /dev/kuangshen/mnt/kuangshen  将外部设备挂载到mnt目录下 卸载 umount 卸载</li>
+<li>进程管理 </li>
+</ol>
+<ul>
+<li>服务后台运行， 前台都是基本程序   每一个进程都有一个父进程有一个id号码</li>
+<li>ps  -a 当前终端运行的进程 -u 显示用户的信息进程 -x显示后台运行进程的参数</li>
+<li>grep 查找文件中符合条件的字符串  ps -aux\grep mysql   A\B 的结果作为B的已知条件</li>
+<li>ps -ef  查看父进程  等同于 pstree         -p显示父类id  -u显示用户组<br>19 kill -9  结束进程id<br>20 . 解压 rpm-ivh rpm包      删除  rpm –e –nodeps jdk_         检测版本 rmp -qa | grep jdk</li>
 </ul>
+<ol start="21">
+<li>查看端口： firewall-cmd –list-ports </li>
+<li>添加端口：firewall-cmd –zone=public –add-port=9000/tcp –permanent</li>
+<li>重启防火墙： systemctl restart firewalld.service</li>
+</ol>
 
       
 
@@ -268,7 +272,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		
 		</ul>
@@ -324,7 +328,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2020/01/21/Redis/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2020/04/07/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,25 +338,16 @@
     </div>
   </div>
 <div align="center" class="post-count">
-字数：368字 | 预计阅读时长：1分钟
+字数：606字 | 预计阅读时长：2分钟
 </div>
 </article>
 
   
 <nav id="article-nav">
   
-    <a href="/2020/01/21/ssm%E6%95%B4%E5%90%88%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ssm整合配置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/01/19/java-web/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java_web</div>
+    <a href="/2020/04/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">编译原理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -379,7 +374,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis"><span class="toc-number">1.</span> <span class="toc-text">Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redis命令"><span class="toc-number">2.</span> <span class="toc-text">redis命令</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-操作-一切皆文件，所有文件都在"><span class="toc-number">1.</span> <span class="toc-text">Linux 操作(一切皆文件，所有文件都在 /)</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -396,8 +391,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://yoursite.com/2020/01/21/Redis/", 
-    sourceId: "Redis",
+    url: "https://yoursite.com/2020/04/07/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/", 
+    sourceId: "linux常用命令",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };

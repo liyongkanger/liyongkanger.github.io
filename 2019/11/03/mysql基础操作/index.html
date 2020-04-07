@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="康康的博客">
 <meta property="og:description" content="MYSQL操作DDL:操作数据库,表  1.C(create) 创建  创建数据库： create database if not exists; 数据可m名称 创建数据库并指定字符集 create database 数据库名称 character set 字符集utf8;  2.R(Retrieve)查询  查询数据库的名称： show databases;  3.U(Updata)修改  修改">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-16T13:55:14.451Z">
+<meta property="og:updated_time" content="2020-04-07T09:21:34.508Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -99,8 +99,8 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 24
-                                           总字数 <span class="post-count">20.9k</span>
+                                           总文章数 28
+                                           总字数 <span class="post-count">28.6k</span>
                                  </nav>
 
 		<nav class="header-nav">
@@ -241,7 +241,8 @@
 <li>修改数据 update 表名 set 列名1 = 值1， 列名2 = 值2 where + 条件</li>
 </ol>
 <p>8.select * from 表名    select 字段 from 表名  where 条件 group by 分组字段 having 分组之后的条件  order by 排序(默认升序) limit分页限定 </p>
-
+<h4 id="mysql-事物补充"><a href="#mysql-事物补充" class="headerlink" title="mysql 事物补充"></a>mysql 事物补充</h4><p>1.ACID 原则： 原子性， 一致性， 持久性， 隔离性<br>2. 事物</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">-- 模拟转账</span></span><br><span class="line"><span class="keyword">SET</span> autocommit = <span class="number">0</span> ; <span class="comment">-- g关闭自动提交</span></span><br><span class="line"><span class="keyword">START</span> <span class="keyword">TRANSACTION</span> <span class="comment">-- 开启一个事物</span></span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">account</span> <span class="keyword">SET</span> money  = money <span class="number">-500</span> <span class="keyword">WHERE</span> <span class="string">`name`</span> = <span class="string">'A'</span> <span class="comment">-- A -500</span></span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">account</span> <span class="keyword">SET</span> money = money + <span class="number">500</span> <span class="keyword">WHERE</span> <span class="string">`name`</span> = <span class="string">'B'</span> <span class="comment">-- B +500</span></span><br><span class="line"><span class="keyword">COMMIT</span>; <span class="comment">-- 提价事物</span></span><br><span class="line"><span class="keyword">ROLLBACK</span> ; <span class="comment">-- 回滚</span></span><br><span class="line"><span class="keyword">SET</span> autocommit = <span class="number">1</span>; <span class="comment">-- 恢复默认值</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -341,7 +342,7 @@
     </div>
   </div>
 <div align="center" class="post-count">
-字数：450字 | 预计阅读时长：1分钟
+字数：532字 | 预计阅读时长：2分钟
 </div>
 </article>
 
@@ -386,7 +387,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MYSQL操作"><span class="toc-number">1.</span> <span class="toc-text">MYSQL操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#DDL-操作数据库-表"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">DDL:操作数据库,表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#操作表"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">操作表</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MYSQL操作"><span class="toc-number">1.</span> <span class="toc-text">MYSQL操作</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#DDL-操作数据库-表"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">DDL:操作数据库,表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#操作表"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">操作表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql-事物补充"><span class="toc-number">1.1.</span> <span class="toc-text">mysql 事物补充</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -528,11 +529,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,6 +550,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">408</a>
               </li>
              
               <li class="article-tag-list-item">

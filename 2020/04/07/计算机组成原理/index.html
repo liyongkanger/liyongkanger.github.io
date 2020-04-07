@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursite.com">
-  <title>Redis | 康康的博客</title>
+  <title>计算机组成原理 | 康康的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -25,15 +25,15 @@
     }
   </style> 
 
- <meta name="description" content="Redisredis命令 redis-server.exe –server-start redis-server.exe –server-stop redis-cli.exe -h 127.0.0.1 -p 6279 del key 删除key dump key 序列化给定key 返回被序列化的值 exists key 检查key是否存在 expire key seconds 为给定的key设置过">
-<meta name="keywords" content="数据库">
+ <meta name="description" content="1.2计算机的硬件组成 计算机体系结构：计算机体系结构是那哪些能够被程序员所见到的计算机系统的属性，即概念的结构和功能特性 计算机组成：是指如何实现计算机体系结构所体现的属性， 它包含了许多对程序员来说是透明的硬件细节。 结构： 部件之间关联的方法  功能：作为结构组成部分吧的各个独立部件的操作。 计算机的基本功能：(数据处理，数据存储，数据传输，控制) 前三种功能都需要控制，控制是由计算机的指令">
+<meta name="keywords" content="408">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis">
-<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;21&#x2F;Redis&#x2F;index.html">
+<meta property="og:title" content="计算机组成原理">
+<meta property="og:url" content="https:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;07&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86&#x2F;index.html">
 <meta property="og:site_name" content="康康的博客">
-<meta property="og:description" content="Redisredis命令 redis-server.exe –server-start redis-server.exe –server-stop redis-cli.exe -h 127.0.0.1 -p 6279 del key 删除key dump key 序列化给定key 返回被序列化的值 exists key 检查key是否存在 expire key seconds 为给定的key设置过">
+<meta property="og:description" content="1.2计算机的硬件组成 计算机体系结构：计算机体系结构是那哪些能够被程序员所见到的计算机系统的属性，即概念的结构和功能特性 计算机组成：是指如何实现计算机体系结构所体现的属性， 它包含了许多对程序员来说是透明的硬件细节。 结构： 部件之间关联的方法  功能：作为结构组成部分吧的各个独立部件的操作。 计算机的基本功能：(数据处理，数据存储，数据传输，控制) 前三种功能都需要控制，控制是由计算机的指令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-21T08:42:09.910Z">
+<meta property="og:updated_time" content="2020-04-07T09:18:44.747Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="康康的博客" type="application/atom+xml">
@@ -187,51 +187,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Redis" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-计算机组成原理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Redis
+      计算机组成原理
     </h1>
   
 
         
-        <a href="/2020/01/21/Redis/" class="archive-article-date">
-  	<time datetime="2020-01-21T08:41:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+        <a href="/2020/04/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-04-07T09:17:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><h3 id="redis命令"><a href="#redis命令" class="headerlink" title="redis命令"></a>redis命令</h3><ul>
-<li>redis-server.exe –server-start</li>
-<li>redis-server.exe –server-stop</li>
-<li>redis-cli.exe -h 127.0.0.1 -p 6279</li>
-<li>del key 删除key</li>
-<li>dump key 序列化给定key 返回被序列化的值</li>
-<li>exists key 检查key是否存在</li>
-<li>expire key seconds 为给定的key设置过期的时间</li>
-<li>pexpire key millseconds 设置key的过期时间以毫秒计算</li>
-<li>ttl key 以秒做单位</li>
-<li>Redis有0~15个数据库</li>
-<li>？为占位符 * 通配符，命名要有意义</li>
-<li>select 0 ~ 15 访问数据库</li>
-<li>rename 修改key名称</li>
-<li>move   当前的key移动到给定的数据库的当中</li>
-<li>type key Redis支持5种数据类型，String，hash，list，set，zset(有序集合)</li>
-<li>set info:msg 活动限时3小时</li>
-<li>get info:msg</li>
-<li>expire key seconds 限时优惠活动，网站数据缓存，手机验证码，限制网站访问评率</li>
-<li>key命名： redis 单个key存入512M 大小 1. key不要太长，尽量不要超过1024字节，这样不仅消耗内存而且降低查找效率， 2.key也不要太短，太短的话可读性降低3.在一个项目中，key最好使用统一的命名模式，例如 user:123:password</li>
-<li>String类型是二进制类型，是二进制安全，可以传输不同类型，解码和编码都是用使用二进制</li>
-<li>setnx 给不存在的key赋值 </li>
-<li>getrange  keys start end</li>
-<li>getset q先将旧值取出然后赋新值</li>
-<li>incr key 自增 decr key 自减  incr key by number 自增自定义 decr by key 自减</li>
+        <h4 id="1-2计算机的硬件组成"><a href="#1-2计算机的硬件组成" class="headerlink" title="1.2计算机的硬件组成"></a>1.2计算机的硬件组成</h4><ul>
+<li>计算机体系结构：计算机体系结构是那哪些能够被程序员所见到的计算机系统的属性，即概念的结构和功能特性</li>
+<li>计算机组成：是指如何实现计算机体系结构所体现的属性， 它包含了许多对程序员来说是透明的硬件细节。</li>
+<li>结构： 部件之间关联的方法  功能：作为结构组成部分吧的各个独立部件的操作。</li>
+<li>计算机的基本功能：(数据处理，数据存储，数据传输，控制) 前三种功能都需要控制，控制是由计算机的指令来施加的</li>
+<li>计算机内部有4个功能组件： I/O, 系统总线，CPU， 存储器</li>
+<li>CUP: 寄存器，内部总线，ALU(计算)，控制器</li>
+<li>控制器： 终端控制，操作控制器，时序控制器<h4 id="1-3计算机的层次结构"><a href="#1-3计算机的层次结构" class="headerlink" title="1.3计算机的层次结构"></a>1.3计算机的层次结构</h4></li>
+<li>计算机的层次结构图：应用语言机器-&gt;高级语言机器-&gt;汇编语言机器-&gt;操作系统机器-&gt;传统机器-&gt;微程序机器-&gt;硬联逻辑(第零级)</li>
+</ul>
+<h4 id="1-4计算机的主要技术指标"><a href="#1-4计算机的主要技术指标" class="headerlink" title="1.4计算机的主要技术指标"></a>1.4计算机的主要技术指标</h4><ul>
+<li>机器字长： 指参与运算的基本位数，他是由加法器，寄存器的位数来决定的。(机器字长byte字节B,位b)</li>
+<li>数据通路宽度:数据总线一次能够并行传送信息的位数，是值外部数据总线的宽度，与CPU内部数据总线宽度可以不相同。影响信息的传输能力，从而影响计算机的有效处理速度。</li>
+<li>主存容量： 一个主存储器所能够存储的全部信息量成为主存储量，一般以字节数来表示存储容量，1024个字节成为1KB</li>
+<li>运算速度：影响计算机的运算速度有很多指标： 吞吐量，响应时间，主频，CPU时钟周期，CPI，CPU，执行时间，MIPS,MFLOPS等</li>
+</ul>
+<ol>
+<li>吞吐量： 计算机系统在单位时间内请求处理的数量</li>
+<li>主频：时钟频率，表示在CPU内数字脉冲信号震荡的速度。</li>
+<li>CPI：每条指令过程中间所使用的时钟周期数， IPC = 1/CPI  (cpi参数用ipc表示)</li>
+<li>CPU执行时间： CPU执行时间= cpu时钟周期数/时钟频率 = 指令数 * CPI/时钟频率</li>
+<li>MIPS： 每秒执行多少百万条指令， MIPS =指令数/执行时间* 10^6 = 主频 * IPC</li>
+<li>MFLOPS: 表示每秒执行多少百万次浮点运算， MFLOPS: 浮点操作次数/执行时间* 10^6</li>
+</ol>
+<ul>
+<li>例题：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1.某程序在一台时钟频率为2G Hz 的计算机上A运行需要10秒，现在将一台计算机B希望运行时间缩短为6秒，计算机设计者采用的方法是提高时钟频率但是这会影响CPU的其他设计部分，使得计算机B运行程序是相当于计算机A的1.2倍时钟周期数，那么计算机的设计者应该将时钟频率提高多少？</span><br><span class="line">         解题： CPU时间a = cpu时钟周期数a / 时钟频率a</span><br><span class="line">              10 = CPU时钟周期数a / 2 * 10^9 ; -- &gt;得出CPU的时钟周期数a = 2 * 10^10</span><br><span class="line">              CPU时间b = 1.2 * CPU时间周期数a / 时钟频率b --&gt; 时钟频率b = 4G Hz</span><br><span class="line">       </span><br><span class="line">2.假设计算机A的时钟周期为250ps,对某程度的CPI为2.0；计算机B的时钟周期为500PS对同样的程序的CPI为1.2,请问哪台计算机快，快多少？</span><br><span class="line">             解题： 对于固定的程序每台执行的指令是相同的 用I表示，</span><br><span class="line">             CPU时钟周期数： A： CPU时钟周期数 = I * 2.0；(每条指令*每条指令所花费的时钟周期数)</span><br><span class="line">                             B： CPU时钟周期数 = I * 1.2；</span><br><span class="line">             CPU时间：       A: CPU时间 = CPU时间周期数 * 时钟周期 = I * 2.0 * 250px = 500 ips;  </span><br><span class="line">                             B: CPU时间 = CPU时间周期数 * 时钟周期 = I * 1.2 * 500px = 600 ips; </span><br><span class="line">            性能：   CPU性能A/ CPU性能B = 执行时间B/ 执行时间A = 1.2</span><br><span class="line">            A性能好， 好B的1.2倍</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="2-1信息表示的概述"><a href="#2-1信息表示的概述" class="headerlink" title="2.1信息表示的概述"></a>2.1信息表示的概述</h4><p>信息: 含有一定含义的数据 2类 非数值数据(字符，汉字，逻辑数据) 数值数据(定点数，浮点数)<br>数据：数据是反应客观事物属性的记录，是信息的具体表现形<br>数据则常指信息的载体，信息需要经过数字化转变成数据才能存储和传输</p>
+<h4 id="2-2非数值数据的表示方法"><a href="#2-2非数值数据的表示方法" class="headerlink" title="2.2非数值数据的表示方法"></a>2.2非数值数据的表示方法</h4><p>非数值数据： 在计算机中用一定的规则用一组二进制编码来表示<br>字符编码： 用一定位数的二进制0 ,1来进行编码 ASCLL<br>字符串在存储器中有两种表示方法分别是： 向量法(连续的地址)和串表法(用指针链接)<br>汉子编码： GBK 字符代码化—&gt;输入码向机内码转换-&gt;机内码-&gt;机内码向字符码转换——&gt;输出<br>unicode： 编码方式（2字节）和实现方式</p>
+<h4 id="2-3-1数值的表示方法"><a href="#2-3-1数值的表示方法" class="headerlink" title="2.3.1数值的表示方法"></a>2.3.1数值的表示方法</h4><ol>
+<li>数据编码的最小单位是”位(bit)” 1 Byte = 8bit </li>
+<li>无符号数： （Java中无） 没有符号位的数相当于数的绝对值</li>
+<li>真值和机器数： 把带有正（+）和负（-）符号的数称之为真值，把符号数字化成为机器数（原码，补码，反码）</li>
+</ol>
+<ul>
+<li>原码： 符号位为0表示正数，符号位为1表示负数，数值位就是真值的绝对值</li>
+<li>反码：负数的反码是他对应的正数的原码所有位取反</li>
+<li>正正数的原，补相同，负数的补码等于反码+1<h4 id="2-3-2-数值的表示："><a href="#2-3-2-数值的表示：" class="headerlink" title="2.3.2.数值的表示："></a>2.3.2.数值的表示：</h4></li>
+<li>模，同余</li>
+<li></li>
+</ul>
+<hr>
+<h4 id="第四章-指令"><a href="#第四章-指令" class="headerlink" title="第四章 指令"></a>第四章 指令</h4><h4 id="机器指令特征"><a href="#机器指令特征" class="headerlink" title="机器指令特征"></a>机器指令特征</h4><p>1.指令： 计算机执行某种指令的命令<br>2.指令系统： 一台计算机所有的指令集合，他决定了一台计算机硬件的主要性能和基本功能。</p>
+<ul>
+<li>操作码:用指令来完成操作类型，在一套指令中需要指明从哪里得到这些源操作数</li>
+<li>结果操作引用： 只能操作结果存放在哪里</li>
+</ul>
+<p>3.操作数可以存放的位置： 主存或者虚存，cup的寄存器，i/o设备<br>4. 指令的助记符表示： 操作码被缩写成助记符来表示，入ADD表示加，SUB代表减，MUL代表乘<br>5. 指令系统的设计： 设计要求：完备，有效，规整，兼容</p>
+<ul>
+<li>操作清单</li>
+<li>数据类型</li>
+<li>指令格式</li>
+<li>寄存器： 哪些寄存器被访问</li>
+<li>寻址方式：如何成为有效的地址</li>
+</ul>
+<ol start="6">
+<li>发展方向： 复杂指令系统(庞大的指令集)， 经典指令系统(简化指令系统，使用寄存器，单周期指令，简单寻址)<h4 id="操作数据类型"><a href="#操作数据类型" class="headerlink" title="操作数据类型"></a>操作数据类型</h4></li>
+<li>操作的类型： 地址，字符，逻辑数据</li>
+<li>数据传送： 寄存器与寄存器，寄存器与存储单元，存储单元与存储单元之间的数据传送</li>
+<li>程序控制：</li>
+<li>输入输出： <h4 id="指令格式"><a href="#指令格式" class="headerlink" title="指令格式"></a>指令格式</h4></li>
+<li>指令格式的设计一般设计操作码结构，地址码结构和指令字长度三个问题</li>
+</ol>
+<ul>
+<li>操作码设计： cpu执行指令呢用译码电路识别每个操作码，定长操作码：   ，扩展操作码： </li>
+</ul>
+<h4 id="第三章：-存储系统和结构"><a href="#第三章：-存储系统和结构" class="headerlink" title="第三章： 存储系统和结构"></a>第三章： 存储系统和结构</h4><p>1.定点数的加减运算：</p>
+<ul>
+<li>定点数补码加法： 任意两个数的补码之和，等于该两数的补码</li>
+<li>定点数的补码减法： x补 - y补 = x补 + (-y)补     （-y）补 = y补 全部取反+1</li>
+<li>补码加减法运算法则： 1.参加运算的两个操作数均用补码表示，2. 符号位作为数的一部分参加运算 3. 若做加法，直接相加，若做减法则将减数与被减数的机器负数相加 4</li>
+</ul>
+<ol start="2">
+<li>溢出和判别方法： 采用单符号，双符号，进位值 3种判别方法</li>
+</ol>
+<ul>
+<li>单符号：相加时结果的符号与参数运算的操作数的符号相反有溢出，相减时结果符号和被减数符号相反，有溢出</li>
 <li></li>
 </ul>
 
@@ -268,7 +322,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">408</a>
         		</li>
       		
 		</ul>
@@ -324,7 +378,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2020/01/21/Redis/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2020/04/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,25 +388,25 @@
     </div>
   </div>
 <div align="center" class="post-count">
-字数：368字 | 预计阅读时长：1分钟
+字数：2.1k字 | 预计阅读时长：7分钟
 </div>
 </article>
 
   
 <nav id="article-nav">
   
-    <a href="/2020/01/21/ssm%E6%95%B4%E5%90%88%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ssm整合配置
+          编译原理
         
       </div>
     </a>
   
   
-    <a href="/2020/01/19/java-web/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java_web</div>
+    <a href="/2020/04/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机网络知识点总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -379,7 +433,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis"><span class="toc-number">1.</span> <span class="toc-text">Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redis命令"><span class="toc-number">2.</span> <span class="toc-text">redis命令</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2计算机的硬件组成"><span class="toc-number">1.</span> <span class="toc-text">1.2计算机的硬件组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3计算机的层次结构"><span class="toc-number">2.</span> <span class="toc-text">1.3计算机的层次结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4计算机的主要技术指标"><span class="toc-number">3.</span> <span class="toc-text">1.4计算机的主要技术指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1信息表示的概述"><span class="toc-number">4.</span> <span class="toc-text">2.1信息表示的概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2非数值数据的表示方法"><span class="toc-number">5.</span> <span class="toc-text">2.2非数值数据的表示方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1数值的表示方法"><span class="toc-number">6.</span> <span class="toc-text">2.3.1数值的表示方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-数值的表示："><span class="toc-number">7.</span> <span class="toc-text">2.3.2.数值的表示：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第四章-指令"><span class="toc-number">8.</span> <span class="toc-text">第四章 指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#机器指令特征"><span class="toc-number">9.</span> <span class="toc-text">机器指令特征</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#操作数据类型"><span class="toc-number">10.</span> <span class="toc-text">操作数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指令格式"><span class="toc-number">11.</span> <span class="toc-text">指令格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三章：-存储系统和结构"><span class="toc-number">12.</span> <span class="toc-text">第三章： 存储系统和结构</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -396,8 +450,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://yoursite.com/2020/01/21/Redis/", 
-    sourceId: "Redis",
+    url: "https://yoursite.com/2020/04/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/", 
+    sourceId: "计算机组成原理",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
