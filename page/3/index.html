@@ -95,8 +95,8 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 28
-                                           总字数 <span class="post-count">28.6k</span>
+                                           总文章数 33
+                                           总字数 <span class="post-count">35k</span>
                                  </nav>
 
 		<nav class="header-nav">
@@ -184,6 +184,498 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-java网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/07/java%E7%BD%91%E7%BB%9C/">java网络</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/07/java%E7%BD%91%E7%BB%9C/" class="archive-article-date">
+  	<time datetime="2019-11-07T00:56:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="java网络编程"><a href="#java网络编程" class="headerlink" title="java网络编程"></a>java网络编程</h4><ol>
+<li>网络编程不等于网站编程</li>
+<li>网络基础，Tcp/ip协议，ip地址，Socket编程</li>
+<li>计算机网络：</li>
+<li>OSI模型：应用层，表示层，会话层，传输层，网络层，数据链路层，物理层。</li>
+<li>TCP/IP：应用层，(TCP UDP)传输层，(ip)网络层，物理+数据链路层</li>
+<li>端口号分为Tcp端口和UDP端口</li>
+<li>socket模型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">首先启动server在启动client，写的时候一起xie</span><br><span class="line">public class TCPServer&#123;</span><br><span class="line">    public static void main(String args)throws Exception&#123;</span><br><span class="line">        ServerSocket ss = new ServerSocket(666);//666为端口</span><br><span class="line">        while(true)&#123;</span><br><span class="line">       Socket s = ss.acept(); //多个client可以连一个server端</span><br><span class="line">       DateInputStream dis = new DataInputStream(s.getInputStream());</span><br><span class="line">       System.out.print(&quot;dis.readUTF()&quot;);//处理其中一个客户端，没处理完第二个连不进来</span><br><span class="line">       dis.close();</span><br><span class="line">       s.close();</span><br><span class="line">      //  System.out.println(&quot;A Client Connect&quot;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class TCPClient&#123;</span><br><span class="line">    public static void main(String args[]) throws Exception&#123;</span><br><span class="line">       Socket s = new Socket(&quot;127.0.1&quot;,666);//本地ip,和那段接口 </span><br><span class="line">      OutPutStream os = s.getOutputStream();</span><br><span class="line">      DateOutputStrem dos = new DataOutputStream(os);</span><br><span class="line">      dos.writeUTF(&quot;hello server!&quot;);</span><br><span class="line">      dos.flush();</span><br><span class="line">      dos.close();</span><br><span class="line">      s.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/07/java%E7%BD%91%E7%BB%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：540字 | 预计阅读时长：2分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java多线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/06/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">java多线程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/06/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2019-11-06T08:10:58.355Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: java多线程<br>date: 2019-11-06 16:10:58<br>tags: java基础<br>—### java多线程<br> 1.线程是一个程序内部的不同的执行路径<br> 2.进程是一个静态概念，同一时间cpu只执行一个线程</p>
+<hr>
+<p> 2种方法创建新的线程<br> 第一种： 定义线程类实现Runnable接口<br> Thread myThread = new Thread(target)//targ为Runable接口类型<br> Runnable接口一直一个方法：<br> public void run()：永凯定义线程的运行<br> 使用Runnable接口为多个线程共享数据<br> 在实现Runnable接口的run方法定义中可以使用Thread的静态方法<br> public staticThread CurrentThread()获取当前线程的引用<br> 第二种：<br> 可以顶一个一Thread线程的子类重写run方法如：<br> class MyThread extends Thread{<br>     public void run(){<br>         …<br>     }<br>     然后生成该类对象 MyThread myThread = new Thread();<br> }<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> public class TestThread&#123;</span><br><span class="line">     public static void main(String[] args)&#123;</span><br><span class="line">         Runner1 r = new Runner1();//重点这一行</span><br><span class="line">         Thread t = new Thread(r);//重点这一行</span><br><span class="line">         t.strat();</span><br><span class="line">         for(int i = 0; i &lt; 100 ; i++)</span><br><span class="line">          System.out.println(&quot;main Thread&quot;);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> class runner1 implements Runnable&#123;</span><br><span class="line">     public void run()&#123;</span><br><span class="line">         for(int i =0;i &lt; 100; i++)</span><br><span class="line">           System.out.println(&quot;Runnable&quot;+i);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125; //注意方法调用t.run()和线程启动t.start()</span><br><span class="line"> ---</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">方法一:  Runner1 r =new Runner1(); </span><br><span class="line">          r.start();</span><br><span class="line">         Class  Runner1 extends Thread&#123;</span><br><span class="line">             public void run ()&#123;</span><br><span class="line">                 for(int i = 0 ;i &lt;100 ; i++)</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">能用接口就不要用继承太过于麻烦不好控制，java不支持多继承</span><br></pre></td></tr></table></figure></p>
+<h4 id="线程转换"><a href="#线程转换" class="headerlink" title="线程转换"></a>线程转换</h4><ol>
+<li>start()去排队，不能一开始就直接调用，cup调入进去才开始执行</li>
+<li>控制线程的基本方法：<br> isAlive() 判断线程是否还活着，线程是否终止<br> getPriority()获得线程点的优先级数值<br> setPriority()设置线程的优先级数值<br> Thread.sleep()指定当前显示睡多久<br> join()调用某线程的该方法，将当前线程与该线程合并，等待该线程结束，在恢复到当前线程的运行<br>  yleld()让出cpu当前线程进入就绪队列等待调度<br> wait()当前线程进入对象的Wait pool<br>notify()/notifyAll()唤醒某个waite pool中的一个/所有等待线程</li>
+<li>sleep方法，睡眠指定的毫秒数，可能会抛出异常，可能睡着被打断就会抛出异常<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> public class TestInterrupt&#123;</span><br><span class="line">     public static void main(String[] args)&#123;</span><br><span class="line">         MyThread thread = new MyThread();</span><br><span class="line">         thread.start();</span><br><span class="line">         try&#123;Thread.sleep(1000)&#125;</span><br><span class="line">         catch(InterreptedException e)&#123;&#125;</span><br><span class="line">         thread.interrupt();</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;//如何停止线程呢定义一个boolean变量</span><br><span class="line">class myThread extends Thread&#123;</span><br><span class="line">boolean flag = ture;</span><br><span class="line">    public void run()&#123;</span><br><span class="line">        while(flag)&#123;</span><br><span class="line">            System.out.println(&quot;---&quot;+new Date()+&quot;---&quot;);</span><br><span class="line">            try&#123;</span><br><span class="line">                sleep(1000);</span><br><span class="line">            &#125;catch(InterruptedException e)&#123;</span><br><span class="line">                return ;//线程退出</span><br><span class="line">              flag = false; &#125;//重写的方法不能抛出被重写方法不同的异常</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="join方法"><a href="#join方法" class="headerlink" title="join方法"></a>join方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class TestJoin&#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        MyThread2 t1 = new MyThread2(&quot;t1&quot;);</span><br><span class="line">        t1.start();</span><br><span class="line">        try&#123;t1.join();&#125;</span><br><span class="line">        catch(InterruptedException e)&#123;&#125;</span><br><span class="line">        for ( int i = 0 ;i  &lt; 100; i++)</span><br><span class="line">         System.out.println(&quot;main thread&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> class MyThread2 extends Thread&#123;</span><br><span class="line">     MyThread2(String s)&#123;super.s;&#125;//线程对象起了个名字</span><br><span class="line">     public void run()&#123;</span><br><span class="line">         for (int i = 0;i &lt; 100 ;i ++)&#123;</span><br><span class="line">             system.out.prinln(&quot;woshi&quot;+getName();</span><br><span class="line">             try&#123;sleep(1000);&#125;</span><br><span class="line">             catch(InterruptedException e)&#123;</span><br><span class="line">                 return ;</span><br><span class="line">             &#125;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     类似方法调用，先执行完子线程然后接着进行主线程</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="yield方法"><a href="#yield方法" class="headerlink" title="yield方法"></a>yield方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public calss TestYield&#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        MyThread3 t1 = new MyThread3(&quot;t1&quot;);</span><br><span class="line">        MyThread3 t2 = new MyThread3(&quot;t2&quot;);</span><br><span class="line">        t1.start(); t2.stat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class MyThread3 extends Thread&#123;</span><br><span class="line">    MyThread3(String s)&#123;</span><br><span class="line">        super.(s);</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()&#123;</span><br><span class="line">        for (int i = 0; i &lt; 100 ;i++)</span><br><span class="line">        System.out.println(getName()+i);</span><br><span class="line">        if (i%10 == 0)</span><br><span class="line">            yield();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a>线程的优先级</h4><p>  1.线程的优先级1——10,<br>  t1.setPriority(Thread.NORM_PRIORITY +3);<br>  设置优先级</p>
+<h4 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h4><p>  1.例子<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class TestSync implements Runnable&#123;</span><br><span class="line">    Timer timer = new Timer();</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        TestSync test = new TestSync();</span><br><span class="line">        Thread t1 = new Thread(test);</span><br><span class="line">        Thread t2 = new Thread(test);</span><br><span class="line">        t.setName(&quot;t1&quot;);</span><br><span class="line">        t2.setName(&quot;t2&quot;);</span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line">    &#125;</span><br><span class="line">    public void run()&#123;</span><br><span class="line">        timer.add(Thread.currentThread().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Thimer&#123;</span><br><span class="line">    private static int num = 0;</span><br><span class="line">    public void add (String name)&#123;</span><br><span class="line">       synchronized(this)&#123;//互斥锁不写则不可以</span><br><span class="line">  //简写 public synchronized void add(String name)</span><br><span class="line">        num++;</span><br><span class="line">        try&#123;</span><br><span class="line">            Thread.sleep(1);</span><br><span class="line">        &#125;catch(InterruptedException e)&#123;&#125;</span><br><span class="line">        System.out.println(name+&quot;你是&quot;+num+&quot;使用者&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">synchronized 放在方法中为同步方法 锁定当前对象并不是锁定代码块，只有当前对象执行完毕才会释放锁</span><br></pre></td></tr></table></figure></p>
+<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">public class TestDeadLock implements Runnable&#123;</span><br><span class="line">    public int flag = 1;</span><br><span class="line">    static Object o1 = new Object(), 02 = new Object();</span><br><span class="line">    pubilc void run()&#123;</span><br><span class="line">    System.out.println(&quot;flag&quot; + flag);</span><br><span class="line">    if (flag == 1)&#123;</span><br><span class="line">        synchronized(o1)&#123;</span><br><span class="line">            try&#123;</span><br><span class="line">                Thread.sleep(500);</span><br><span class="line">            &#125;catch(Exception e)&#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            synchronized(o2)&#123;</span><br><span class="line">                System.out.println(&quot;1&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (flag == 0 )&#123;</span><br><span class="line">        synchronized(o2)&#123;</span><br><span class="line">            try&#123;</span><br><span class="line">                Thread.sleep(500);</span><br><span class="line">            &#125;catch(Exception e)&#123;&#125;</span><br><span class="line">            synchronized(o1)</span><br><span class="line">               syste.out.print(&quot;0&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">    TestDeadLock td1= new TestDeadLock();</span><br><span class="line">    TestDeadLock td2 = new TestDeadLock();</span><br><span class="line">    td1.flag = 1;</span><br><span class="line">    td2.flag = 0;</span><br><span class="line">    Thread t1 =new Thread(td1);</span><br><span class="line">    Thread t2 = new Thread(td2);</span><br><span class="line">    t1.start();</span><br><span class="line">    t2.start();</span><br><span class="line">&#125;</span><br><span class="line">&#125;别线程使用别的方法可能对同步方法产生影响，如果不想产生，必须对访问这个对象的所有方法加锁，加了同步效率变低，不加可能破坏对象的值,互斥锁，保证某个时间段只有一个线程进入这个代码段，不影响别的线执行别的代码段</span><br></pre></td></tr></table></figure>
+<h4 id="消费者生产者问题"><a href="#消费者生产者问题" class="headerlink" title="消费者生产者问题"></a>消费者生产者问题</h4><pre><code> public clss ProduceserComsumer{
+     public static void main(String args[]){
+         SyncStack ss =new SyncStack();
+         Producer p = new Producer(ss);
+         Comsumer c = new Comsumer(c);
+         new Thread(p).start();
+         new Thread(c).start();
+     }
+ }
+
+ class WoTo{
+     in id;
+     WoTo(int id){
+         this.id = id;
+     }
+     public StringtString (){
+         return &quot;WoTo:&quot;+id; 
+     }
+ }
+ class SyncStack{
+     int index = 0;
+     WoTo[] arrWT = new WoTo[6];
+     pulic synchronied void push(WoTo wt){
+         while(index = arrWT.length){
+             try{
+                 this.wait();
+             }catch(InterruptedException e){
+                 e.printStackTrance();
+             }
+         }
+         this.notify();
+
+         arrWT(index) = wt;
+         index ++;
+     }
+     pubic synchronized WoTou Pop(){
+         while(index  == 0){
+             try{
+                 this.wait();
+             }catch(InterruptedException e){
+                 e.printStackTrace();
+             }
+         }
+         this.notify();
+         index--;
+         return arrWT(index);
+     }
+ }
+ class Produce implements Runnable{
+     SyncStack ss = null;
+     Produce(SyncStack ss){
+         this.ss = ss;
+     }
+     public void run(){
+         fr(int i = 0; i &lt; 20; i++ ){
+             WoTo wt = new WoTo(i);
+             ss.push(wt);
+             System.out.println(&quot;生产了&quot;+wt);
+             try{
+                 Thread.sleep((int)(Math.randow() * 200));
+             }catch(InterruptedException e){
+                 e.printStackTace();
+             }
+         }
+     }
+ }
+class Consumer implements Runnable{
+    SyncStack ss = null
+    Consumer(syncStack ss){
+        this.ss = ss;
+    }
+    public void run(){
+     for(int i =0;i&lt; 20 ;i ++){
+     WoTou wt = ss.Pop();
+     System.out.print(&quot;消费了&quot;+wt);
+     try{
+         Thread.sleep((int)(Math.random()*1000)));
+     }catch(InterruptedException e){
+         e.printStackTrace();
+     }
+    }
+} //不知道堵塞多长时间，wait ,被打断也要检查线程，notif唤醒线程wait把锁放开sleep不放锁</code></pre><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>   1.线程/进程概念，<br>   2.创建线程的方式<br>   3.sleep<br>   4.join<br>   5.yield<br>   6.synchronized<br>   7.wait<br>   8.notify</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/06/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：1.5k字 | 预计阅读时长：7分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java-stream流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/06/java-stream%E6%B5%81/">java stream流</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/06/java-stream%E6%B5%81/" class="archive-article-date">
+  	<time datetime="2019-11-06T05:32:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="java-流"><a href="#java-流" class="headerlink" title="java 流"></a>java 流</h3><p>1.java.io包中定义了多种流型类，输入流输出流，字节流，字符流，节点流和处理流<br>  例如： 输入流字节流InputStream 输入流字符流Reader 输出流字节流 OutputStream 输出流字符流Writer<br>  2.输入流和输出流都是在程序的角度上，处理单位的不同字节流010101，字符流一个字符字符的读2个字节<br>  3.节点流直接接在数据源上，在外面套在节点流一样是处理流</p>
+<h5 id="InputStream-字节流"><a href="#InputStream-字节流" class="headerlink" title="InputStream 字节流"></a>InputStream 字节流</h5><ol>
+<li>FileInputStream PipledInputStream FilterInputStream……</li>
+<li>int read() throws IOException//读取一个字节返回<br>int read(byte[] buffer) throws IOException//读取一系列并且存储在数组buffer中//byte[] buffer字节数组，读满了在执行操作<br>int read(byte[] buffer, int offset, int length) //从buffer数组的length位置开始读取字节数，返回实际读取的字节数<br>int clse();<h4 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h4><ol>
+<li>对称InPutStream, 方法：void write(int b) throws IOException</li>
+<li>在close()之前先写flush()，</li></ol></li></ol>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/06/java-stream%E6%B5%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：636字 | 预计阅读时长：2分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java-泛型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/06/java-%E6%B3%9B%E5%9E%8B/">java 泛型</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/06/java-%E6%B3%9B%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2019-11-06T05:04:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="java-泛型"><a href="#java-泛型" class="headerlink" title="java 泛型"></a>java 泛型</h3><p>1.List<String> c = new ArrayList<String>();list容器只装String类型的容器,Comparable<String>也可使用泛型，指定的类型作比较，集合时多指定类型，增强程序的稳定性和可读性</String></String></String></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class TestMap&#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        Map&lt;String, Integer&gt; m1 = HashMap&lt;String, Integer()&gt;();</span><br><span class="line">        m1.put(&quot;one&quot;,1);</span><br><span class="line">        m1.put(&quot;two&quot;,2)；</span><br><span class="line">        m1.out(&quot;three&quot;,3);</span><br><span class="line">        System.out.Println(m1.size());</span><br><span class="line">        System.out.println(m2.containsKey(&quot;one&quot;));</span><br><span class="line">        if (m1.contaionsKey(&quot;two&quot;))&#123;</span><br><span class="line">            int i = m.get(&quot;two&quot;);//泛型不用强制转化</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结 ： 一个图List,set,Map,一个类Collections，三个 知识点：for ,generic泛型,Auto-boxing/unboxing，六个接口 collection,set,list,map,Iterator,comparable</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/06/java-%E6%B3%9B%E5%9E%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：169字 | 预计阅读时长：1分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/06/java%E5%AE%B9%E5%99%A8/">java容器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/06/java%E5%AE%B9%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2019-11-06T02:15:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="java容器"><a href="#java容器" class="headerlink" title="java容器"></a>java容器</h4><ol>
+<li>1136 一个图一个类三个知识点六个接口java.util是工具包提供一些工具类</li>
+<li>Collecton接口定义了一组对象的方法，其子接口Set没有顺序不可重复，List有顺序可以重复 （Colletion c = new ArrayList(); ArrayList()可以替换以后更改更加方便）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Collection方法举例</span><br><span class="line">import java.util.*；</span><br><span class="line">public class Test&#123;</span><br><span class="line">     public static void main(String[] args)&#123;</span><br><span class="line">         Collection c = new ArrayList(); //方便以后更改代码，ArrayList() 可以替换成为LinkList();</span><br><span class="line">         c.add(&quot;hello&quot;);</span><br><span class="line">         c.add(new Name(&quot;f1&quot;,&quot;f2&quot;));</span><br><span class="line">         c.add(new Integer(100));</span><br><span class="line">         System.out.println(c.size());</span><br><span class="line">         System.out.println(c);//里面装对象不可是基础类型</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+在利用Connection中的remove时，如要重写equals方法应该重写equls方法，对象做索引的时候hasCode()方法起作用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pubic boolean equals(Object obj)&#123;</span><br><span class="line">    if (obj instanceof Name )&#123;</span><br><span class="line">    Name name = (Name) obj;</span><br><span class="line">    return (firstName.equals(name.firstName) &amp;&amp; (LastName.eauals(name.firstName)));</span><br><span class="line">&#125;else </span><br><span class="line">    return super.eauals(obj);</span><br><span class="line">&#125;</span><br><span class="line">public int hasCode()&#123;</span><br><span class="line">    return firstName.hasCode();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/06/java%E5%AE%B9%E5%99%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：1.2k字 | 预计阅读时长：5分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-mybatis-day01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -649,257 +1141,9 @@ private static void main(String[] args) throw IOExeception{
 
 
   
-    <article id="post-spring-day01-ioc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/spring-day01-ioc/">spring_day01_ioc</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/03/spring-day01-ioc/" class="archive-article-date">
-  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##关于jdbc的简单用法<br>  1.注册驱动<br>       DriverManager.registerDriver(new com.mysql.jdbc.Driver());<br>       或者Class.forName(“com.sql.jdbc.Driver”);<br>  2.获取连接<br>       Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/数据库名称，”root”,”admin”);<br>  3.获取操作数据库的预处理对象<br>       PrepareStatement pstm = conn.prepareStatement(“select * from account”);<br>  4.执行sql语句得到结果集<br>       ResultSet rs = pstm.executeQuery();<br>  5.便利结果集<br>      while(rs.next()){System.out.println(rs.getString(“name”);)}<br>  6.释放资源  rs.close()  pstm.close(); conn.close();  规则先打开的最后关闭</p>
-<hr>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/spring-day01-ioc/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：816字 | 预计阅读时长：3分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-spring-day02-annotation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/spring-day02-annotation/">spring_day01_ioc</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/03/spring-day02-annotation/" class="archive-article-date">
-  	<time datetime="2019-11-03T10:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="spring-day02-ioc"><a href="#spring-day02-ioc" class="headerlink" title="spring_day02_ioc"></a>spring_day02_ioc</h3><h4 id="1-使用注解来管理spring-ioc"><a href="#1-使用注解来管理spring-ioc" class="headerlink" title="1.使用注解来管理spring ioc"></a>1.使用注解来管理spring ioc</h4><h6 id="用于创建对象"><a href="#用于创建对象" class="headerlink" title="用于创建对象"></a>用于创建对象</h6><p> 1.@Component 作用：把资源让spring管理，相当于在xml中配置了一个bean 属性：指定bean的id，如果不指定value的属性，默认bean的id为当前类名，首字母小写<br> 2.@Controller 一般用于表现层的注解<br> 3.@Service 一般用于业务层的注解<br> 4.@Respository一般用于持久层的注解(如果注解中只有一个属性要赋值时，且名称为value，value在赋值时可以不写)</p>
-<h6 id="用于注入数据"><a href="#用于注入数据" class="headerlink" title="用于注入数据"></a>用于注入数据</h6><p>  1.@Autowired 作用：自动按照类型注入，当使用注解注入属性时，set方法可以省略，他只能注入其他bean类型当多个类型匹配时，要使用对象的变量名称作为bean的id<br>  2.@Qualifier作用自动注入的基础上，在按照Bean的id注入,给字段注入时不能单独使用，必须和@Autowire一起使用。属性：指定bean的id<br>  3.@Resource作用:按照bean的id注入，只能注入其他bean类型。属性:指定bean的id<br>  4.@Value作用：注入基本数据类型和String类型value:指定值</p>
-<h6 id="改变作用范围的"><a href="#改变作用范围的" class="headerlink" title="改变作用范围的"></a>改变作用范围的</h6><p>  1.@Scope 作用：指定bean的作用范围。属性：value:取值singleton prototype request session globalsession<br>  2.@PostConstruct初始化方法<br>  3.@PreDestroy销毁方法</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/spring-day02-annotation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：634字 | 预计阅读时长：2分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-my基本操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">my基本操作</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2019-10-30T08:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><ol>
-<li>数据库的基本概念</li>
-</ol>
-<ol start="2">
-<li><p>MySQL数据库软件</p>
-<ol>
-<li>安装</li>
-<li>卸载</li>
-<li>配置</li>
-</ol>
-</li>
-<li><p>SQL</p>
-</li>
-</ol>
-<h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><pre><code>1. 数据库的英文单词： DataBase 简称 ： DB
-2. 什么数据库？
-    * 用于存储和管理数据的仓库。
-
-3. 数据库的特点：
-    1. 持久化存储数据的。其实数据库就是一个文件系统
-    2. 方便存储和管理数据
-    3. 使用了统一的方式操作数据库 -- SQL
-
-
-4. 常见的数据库软件
-    * 参见《MySQL基础.pdf》</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/30/my%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：2k字 | 预计阅读时长：8分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1013,11 +1257,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1037,11 +1281,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">408</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
