@@ -95,8 +95,8 @@
             
 		</nav>
                                  <nav>
-                                           总文章数 33
-                                           总字数 <span class="post-count">35k</span>
+                                           总文章数 34
+                                           总字数 <span class="post-count">38.5k</span>
                                  </nav>
 
 		<nav class="header-nav">
@@ -184,6 +184,119 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-springmvc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/23/springmvc/">springmvc</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/23/springmvc/" class="archive-article-date">
+  	<time datetime="2020-01-22T17:20:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="springmvc-字符串转换Date时间格式"><a href="#springmvc-字符串转换Date时间格式" class="headerlink" title="springmvc 字符串转换Date时间格式"></a>springmvc 字符串转换Date时间格式</h4><p>在utils中设计一个类，实现Converter接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringToDateConverter</span> <span class="keyword">implements</span> <span class="title">Converter</span>&lt;<span class="title">String</span> ,<span class="title">Date</span>&gt;</span>&#123;</span><br><span class="line"><span class="comment">//实现接口方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Date <span class="title">convert</span><span class="params">(String source)</span></span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (source == <span class="keyword">null</span>)&#123;</span><br><span class="line">	 <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"请您传入数据"</span>)；</span><br><span class="line">	 &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">	 DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-mm-dd"</span>);</span><br><span class="line">	 <span class="comment">//把字符串转换成日期 </span></span><br><span class="line">	 <span class="keyword">return</span> df.parse(source);</span><br><span class="line"></span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在springmvc-config中配置自义定类型转换器</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"conversionService"</span> <span class="attr">class</span>=<span class="string">".ConversionServiceFactoryBean"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"converter"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">set</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"类的路径  StringToDateConverter"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">//最后在开启springmvc注解支持中加入conversion-service</span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driver</span> <span class="attr">convertion-service</span>=<span class="string">"conversionService"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="restFule-风格"><a href="#restFule-风格" class="headerlink" title="restFule 风格"></a>restFule 风格</h5><ul>
+<li>请求路径相同(url地址)，但是请求方式不同(post, get)，若两个方法请求方式也相同则传参数 /user/{id}  findByid(id)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testPathVariable/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testPathVariable</span><span class="params">(@PathVariable(name=<span class="string">"id"</span>)</span>String id)</span>&#123;</span><br><span class="line"><span class="comment">// @PathVariable 就是获取url地址的&#123;id&#125;的值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h4><ul>
+<li>RequestParam 前段参数与后端参数不一致时候，使用@RequestParam(前段的参数名) 相当于定义别名写死（name属性），</li>
+<li>RequestBody get请求方式不适用，在传参时不要写具体的参数采用@RequestBody 封装整个响应体</li>
+<li>PathVariable 用于绑定url的占位符</li>
+<li>RequestHeader 获取请求头消息</li>
+<li>CookieValue 指定cookie名称的值传入控制器方法参数(在形参的时候用这个注解里面含有value属性等于名称，然后拿值)</li>
+<li>ModelAtrribute(方法和参数都可用) 方法上：优先执行这个方法 参数上：在map集合中取出来对象赋值给参数(就是参数不完全包含字段，可以设置一个方法先执行查询出没有字段的元素赋给对象，在利用注解取出赋给参数对象)</li>
+<li>SessionAttribute 多次执行控制器方法的参数共享（model防止过多使用servelet API耦合过多，想model里面存数据就是存放在Request域中存放类型map） 可以多次请求 SessionAttributes注解在类上（value=”key”）存放数据在session域中可以用el表达式中查看 可以在session域中取值封装到modelMap中</li>
+</ul>
+<h4 id="返回值类型"><a href="#返回值类型" class="headerlink" title="返回值类型"></a>返回值类型</h4><ul>
+<li>String类型 返回在springmvc.xml里面配置的目录下面的的jsp文件</li>
+<li>void类型 如果不写返回值默认请求目录下(请求路径.jsp文件) 可以自己编写请求转发（不会帮你调用视图解析器，得自己写全web-inf/success.jsp）  请求转发一次请求，不用编写项目名字，重定向两次请求，</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testVoid"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testVoid</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span> throw Exception</span>&#123;</span><br><span class="line">   System.out.println(<span class="string">"testVoid执行"</span>)；</span><br><span class="line">   <span class="comment">//请求转发 可以进web-inf</span></span><br><span class="line">   request.getRequestDispatcher(<span class="string">"WEB-INF/success.jsp"</span>).forward(request,response);</span><br><span class="line">   <span class="comment">/*</span></span><br><span class="line"><span class="comment">   重定向 = 发送一个新的请求不能直接进web-inf里面的目录</span></span><br><span class="line"><span class="comment">   response.sendRedirect(request.getContextPath()+"/index.jsp");</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   或者直接响应</span></span><br><span class="line"><span class="comment">   设置中文乱码</span></span><br><span class="line"><span class="comment">   respon.setCharacterEncoding("UTF-8")；</span></span><br><span class="line"><span class="comment">   respon.setContentType("text/html;charset=UTF=8");</span></span><br><span class="line"><span class="comment">   response.getWriter().print("你好");</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ModelAndView类型 ModelAndView对象是Spring提供的一个对象，可以用来调整具体的Jsp视图</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testModelAndView"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">testModelAndView</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//创建ModelAndView对象</span></span><br><span class="line">ModelAndView mv = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">User user = <span class="keyword">new</span> User();</span><br><span class="line">user.setUsername(<span class="string">"妹妹"</span>);</span><br><span class="line">user.setPassWord(<span class="string">"123"</span>);</span><br><span class="line">user.setAge(<span class="string">"20"</span>);</span><br><span class="line"><span class="comment">//把user对象存储到mv对象中，也会把user对象存入到request对象</span></span><br><span class="line">mv.addObject(<span class="string">"user"</span>,user);</span><br><span class="line"><span class="comment">//跳转到那个页面  使用了视图解析器（web-inf）</span></span><br><span class="line">mv.setViewName(<span class="string">"success"</span>);</span><br><span class="line"><span class="keyword">return</span> mv;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用forward转发，Redirect重定向方式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testForwardOrRedirect"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">  System.out.print(<span class="string">"323"</span>);</span><br><span class="line">  <span class="comment">//请求的转发</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">"forward:/WEB-INF/pages/success.jsp"</span>;</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  重定向 不使用视图解析器 一般要加项目名称</span></span><br><span class="line"><span class="comment">  return "redirect:/index.jsp"；</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>响应json数据的请求 ResponseBody</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ssm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/23/springmvc/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<div align="center" class="post-count">
+字数：901字 | 预计阅读时长：3分钟
+</div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-ssm整合配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1020,71 +1133,6 @@ String 重写了Object的equals方法，把引用比较改成了值比价<h4 id=
 
 
   
-    <article id="post-java小游戏坦克大战" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/07/java%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/">java小游戏坦克大战</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/07/java%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/" class="archive-article-date">
-  	<time datetime="2019-11-07T05:58:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/07/java%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-<div align="center" class="post-count">
-字数：0字 | 预计阅读时长：1分钟
-</div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1193,19 +1241,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">-Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1217,11 +1261,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ssm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1233,7 +1281,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">-前端</a>
               </li>
             
             <div class="clearfix"></div>
