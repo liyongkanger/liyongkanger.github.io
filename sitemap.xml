@@ -284,14 +284,14 @@
   </url>
   
   <url>
-    <loc>https://yoursite.com/tags/web/</loc>
+    <loc>https://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2021-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://yoursite.com/tags/web/</loc>
     <lastmod>2021-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -305,14 +305,14 @@
   </url>
   
   <url>
-    <loc>https://yoursite.com/tags/MySQL/</loc>
+    <loc>https://yoursite.com/tags/Mybatis/</loc>
     <lastmod>2021-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://yoursite.com/tags/Mybatis/</loc>
+    <loc>https://yoursite.com/tags/MySQL/</loc>
     <lastmod>2021-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
